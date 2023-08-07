@@ -1,0 +1,59 @@
+@use '../abstract/colors' as *;
+@use '../abstract/breakpoints' as *; 
+@use '../abstract/functions' as *;
+
+
+.img-fluid{
+    width: 100%;
+    height: auto;
+}
+
+p + p, 
+h1 + p, 
+h2 + p, 
+h3 + p,
+h4 + p, 
+h5 + p, 
+h6 + p{
+    margin-top:1rem;
+}
+
+
+.text-primary{
+    color:$clr-primary;
+}
+.text-secondary{
+    color:$clr-secondary;
+}
+
+.text-center{
+    text-align:center;
+}
+.text-left{
+    text-align:left
+}
+.text-white{
+    color:$clr-white-100;
+}
+.text-lightgray{
+    color:$clr-light-grey;
+}
+.text-uppercase{
+    text-transform:uppercase;
+}
+.text-capitalize{
+    text-transform: capitalize;
+}
+.text-lowercase{
+    text-transform: lowercase;
+}
+.text-underline{
+  text-decoration: underline;   
+}
+.overflow-hidden{
+    overflow:hidden;
+}
+.img-cover{
+    width:100%;
+    object-fit:cover;
+}

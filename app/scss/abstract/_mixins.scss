@@ -1,0 +1,59 @@
+@use "./fonts" as *;
+@use "./colors" as *;
+
+@mixin background-cover{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center center;
+}
+
+@mixin flex-cloumn{
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center-horizontal{
+    display: flex;
+    align-items: center;
+}
+@mixin flex-center-vertical{
+    display: flex;
+    justify-content: center;
+}
+@mixin flex-space-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin pseudo-cover{
+    content:"";
+    position: absolute;
+    inset:0;
+}
+
+@mixin border-radius($val){
+    border-radius:$val;
+}
+
+@mixin transition($property:all, $delay:0, $timing-func:ease){
+    transition:$property $delay $timing-func;
+}
+
+@mixin transform-rotate($deg){
+    transform:rotate($deg) ;
+}
+
+// ======== setting font for header and body ======= //
+@mixin font-heading{
+    // font-family:$ff-regular;
+}
+
+@mixin font-body{
+    font-family:$ff-regular;
+}

@@ -1,6 +1,7 @@
 @use '../abstract/colors' as *;
 @use '../abstract/breakpoints' as *; 
 @use '../abstract/functions' as *;
+@use "../abstract/fonts" as *;
 
 
 .img-fluid{
@@ -56,4 +57,11 @@ h6 + p{
 .img-cover{
     width:100%;
     object-fit:cover;
+}
+
+.section-heading{
+    margin: 0 auto;
+    text-align: center;
+    font-family: $ff-light;
+    font-weight: normal;
 }

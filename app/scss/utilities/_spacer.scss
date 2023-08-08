@@ -6,7 +6,7 @@
       sm: em(576),
       md: em(767),
       lg: em(992),
-      xl: em(1200),
+      xl: em(1366),
       xxl: em(1600),
     );
   
@@ -17,12 +17,12 @@
     // Loop over each size
     @each $suffix, $width in $sizes {
       @media only screen and (min-width: $width) {
-        &-#{$suffix} { @content; }
+        &--#{$suffix} { @content; }
       }
     }
 }
 
-$spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22);
+$spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 0);
 
 // change this order to manage the space multiplier
 $base-multiplier:1;
@@ -39,7 +39,7 @@ $base-multiplier:1;
 
     .mx{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 margin-left: #{calc($space * $base-multiplier)}rem !important;
                 margin-right: #{calc($space * $base-multiplier)}rem !important;
             }
@@ -48,7 +48,7 @@ $base-multiplier:1;
 
     .my{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 margin-top: #{calc($space * $base-multiplier)}rem !important;
                 margin-bottom: #{calc($space * $base-multiplier)}rem !important;
             }
@@ -57,7 +57,7 @@ $base-multiplier:1;
 
     .ml{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 margin-left: #{calc($space * $base-multiplier)}rem !important;
             }
         }
@@ -65,7 +65,7 @@ $base-multiplier:1;
 
     .mr{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 margin-right: #{calc($space * $base-multiplier)}rem !important;
             }
         } 
@@ -73,7 +73,7 @@ $base-multiplier:1;
 
     .mb{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 margin-bottom: #{calc($space * $base-multiplier)}rem !important;
             }
         } 
@@ -81,7 +81,7 @@ $base-multiplier:1;
 
     .mt{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 margin-top: #{calc($space * $base-multiplier)}rem !important;
             }
         } 
@@ -89,7 +89,7 @@ $base-multiplier:1;
 
     .p{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 padding: #{calc($space * $base-multiplier)}rem !important;
             }
         }
@@ -97,7 +97,7 @@ $base-multiplier:1;
  
     .px{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 padding-left: #{calc($space * $base-multiplier)}rem !important;
                 padding-right: #{calc($space * $base-multiplier)}rem !important;
             }
@@ -106,7 +106,7 @@ $base-multiplier:1;
 
     .py{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 padding-top: #{calc($space * $base-multiplier)}rem !important;
                 padding-bottom: #{calc($space * $base-multiplier)}rem !important;
             }
@@ -115,7 +115,7 @@ $base-multiplier:1;
 
     .pl{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 padding-left: #{calc($space * $base-multiplier)}rem !important;
             }
         } 
@@ -123,7 +123,7 @@ $base-multiplier:1;
 
     .pr{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 padding-right: #{calc($space * $base-multiplier)}rem !important;
             }
         } 
@@ -131,7 +131,7 @@ $base-multiplier:1;
 
     .pb{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 padding-bottom: #{calc($space * $base-multiplier)}rem !important;
             }
         } 
@@ -139,7 +139,7 @@ $base-multiplier:1;
 
     .pt{
         @include generate-responsive(){ // to add the prefix of breakpoint
-            &-#{$space}{
+            &--#{$space}{
                 padding-top: #{calc($space * $base-multiplier)}rem !important;
             }
         }  

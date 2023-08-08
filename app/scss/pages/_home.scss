@@ -1,0 +1,135 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+// ======== hero styles start =========
+.hero{
+
+    height: rem(773);
+    background-color: $clr-primary;
+
+    &__footer{
+        border-top: 1px solid #4d4d4d;
+        
+        &-list{
+            display: flex;
+            align-items: center;
+            gap:5rem;
+            box-sizing: border-box;
+        }
+
+        &-link{
+            color:$clr-white-100 ;
+        }
+    }
+
+}
+// ======== hero styles end =========
+
+
+.contactShine{
+  margin: 213.5px 0 0;
+  padding-block:em(160);
+  background-color: #050505;
+}
+
+
+// ======== FAQs Styles Start =========
+.faq{
+    font-family: $ff-regular;
+    font-size:rem(18);
+
+    &__summary{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        font-size:rem(24);
+        line-height: 2.5;
+        @include transition(all, 0.35s, ease);
+        cursor: pointer;
+
+        &::-webkit-details-marker{
+            display: none;
+        }
+        &::after{
+            content: "\002B";
+            font-size: rem(26);
+        }
+    }
+
+    &__details{
+        border-bottom: 1px solid  #cecece;
+        padding-block: em(26);
+    }
+}
+
+
+.faq__details[open] .faq__summary{
+    margin-bottom: .5em;
+}
+
+.faq__details[open] .faq__summary:after{
+  content: "\00D7";
+  font-size: rem(26);
+}
+
+.faq__details[open] p{
+  font-size: rem(18);
+  font-family: $ff-regular;
+  line-height: 2;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+// ======== FAQs Styles End =========
+
+
+// Testtimonials
+.testimonials{
+
+    &__heading{
+        font-size:rem(268);
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        color: #efefef;
+        position: relative;
+        z-index: -1;
+        top: -20px;
+    }
+
+    &__top{
+
+    }
+    &__bottom{
+        padding: 240px 0px 240px 280px;
+        background-color: #1c1c1c;
+
+        figure{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+    }
+}
+
+.testimonials__thumbnail{
+
+}
+
+
+// Services Styles Start
+.services{
+
+    &__categoriesWrapper{
+        border-bottom: 1px solid #d6d6d6;
+        padding-bottom: em(72);
+    }
+
+}

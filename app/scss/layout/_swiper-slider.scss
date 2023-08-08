@@ -1,0 +1,53 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+.swiper-button-prev,
+.swiper-button-next{
+    position: static !important;
+    margin: 0px !important;
+}
+
+.chevronIcons{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    // border: 1px solid red;
+    height: 100%;
+    align-items: flex-end;
+    align-items: center;
+    padding-top: em(112);
+    
+
+
+    &__wrapper{
+        @include flex-center;
+        width: 64px;
+        height: 64px;
+        border:1px solid #9c9c9c;
+        @include border-radius(12px);
+       
+
+        
+    }
+}
+
+.swiper-slide p{
+    font-family: $ff-light;
+    font-size: rem(40);
+    font-weight: normal;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.chevronIcons__wrapper:hover{
+    cursor: pointer;
+    background-color: $clr-secondary;
+    border-color: $clr-secondary;
+}
+
+.chevronIcons__wrapper:hover .chevronIcons__wrapper > svg > path{
+    stroke :$clr-primary;
+}

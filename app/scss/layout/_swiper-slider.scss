@@ -11,26 +11,17 @@
 }
 
 .chevronIcons{
-    display: flex;
-    justify-content: center;
+    @include flex-center;
     gap: 3rem;
-    // border: 1px solid red;
     height: 100%;
-    align-items: flex-end;
-    align-items: center;
     padding-top: em(112);
     
-
-
     &__wrapper{
         @include flex-center;
         width: 64px;
         height: 64px;
-        border:1px solid #9c9c9c;
+        border:1px solid $clr-light-grey;
         @include border-radius(12px);
-       
-
-        
     }
 }
 
@@ -39,7 +30,7 @@
     font-size: rem(40);
     font-weight: normal;
     line-height: 1.5;
-    color: #fff;
+    color: $clr-white-100;
 }
 
 .chevronIcons__wrapper:hover{

@@ -16,7 +16,7 @@
     &.sticky{
         background-color:$clr-primary;
         color:$clr-white-100;
-        z-index: 999;
+        z-index: 3;
         border-bottom: 1px solid $clr-grey-100;
     }
 
@@ -25,15 +25,45 @@
         align-items: center;
         justify-content:space-between;
     }
+    &__mobile{
+        position: fixed;
+        inset:0;
+        z-index: 99;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        color: $clr-white-100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 78px;
+        @include transition(0.8s);
+        opacity: 0;
+        visibility: hidden;
+       @include transform-x(-100%);
+    
+        &.open{
+            @include transition(0.8s);
+            opacity: 1;
+            visibility: visible;
+            @include transform-x(0%);
+        }
+    
+        &-list{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            @include flex-center;
+            flex-direction: column;
+            gap:rem(40);
+        }
+    
+        &-link{
+            color: $clr-white-100;
+            font-size: rem(18);
+        }
+      }
 
-}
-
-.nav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:6rem;
-    color:$clr-white-100;
 }
 
 

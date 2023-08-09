@@ -9,22 +9,34 @@
 
 // ======== hero styles start =========
 .hero{
-
-    height: rem(773);
     background-color: $clr-primary;
 
+
+    &__container{
+        background-image: url("../../assets/images/hero-bg-pattern-1.webp");
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+
     &__footer{
-        border-top: 1px solid #4d4d4d;
+        border-top: 1px solid $clr-border;
         
         &-list{
             display: flex;
             align-items: center;
-            gap:5rem;
+            gap:rem(150);
             box-sizing: border-box;
         }
 
         &-link{
             color:$clr-white-100 ;
+            font-size: rem(20);
+            letter-spacing: -0.64px;
+            font-family: $ff-medium;
+
+            &.active{
+                color: $clr-secondary;
+            }
         }
     }
 
@@ -68,7 +80,6 @@
     }
 }
 
-
 .faq__details[open] .faq__summary{
     margin-bottom: .5em;
 }
@@ -86,11 +97,10 @@
   font-stretch: normal;
   font-style: normal;
 }
-
 // ======== FAQs Styles End =========
 
 
-// Testtimonials
+// ======== Testtimonials Styles Start =========
 .testimonials{
 
     &__heading{
@@ -103,33 +113,88 @@
         z-index: -1;
         top: -20px;
     }
-
-    &__top{
-
-    }
     &__bottom{
         padding: 240px 0px 240px 280px;
         background-color: #1c1c1c;
-
         figure{
             display: flex;
             align-items: center;
             gap: 2rem;
         }
     }
+
+    &__name{
+        font-size: rem(18);
+        @include breakpoint-md{
+            font-size: rem(20);
+        }
+    }
 }
 
-.testimonials__thumbnail{
 
-}
+// ======== Testtimonials Styles End =========
 
 
-// Services Styles Start
+// ======== Services Styles Start =========
 .services{
+
+    &__heading{
+        font-family: $ff-light;
+        text-transform: capitalize;
+    }
 
     &__categoriesWrapper{
         border-bottom: 1px solid #d6d6d6;
         padding-bottom: em(72);
+        
+    }
+    &__category{
+        @include  flex-center-vertical;
+        gap:rem(40);
+        font-family: $ff-regular;
+        font-weight: 400;
+    }
+}
+// ======== Services Styles End =========
+
+
+// about
+
+.about{
+    overflow: hidden;
+    
+    &__figure{
+        // width: 430px;
+        height: 432px;
+        // margin: 228px 40px 273px 0;
+        // object-fit: contain;
+        background-color: #f1b61d;
+
+    }
+}
+
+// Work
+.work{
+
+    &__figcaption{
+        @include flex-space-between;
+    }
+    &__left{
+        
+        p{
+            font-size: rem(18);
+            font-family: $ff-light;
+            font-weight: 300;
+
+            @include breakpoint-md{
+                font-size: rem(20);
+            }
+        }
     }
 
+    &__right{
+        @include flex-center;
+        gap: rem(16);
+    }
 }
+

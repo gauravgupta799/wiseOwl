@@ -63,5 +63,20 @@ h6 + p{
     margin: 0 auto;
     text-align: center;
     font-family: $ff-light;
-    font-weight: normal;
+    font-weight: 300;
+}
+
+.divider{
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+}
+
+.ff-medium{
+    font-family: $ff-medium;
+    font-weight: 500;
+}
+.ff-light{
+    font-family: $ff-light;
+    font-weight: 300;
 }

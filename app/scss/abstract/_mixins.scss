@@ -17,11 +17,11 @@
     justify-content: center;
 }
 
-@mixin flex-center-horizontal{
+@mixin flex-center-vertical{
     display: flex;
     align-items: center;
 }
-@mixin flex-center-vertical{
+@mixin flex-center-horizontal{
     display: flex;
     justify-content: center;
 }
@@ -49,6 +49,10 @@
     transform:rotate($deg) ;
 }
 
+@mixin transform-x($value){
+    transform: translateX($value);
+}
+
 // ======== setting font for header and body ======= //
 @mixin font-heading{
     // font-family:$ff-regular;
@@ -56,4 +60,36 @@
 
 @mixin font-body{
     font-family:$ff-regular;
+}
+
+
+// ham
+
+@mixin icon($height, $width) {
+  transition-duration: 0.5s;
+  position: relative;
+  height: $height;
+  width: $width;
+  background-color: $clr-white-100;
+}
+
+@mixin icon-before($height, $width, $top) {
+    content: "";
+    top: $top;
+    transition-duration: 0.5s;
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: $clr-white-100;
+ 
+}
+
+@mixin icon-after($height, $width, $top) {
+    content: "";
+    top: $top;
+    transition-duration: 0.5s;
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: $clr-white-100;
 }

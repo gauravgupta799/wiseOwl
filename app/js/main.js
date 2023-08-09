@@ -1,4 +1,3 @@
-
 const header = document.querySelector('.header');
 
 window.addEventListener("scroll", () => {
@@ -9,6 +8,13 @@ window.addEventListener("scroll", () => {
         header.classList.remove("sticky");
     }
 })
+
+// var menuText = document.querySelector('.menu__text');
+// const mobileMenu = document.querySelector(".header__mobile");
+$('.menu').click (function(){
+    $(this).toggleClass('open');
+    $(".header__mobile").toggleClass('open');
+  });
 
 
 // Swiper start

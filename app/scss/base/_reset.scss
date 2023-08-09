@@ -83,7 +83,8 @@ body {
   h5,
   h6 {
     font-size: 100%;
-    // font-family: $ff-light;
+    font-family: $ff-light;
+    font-weight: 300;
 }
 
 button{
@@ -93,11 +94,11 @@ button{
 }
 
 
-*::placeholder{
-  font-size: rem(18);
-  font-family:$ff-regular;
+::placeholder{
+  font-size: rem(18) !important;
+  font-family:$ff-regular !important;
 }
-*::selection{
-  color:$clr-primary;
+::selection{
+  color:$clr-white-100;
   background-color: $clr-primary;
 }

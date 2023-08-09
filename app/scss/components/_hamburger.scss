@@ -1,0 +1,59 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+.hamburger{
+    position: relative;
+    transition-duration: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:rem(32);
+
+    .icon {
+      @include icon(3px, 30px);
+      
+      &::before{
+        @include icon-before(3px, 30px, -8px);
+      }
+      
+      &::after{
+        @include icon-after(3px, 30px , 8px);
+      }
+    }
+
+    .menu__text-2{
+        display: none;
+        @include transition(0.5s);
+    }
+
+    &.open {
+      .icon {
+        transition-duration: 0.5s;
+        background: transparent;
+        
+        &::before{
+          transform: rotateZ(45deg) scaleX(1) translate(6px, 6px);
+        }
+  
+        &::after{
+          transform: rotateZ(-45deg) scaleX(1) translate(6px, -6px);
+        }
+      }
+      .menu__text-1{
+        display: none;
+        @include transition(0.5s);
+      }
+      .menu__text-2{
+        display: block;
+        @include transition(0.5s);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  

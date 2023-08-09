@@ -22,13 +22,12 @@
         row-gap: rem(10);
     }
     &__link{
-        color:white;
+        color:$clr-white-100;
+        @include transition(0.5s, ease-in-out);
+        &:hover{
+            color:$clr-secondary;
+        }
     }
-
-    &__bottom{
-        // margin-top: rem(166);
-    }
-
     &__form{
         display: flex;
         align-items: center;
@@ -53,9 +52,7 @@
             background: transparent;
             color: white;
         }
-
     }
-
     &__socials{
         display: flex;
         align-items: center;

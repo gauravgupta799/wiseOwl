@@ -6,7 +6,7 @@
     url("../../../app/assets/fonts/productSans-light/productSans-light.woff") format('woff'),
     url("../../../app/assets/fonts/productSans-light/productSans-light.ttf") format('truetype'),
     url("../../../app/assets/fonts/productSans-light/productSans-light.svg") format('svg');
-    font-weight:300;
+    font-weight:300 !important;
 }
 
 // --------- ProductSans Regular -------------
@@ -17,7 +17,7 @@
     url("../../../app/assets/fonts/productSans-regular/productSans-regular.woff") format('woff'),
     url("../../../app/assets/fonts/productSans-regular/productSans-regular.ttf") format('truetype'),
     url("../../../app/assets/fonts/productSans-regular/productSans-regular.svg") format('svg');
-    font-weight:400;
+    font-weight:400 !important;
 }
 
 // --------- ProductSans Medium -------------
@@ -28,7 +28,7 @@
     url("../../../app/assets/fonts/productSans-medium/productSans-medium.woff") format('woff'),
     url("../../../app/assets/fonts/productSans-medium/productSans-medium.ttf") format('truetype'),
     url("../../../app/assets/fonts/productSans-medium/productSans-medium.svg") format('svg');
-    font-weight:500;
+    font-weight:500 !important;
 }
 
 

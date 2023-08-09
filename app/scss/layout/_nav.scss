@@ -1,0 +1,60 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.nav{
+   @include flex-center;
+    gap:6rem;
+    color:$clr-white-100;
+}
+
+
+// ========== Slider styles start ========
+.switch{
+    position: relative;
+    display: inline-block;
+    width: rem(60);
+    height: rem(24);
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    inset:0;
+    @include transition(0.4s);
+    @include border-radius(12px);
+    border:1px solid $clr-primary;
+    background-color: $clr-white-100;
+}
+
+.switch .checkbox__field{
+    --webkit-appearance:none;
+    visibility: hidden;
+    display:none;
+}
+
+.slider::before{
+    content: "";
+    position: absolute;
+    height: rem(19);
+    width: rem(19);
+    left: 2px;
+    bottom: 2px;
+    background-color: $clr-primary;
+    @include transition(all, 0.3s, ease-in-out);
+    @include border-radius(50%);
+}
+
+.checkbox__field:checked  ~ .slider{
+    background-color: $clr-primary;
+    border-color:$clr-border;
+}
+
+.checkbox__field:checked ~ .slider::before{
+    @include transform-x(34px);
+    background-color: $clr-secondary;
+}
+// ========== Slider styles start ========

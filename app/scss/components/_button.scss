@@ -9,7 +9,7 @@
     outline:none;
     border:none;
     font-size:rem(16);
-    padding:em(12) em(42);
+    padding:em(8) em(42);
     color:$clr-lighter-dark;
     @include border-radius(21px);
     @include transition(all, 0.5s, ease-in-out);
@@ -30,12 +30,22 @@
 .btn--secondary{
     background:transparent;
     font-family:$ff-light;
+    font-weight: 300;
     font-size: rem(18);
     padding-inline:0;
+
+    &:hover{
+        @include transform-x(5px);
+    }
 }
 
 .btn-tertiary{
     background: $clr-primary;
     color:$clr-white-100;
     border: solid 1px $clr-border;
+    &:hover{
+        background: $clr-white-100;
+        color:$clr-primary;
+        border-color: $clr-primary;
+    }
 }

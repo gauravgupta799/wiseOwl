@@ -20,27 +20,52 @@
         display: flex;
         flex-direction: column;
         row-gap: rem(10);
+       
     }
     &__link{
         color:$clr-white-100;
         @include transition(0.5s, ease-in-out);
+        position: relative;
+        display: inline-block;
+
+        &::before{
+            content:"";
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            background: $clr-secondary;
+            @include transition(0.5s, ease-in-out);
+            transform:scaleX(0);
+            transform-origin: left;
+        }
+
         &:hover{
             color:$clr-secondary;
+
+            &::before{
+                transform:scaleX(1);
+            }
         }
     }
     &__form{
-        display: flex;
-        align-items: center;
+        @include flex-center-vertical;
         width: 100%;
     }
     &__input{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-center;
         width: 100%;
         gap: 2rem;
         border-bottom: 2px solid #4d4d4d;
         padding-bottom: 16px;
+
+        &.border-color{
+            border-color:$clr-white-100;
+        }
+        &.error{
+            border-color: red;
+        }
 
         input{
             outline: none;
@@ -50,7 +75,7 @@
             height: 100%;
             font-size: 18px;
             background: transparent;
-            color: white;
+            color: $clr-white-100;
         }
     }
     &__socials{
@@ -66,14 +91,3 @@
     }
 }
 
-
-
-
-
-
-
-// &__top{
-//     display: grid;
-//     grid-gap:1rem;
-//     grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
-// }

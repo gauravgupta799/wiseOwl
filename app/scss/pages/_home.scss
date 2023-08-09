@@ -33,8 +33,13 @@
             font-size: rem(20);
             letter-spacing: -0.64px;
             font-family: $ff-medium;
+            @include transition(0.4s, ease-in-out);
 
             &.active{
+                color: $clr-secondary;
+            }
+
+            &:hover{
                 color: $clr-secondary;
             }
         }

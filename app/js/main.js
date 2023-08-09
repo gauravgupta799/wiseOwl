@@ -1,7 +1,6 @@
 const header = document.querySelector('.header');
 
 window.addEventListener("scroll", () => {
-    console.log(window.screenY)
     if(window.scrollY > 10){
         header.classList.add("sticky");
     }else{
@@ -9,12 +8,33 @@ window.addEventListener("scroll", () => {
     }
 })
 
-// var menuText = document.querySelector('.menu__text');
-// const mobileMenu = document.querySelector(".header__mobile");
-$('.menu').click (function(){
-    $(this).toggleClass('open');
-    $(".header__mobile").toggleClass('open');
-  });
+
+document.getElementById("footer__form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const inputField = document.querySelector('input[type="email"]');
+    if(inputField.value != ""){
+        $(".footer__input").removeClass("error");
+        console.log(inputField.value);
+        inputField.value = "";
+    }else{
+        $(".footer__input").addClass("error");
+    }
+})
+
+$(document).ready(function() {
+    $('.menu').click (function(){
+        $(this).toggleClass('open');
+        $(".header__mobile").toggleClass('open');
+    });
+    $(".footer__input input").focusin(function(){
+        $(".footer__input").addClass("border-color");
+        $(".footer__input").removeClass("error");
+    })
+    $(".footer__input input").focusout(function(){
+        $(".footer__input").removeClass("border-color");
+    })
+})
+
 
 
 // Swiper start

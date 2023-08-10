@@ -15,9 +15,13 @@
 // ========== Slider styles start ========
 .switch{
     position: relative;
-    display: inline-block;
+    display: none;
     width: rem(60);
     height: rem(24);
+
+    @include breakpoint-sm{
+        display: inline-block;
+    }
 }
 
 .slider{

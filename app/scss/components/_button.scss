@@ -8,17 +8,19 @@
     display: inline-block;
     outline:none;
     border:none;
-    font-size:rem(16);
-    padding:em(8) em(42);
+    font-size:rem(14);
+    padding:em(8) em(28);
+    padding: 0.5em 1.8em;
     color:$clr-lighter-dark;
     @include border-radius(21px);
     @include transition(all, 0.5s, ease-in-out);
-    
 
+    @include breakpoint-sm{
+        font-size:rem(16);
+    }
     &:hover{
         cursor: pointer;
     }
-
 }
 
 .btn--primary{
@@ -31,9 +33,11 @@
     background:transparent;
     font-family:$ff-light;
     font-weight: 300;
-    font-size: rem(18);
+    font-size: rem(16);
     padding-inline:0;
-
+    @include breakpoint-md{
+        font-size: rem(18);
+    }
     &:hover{
         @include transform-x(5px);
     }

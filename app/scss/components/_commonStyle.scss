@@ -1,0 +1,52 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.footer__link,
+.header__mobile-link{
+    position: relative;
+    display: inline-block;
+    @include transition(0.5s, ease-in-out);
+
+    &::before{
+        content:"";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        background: $clr-secondary;
+        @include transition(0.5s, ease-in-out);
+        transform:scaleX(0);
+        transform-origin: left;
+    }
+    
+    &:hover{
+        color:$clr-secondary;
+    
+        &::before{
+            transform:scaleX(1);
+        }
+    }
+}
+
+.footer__socials-link{
+    // width: 34px;
+    // height: 34px;
+    // border: 1px solid transparent;
+    // @include flex-center;
+    // @include border-radius(50%);
+    @include transition(all, 0.4s, ease);
+
+    &:hover{
+        svg{
+            transform:scale(1.2);
+            path{
+                fill:$clr-secondary !important;
+            }
+        }
+    }
+}

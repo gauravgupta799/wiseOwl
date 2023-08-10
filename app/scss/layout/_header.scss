@@ -9,8 +9,8 @@
     position: fixed;
     top:0;
     width: 100%;
-    height: rem(80);
-    padding-block:30px;
+    // height: rem(80);
+    padding-block:em(25);
     @include transition(all, 0.4s, ease);
 
     &.sticky{
@@ -21,9 +21,7 @@
     }
 
     &__wrapper{
-        display: flex;
-        align-items: center;
-        justify-content:space-between;
+        @include flex-space-between;
     }
     &__mobile{
         position: fixed;
@@ -31,16 +29,19 @@
         z-index: 99;
         width: 100%;
         height: 100vh;
-        background: #000;
+        background: $clr-primary;
         color: $clr-white-100;
-        display: flex;
+        @include flex-center-vertical;
         flex-direction: column;
-        align-items: center;
-        top: 78px;
-        @include transition(0.8s);
+        top: 70px;
         opacity: 0;
         visibility: hidden;
+        @include transition(0.8s);
        @include transform-x(-100%);
+
+       @include breakpoint-sm{
+            top: 78px;
+       }
     
         &.open{
             @include transition(0.8s);
@@ -51,11 +52,11 @@
     
         &-list{
             width: 100%;
-            height: 100vh;
-            display: flex;
+            // height: 100vh;
             @include flex-center;
             flex-direction: column;
             gap:rem(40);
+            margin-top:rem(100);
         }
     
         &-link{
@@ -64,6 +65,18 @@
         }
       }
 
+      &__logo{
+        @include flex-center;
+      }
 }
 
+
+@media only screen and (max-width:576px){
+    .header__logo{
+      
+        img{
+            width: rem(150);
+        }
+    }
+}
 

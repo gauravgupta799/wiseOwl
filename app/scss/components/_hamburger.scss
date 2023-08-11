@@ -10,25 +10,36 @@
     @include flex-center;
     gap:rem(32);
 
-    .icon {
-      @include icon(3px, 30px);
+    .bar{
+      @include bar(3px, 30px);
       
       &::before{
-        @include icon-before(3px, 30px, -8px);
+        @include bar-before(3px, 30px, -8px);
       }
       
       &::after{
-        @include icon-after(3px, 30px , 8px);
+        @include bar-after(3px, 30px , 8px);
       }
     }
 
-    .menu__text-2{
-        display: none;
-        @include transition(0.5s);
+    .bar--about{
+      background:$clr-primary;
     }
+    .menu__text-1{
+      display: none;
+      @include transition(0.5s, ease-out);
 
+      @include breakpoint-md{
+        display: block;
+      }
+    }
+    .menu__text-2{
+      display: none;
+      @include transition(0.5s, ease-out);
+    }
+    
     &.open {
-      .icon {
+      .bar{
         transition-duration: 0.5s;
         background: transparent;
         
@@ -42,11 +53,13 @@
       }
       .menu__text-1{
         display: none;
-        @include transition(0.5s);
+        @include transition(0.5s, ease-out);
       }
       .menu__text-2{
-        display: block;
-        @include transition(0.5s);
+        @include breakpoint-md{
+          display: block;
+          @include transition(0.5s, ease-out);
+        }
       }
     }
 

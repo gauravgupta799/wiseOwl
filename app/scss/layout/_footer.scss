@@ -21,12 +21,10 @@
     @include breakpoint-xl{
         padding-block: em(165) em(50);
     }
-
     &__title{
         color:$clr-light-grey;
         font-size: rem(18);
     }
-
     &__list{
         font-size: rem(18);
         margin-top: rem(24);
@@ -59,12 +57,10 @@
             outline: none;
             border: none;
             padding: em(15) em(10);
-            width: 100%;
-            height: 100%;
+            @include full-dimensions;
             font-size: rem(16);
             background: transparent;
             color: $clr-white-100;
-
             @include breakpoint-lg{
                 font-size: rem(18);
             }
@@ -75,7 +71,6 @@
         justify-content: flex-start;
         gap:rem(52);
         margin-top: rem(44);
-
         @include breakpoint-sm{
             justify-content: flex-end;
         }

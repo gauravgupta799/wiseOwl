@@ -17,9 +17,9 @@
     height: 100%;
     @include breakpoint-md{
         @include flex-center;
+        align-items: flex-end;
         gap: 3rem;
     }
-    
     &__wrapper{
         @include flex-center;
         width: rem(52);

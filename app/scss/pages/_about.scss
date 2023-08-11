@@ -1,0 +1,162 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+//?--------- Hero Styles Start ---------
+.about-hero{
+    &__top{
+        background-color: $clr-white-50;
+        padding-block: em(198) em(314);
+    }
+}
+//?--------- Hero Styles End ---------
+
+
+//?--------- Company  Styles Start ---------
+.company{
+    p{
+        font-size: rem(18);
+    }
+}
+//?--------- Company  Styles End ---------
+
+
+//?--------- Marquee Styles Start ---------
+.marquee{
+
+    &__container{
+       @include flex-center;
+        padding-block: em(16);
+        overflow: hidden;
+    }
+    &__text{
+        font-family: $ff-light;
+        color: $clr-primary;
+        position: relative;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        padding: 0 4rem;
+        font-size: clamp(4.4rem, 6.8vw + 1rem, 12rem) !important;
+        @include animation(marquee-text, 10s, linear, infinite);
+
+        &::after{
+            content:"-";
+            margin-left: rem(24);
+            @include breakpoint-sm{
+                margin-left: rem(44); 
+            }
+            @include breakpoint-md{
+                margin-left: rem(64); 
+            }
+            @include breakpoint-lg{
+                margin-left: rem(84); 
+            }
+            @include breakpoint-xl{
+                margin-left: rem(124); 
+            }
+        }
+
+       @include keyframes(marquee-text){
+        from { @include transform-x(-100%); }
+        to { @include transform-x(0); }
+       }
+    }
+}
+//?--------- Marquee Styles End ---------
+
+
+//?--------- Team Styles Start ---------
+.team{
+    &__imgWrapper{
+        background: $clr-primary;
+        height: 464px;
+        padding: em(40)
+    }
+    &__details{
+        display: inline-block;
+    }
+}
+//?--------- Team Styles End ---------
+
+
+//?--------- Our Values Styles Start ---------
+.values{
+    background-color: $clr-light-dark;
+    &__bottom{
+        padding-block: em(240) em(130);
+    }
+    &__counting{
+        h3{
+            @include flex-center-vertical;
+            justify-content: space-between;
+            position: relative;
+
+            &::after{
+                content: "";
+                position: absolute;
+                width: rem(76);
+                height: 1px;
+                background: $clr-grey-10;
+                margin-left: rem(128);
+            }
+        }
+    }
+
+    &__detailsWrapper{
+        display: flex;
+        justify-content: space-between;
+        gap: 13rem;
+    }
+
+    &__details{
+        h2{
+            margin-top: rem(-10);
+        }
+        p{
+            font-size: rem(18);
+            margin-top: 0;
+        }
+    }
+}
+//?--------- Our Values Styles End ---------
+
+
+//?--------- Join-Us Values Styles Start ---------
+//?--------- Join-Us Values Styles End ---------
+
+
+//?--------- Counter Styles Start ---------
+.counter{
+    h1{
+        font-weight: bold;
+        font-family: $ff-medium;
+    }
+    &__top {
+        h1{
+            font-size: clamp(4.4rem, 6.8vw + 1rem, 12rem) !important;
+        }
+    }
+
+    &__number{
+        &::after{
+            content:"+"
+        }
+    }
+    &__bottom{
+        @include flex-center-vertical;
+        justify-content: space-between;
+        padding-right: em(92);
+    }
+}
+//?--------- Counter Styles End ---------
+
+
+.btn__wrapper{
+    @include full-dimensions;
+    display: flex;
+    align-items:flex-end;
+    justify-content: flex-end;
+}

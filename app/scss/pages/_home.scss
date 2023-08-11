@@ -5,7 +5,7 @@
 @use "../abstract/mixins" as *;
 
 
-// ======== hero styles start =========
+//?--------- Hero Styles Start ---------
 .hero{
     background-color: $clr-primary;
 
@@ -14,18 +14,17 @@
         background-repeat: no-repeat;
         background-position: right center;
     }
-   
     &__footer{
         border-top: 1px solid $clr-grey-50;
-        
+    
         &-list{
             @include flex-center-vertical;
             flex-wrap: wrap;
             justify-content: space-between;
-            // gap:rem(48);
             box-sizing: border-box;
             @include breakpoint-sm{
                 gap:rem(56);
+                justify-content: flex-start;
             }
             @include breakpoint-md{
                 gap:rem(64);
@@ -37,7 +36,6 @@
                 gap:rem(150);
             }
         }
-
         &-link{
             color:$clr-white-100 ;
             font-size: rem(16);
@@ -50,160 +48,72 @@
             @include breakpoint-sm{
                 font-size: rem(20);
             }
-
             &.active{
                 color: $clr-secondary;
             }
-
             &:hover{
                 color: $clr-secondary;
             }
         }
     }
-
 }
-// ======== hero styles end =========
+//?--------- Hero Styles End ---------
 
 
-.contactShine{
-    margin: 213.5px 0 0;
-    padding-block:em(160);
-    background-image: radial-gradient(circle at 50% 50%, #373737, $clr-primary 56%);
-    border-width: 1px 0px 1px 0px;
-    border-style: solid;
-    border-color:#707070;
+//?--------- Work Styles Start ---------
+.work{
 
-    @include breakpoint-lg{
-        background-color: $clr-primary;
-    }
-}
-
-
-// ======== FAQs Styles Start =========
-.faq{
-    font-family: $ff-regular;
-    font-size:rem(18);
-
-    &__summary{
-        list-style: none;
-       @include flex-center-horizontal;
-       gap:rem(48);
-        font-size:rem(24);
-        // line-height: 2.5;
-        @include transition(all, 0.4s, ease);
-        cursor: pointer;
-
-        @include breakpoint-sm{
-            justify-content: space-between;
-        }
-
-        &::-webkit-details-marker{
-            display: none;
-        }
-        &::after{
-            content: "\002B";
-            font-size: rem(26);
-        }
-
-        &:hover{
-            color:$clr-secondary;
-        }
-    }
-
-    &__details{
-        border-bottom: 1px solid  #cecece;
-        padding-block: em(26);
-    }
-}
-
-.faq__details[open] .faq__summary{
-    margin-bottom: .5em;
-    color:$clr-secondary;
-}
-
-.faq__details[open] .faq__summary:after{
-  content: "\00D7";
-  font-size: rem(26);
-}
-
-.faq__details[open] p{
-  font-size: rem(18);
-  font-family: $ff-regular;
-  line-height: 2;
-}
-// ======== FAQs Styles End =========
-
-
-// ======== Testtimonials Styles Start =========
-.testimonials{
-
-    &__heading{
-        font-size:rem(72);
-        // font-size: clamp(rem(64), 4vw + rem(16), rem(268));
-        color: $clr-white-30;
-        position: relative;
-        z-index: -1;
-        top: 11px;
-        margin-inline:0px !important;
-
-        @include breakpoint-sm{
-            font-size:rem(120); 
-        }
+    &__figcaption{
         @include breakpoint-md{
-            font-size:rem(168); 
-        }
-        @include breakpoint-lg{
-            font-size:rem(228); 
-        }
-        @include breakpoint-xl{
-            font-size:rem(268);
-            top: -20px; 
+            @include flex-space-between;
         }
     }
-    &__bottom{
-        // padding: 240px 0px 240px 280px;
-        background-color: #1c1c1c;
-        figure{
-            @include flex-center-vertical;
-            gap: 2rem;
-        }
-    }
-
-    &__thumbnail{
-        width: rem(80);
-        height: rem(80);
-        @include border-radius(50%);
-
-        @include breakpoint-sm{
-            width: rem(90);
-            height: rem(90);
-        }
-        @include breakpoint-md{
-            width: rem(100);
-            height: rem(100);
-        }
-
+    &__figure{
         img{
-            width: 100%;
-            // height: 100%;
+            @media only screen and (max-width:36em){
+                height: rem(280);
+                object-fit: cover;
+            }
         }
     }
-
-    &__name{
-        font-size: rem(18);
-        @include breakpoint-md{
+    &__left{
+        p{
             font-size: rem(18);
-
+            font-family: $ff-light;
+            font-weight: 300;
             @include breakpoint-md{
                 font-size: rem(20);
             }
         }
     }
+    &__right{
+        @include flex-center-vertical;
+        flex-wrap: wrap;
+        gap: rem(12);
+        margin-top: rem(26);
+        @include breakpoint-md{
+            @include flex-center;
+            flex-wrap: nowrap;
+            gap: rem(16);
+            margin-top: 0;
+        }
+    }
 }
-// ======== Testtimonials Styles End =========
+//?--------- Work Styles End ---------
 
 
-// ======== Services Styles Start =========
+//?--------- About Styles Start ---------
+.about-home{
+    overflow: hidden;
+    &__figure{
+        height: 432px;
+        background-color: $clr-secondary;
+    }
+}
+//?--------- About Styles End ---------
+
+
+//?--------- Services Styles Start ---------
 .services{
 
     &__heading{
@@ -229,66 +139,162 @@
         }
     }
 }
-// ======== Services Styles End =========
+//?--------- Services Styles End ---------
 
 
-// about
+//?--------- Testtimonials Styles Start ---------
+.testimonials{
 
-.about{
-    overflow: hidden;
-    
-    &__figure{
-        // width: 430px;
-        height: 432px;
-        // margin: 228px 40px 273px 0;
-        // object-fit: contain;
-        background-color: #f1b61d;
+    &__heading{
+        font-size:rem(72);
+        font-weight: 700;
+        color: $clr-white-30;
+        position: relative;
+        z-index: -1;
+        top: 11px;
+        margin-inline:0px !important;
 
+        @include breakpoint-sm{
+            font-size:rem(120); 
+        }
+        @include breakpoint-md{
+            font-size:rem(150); 
+            top: -4px;
+        }
+        @include breakpoint-lg{
+            font-size:rem(190); 
+            top: -10px; 
+        }
+        @include breakpoint-xl{
+            font-size:rem(268);
+            top: -26px; 
+        }
+        @include breakpoint-xxl{
+            font-size:rem(268);
+            top: -20px; 
+        }
+    }
+    &__bottom{
+        background-color: $clr-light-dark;
+        figure{
+            @include flex-center-vertical;
+            gap: 2rem;
+        }
+    }
+    &__thumbnail{
+        width: rem(80);
+        height: rem(80);
+        @include border-radius(50%);
+        @include breakpoint-sm{
+            width: rem(90);
+            height: rem(90);
+        }
+        @include breakpoint-md{
+            width: rem(100);
+            height: rem(100);
+        }
+        img{ width: 100%; }
+    }
+    &__name{
+        font-size: rem(18);
+        @include breakpoint-md{
+            font-size: rem(20);
+        }
+    }
+}
+//?--------- Testtimonials Styles End ---------
+
+
+//?--------- FAQs Styles Start ---------
+.faq{
+    font-family: $ff-regular;
+    font-size:rem(18);
+
+    &__wrapper{
+        @include breakpoint-sm{
+            padding-inline:2rem;
+        }
+        @include breakpoint-md{
+            padding-inline:4rem;
+        }
+        @include breakpoint-lg{
+            padding-inline:8rem;
+        }
+        @include breakpoint-xl{
+            padding-inline:12rem;
+        }
+        @include breakpoint-xxl{
+            padding-inline:16rem;
+        }
+    }
+    &__summary{
+        list-style: none;
+       @include flex-center-horizontal;
+       gap:rem(48);
+        font-size:rem(24);
+        @include transition(all, 0.4s, ease);
+        cursor: pointer;
+
+        @include breakpoint-sm{
+            justify-content: space-between;
+        }
+        &::-webkit-details-marker{
+            display: none;
+        }
+        &::after{
+            content: "\002B";
+            font-size: rem(26);
+        }
+        &:hover{
+            color:$clr-secondary;
+        }
+    }
+
+    &__details{
+        border-bottom: 1px solid  $clr-white-20;
+        padding-block: em(26);
+        @include breakpoint-sm{
+            padding-block: em(32);
+        }
+        @include breakpoint-md{
+            padding-block: em(36);
+        }
+        @include breakpoint-lg{
+            padding-block: em(42);
+        }
+        @include breakpoint-xl{
+            padding-block: em(48);
+        }
     }
 }
 
-// Work
-.work{
-
-    &__figcaption{
-        @include breakpoint-md{
-            @include flex-space-between;
-        }
-    }
-    &__figure{
-        img{
-            @media only screen and (max-width:36em){
-                height: rem(280);
-                object-fit: cover;
-            }
-        }
-    }
-    &__left{
-        
-        p{
-            font-size: rem(18);
-            font-family: $ff-light;
-            font-weight: 300;
-
-            @include breakpoint-md{
-                font-size: rem(20);
-            }
-        }
-    }
-
-    &__right{
-        // @include flex-center;
-        @include flex-center-vertical;
-        // justify-content: space-between;
-        flex-wrap: wrap;
-        gap: rem(12);
-        margin-top: rem(26);
-
-        @include breakpoint-md{
-              @include flex-center;
-              gap: rem(16);
-              margin-top: 0;
-        }
-    }
+.faq__details[open] .faq__summary{
+    margin-bottom: .5em;
+    color:$clr-secondary;
 }
 
+.faq__details[open] .faq__summary:after{
+  content: "\00D7";
+  font-size: rem(26);
+}
+
+.faq__details[open] p{
+  font-size: rem(18);
+  font-family: $ff-regular;
+  line-height: 2;
+}
+//?--------- FAQs Styles End ---------
+
+
+//?--------- COntact Styles Start ---------
+.contactShine{
+    padding-block:em(170);
+    background-image: radial-gradient(circle at 50% 50%, #373737, $clr-primary 56%);
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color:$clr-grey-10;
+    @include breakpoint-lg{
+        background-color: $clr-primary;
+    }
+}
+//?--------- COntact Styles End ---------

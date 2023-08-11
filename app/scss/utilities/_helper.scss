@@ -9,22 +9,15 @@
     height: auto;
 }
 
-p + p, 
-h1 + p, 
-h2 + p, 
-h3 + p,
-h4 + p, 
-h5 + p, 
-h6 + p{
-    margin-top:1rem;
-}
-
-
 .text-primary{
     color:$clr-primary;
 }
 .text-secondary{
     color:$clr-secondary;
+}
+
+.clr-g-10{
+    color:$clr-grey-10;
 }
 
 .text-center{
@@ -80,3 +73,16 @@ h6 + p{
     font-family: $ff-light;
     font-weight: 300;
 }
+
+.order--1{
+    order:1;
+}
+
+.order--2{
+    order:2;
+
+    @include breakpoint-sm{
+        order:1;
+    }
+}
+

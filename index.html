@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./app/assets/logos/wiseOwl-logo.svg">
     <link rel="stylesheet" href="dist/bundle.min.css">
     <title>WiseOwl - Homepage</title>
 </head>
 <body>
-    <!-- Header section start -->
-    <header class="header">
+    <!-- Header Section Start -->
+    <header class="header header--home">
         <div class="header__desktop">
             <div class="page-container">
                 <div class="header__wrapper">
@@ -25,7 +26,7 @@
                         <div class="menu hamburger">
                             <span class="text-white menu__text-1">Menu</span>
                             <span class="text-white menu__text-2">Close</span>
-                            <div class="icon"></div>
+                            <div class="bar"></div>
                         </div>
                     </nav>
                 </div>
@@ -35,28 +36,28 @@
         <div class="header__mobile">
             <div class="page-container">
                 <ul class="header__mobile-list">
-                   <li class="header__mobile-item"><a href="#" class="header__mobile-link">Home</a></li>
-                   <li class="header__mobile-item"><a href="#" class="header__mobile-link">About</a></li>
-                   <li class="header__mobile-item"><a href="#" class="header__mobile-link">Our Team</a></li>
-                   <li class="header__mobile-item"><a href="#" class="header__mobile-link">Blogs</a></li>
-                   <li class="header__mobile-item"><a href="#" class="header__mobile-link">Services</a></li>
-                   <li class="header__mobile-item"><a href="#" class="header__mobile-link">Contact</a></li>
+                   <li class="header__mobile-item"><a href="home.html" class="header__mobile-link">Home</a></li>
+                   <li class="header__mobile-item"><a href="about.html" class="header__mobile-link">About</a></li>
+                   <li class="header__mobile-item"><a href="team.html" class="header__mobile-link">Our Team</a></li>
+                   <li class="header__mobile-item"><a href="blogs.html" class="header__mobile-link">Blogs</a></li>
+                   <li class="header__mobile-item"><a href="services.html" class="header__mobile-link">Services</a></li>
+                   <li class="header__mobile-item"><a href="contact.html" class="header__mobile-link">Contact</a></li>
                 </ul>
             </div>
         </div>
 
     </header>
-    <!-- Header section end -->
+    <!-- Header Section End -->
 
-    <!-- Main section start -->
+    <!-- Main Section Start -->
     <main>
-        <!-- Hero section star -->
+        <!-- Hero Section Start -->
         <section class="hero">
             <div class="hero__container">
                 <div class="page-container">
                     <div class="hero__top py--13">
                         <div class="row">
-                           <div class="col-12 col-lg-6">
+                           <div class="col-12 col-md-8 col-xl-6">
                                 <h1 class="text-white ff-medium">Lorem Ipsum Website Design</h1>
                                 <div class="mt--2">
                                     <a href="#" class="text-white btn--secondary">
@@ -82,13 +83,13 @@
                 </div>
             </div>
         </section>
-        <!-- Hero section star -->
+        <!-- Hero Section End -->
 
         <!-- Work Section Start -->
         <section class="work mt--10">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-12 col-md-7 mx-auto text-center">
+                    <div class="col-12 col-md-10 col-lg-9 col-xl-7 mx-auto text-center">
                         <a href="#" class="btn btn--primary">
                             Work
                         </a>
@@ -155,11 +156,11 @@
         <div class="divider mt--10 mt--md--15 mt--lg--20"></div>
 
         <!-- About Section Start -->
-        <section class="about mt--10 mt--lg--15">
+        <section class="about-home mt--10 mt--lg--15">
             <div class="page-container">
                 <a href="#" class="btn btn--primary">About</a>
                 <div class="row">
-                    <div class="col-12 col-md-8">
+                    <div class="col-12 col-md-10 col-xl-8">
                         <h3 class="services__heading mt--2">
                             The 35-person Big Human team consists of 12 designers, 15 engineers, and 8 strategists.
                         </h3>
@@ -170,23 +171,35 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt--10 mt--lg--14">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <figure class="about__figure">
-                        <img src="" alt="">
-                    </figure>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <figure class="about__figure">
-                        <img src="" alt="">
-                    </figure>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <figure class="about__figure">
-                        <img src="" alt="">
-                    </figure>
+            <div class="swiper mySwiper mt--10 mt--md--15">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="about-home__figure">
+                            <figure class="">
+                                <img src="" alt="">
+                            </figure>
+                        </div>
+                    </div>                                            
+                                          
                 </div>
             </div>
+            <!-- <div class="row mt--10 mt--lg--14">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <figure class="about__figure">
+                        <img src="" alt="">
+                    </figure>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <figure class="about__figure">
+                        <img src="" alt="">
+                    </figure>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <figure class="about__figure">
+                        <img src="" alt="">
+                    </figure>
+                </div>
+            </div> -->
         </section>
         <!-- About Section End -->
 
@@ -197,7 +210,7 @@
                     Services
                 </a>
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-10 col-sm-8 col-md-5 col-xxl-4">
                         <h3 class="services__heading mt--2">
                             Service Big Human team consists of 12
                         </h3>
@@ -206,9 +219,9 @@
                             <span>-></span>
                         </a>
                     </div>
-                    <div class="col-12 col-md-6 mt--2 mt--md--0 offset-md-2">
+                    <div class="col-12 col-md-6 col-xxl-6 offset-md-1 offset-xxl-2 mt--2 mt--md--0 ">
                         <div class="row">
-                            <div class="col-12 col-md-8">
+                            <div class="col-12 col-xl-10 col-xxl-8">
                                 <div class="services__categoriesWrapper">
                                     <h2 class="services__category">
                                       <span>web design</span>
@@ -219,7 +232,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-8">
+                            <div class="col-12 col-xl-10 col-xxl-8">
                                 <div class="services__categoriesWrapper pt--2 pt--md--4">
                                     <h2 class="services__category ">
                                       <span>branding</span>
@@ -230,7 +243,7 @@
                                     </p>                       
                                 </div>
                             </div>
-                            <div class="col-12 col-md-8">
+                            <div class="col-12 col-xl-10 col-xxl-8">
                                 <div class="services__categoriesWrapper pt--2 pt--md--4">
                                     <h2 class="services__category ">
                                       <span>seo</span>
@@ -253,7 +266,7 @@
             <div class="page-container">
                 <h1 class="testimonials__heading">testimonial</h1>
             </div>
-            <div class="testimonials__bottom pt--10 pb--7 pt--md--0 pb--md--0 py--md--10 py--lg--15">
+            <div class="testimonials__bottom pt--10 pb--7 py--md--10 py--lg--15">
                 <div class="page-container">
                     <div class="row">
                         <div class="col-12 col-md-8">
@@ -366,11 +379,11 @@
         <!-- FAQs Section End -->
 
         <!-- Contact Section Start -->
-        <section class="contactShine">
+        <section class="contactShine mt--10 mt--lg--15">
             <div class="page-container">
                 <div class="row">
-                    <div class="col-12 col-md-5 mx-auto text-center">
-                        <h2 class="text-white ff-medium">
+                    <div class="col-12 col-sm-8 col-lg-6 col-xl-5 mx-auto text-center">
+                        <h2 class="text-white ff-medium text-capitalize">
                             Let's make your  Website shine.
                         </h2>
                         <a href="#" class="btn btn--secondary mt--2">
@@ -384,14 +397,14 @@
         <!-- Contact Section End -->
 
     </main>
-    <!-- Main section end -->
+    <!-- Main Section End -->
 
-    <!-- Footer section start -->
+    <!-- Footer Section Start -->
     <footer class="footer">
         <div class="page-container">
             <div class="footer__top">
                 <div class="row">
-                    <div class="col-6 col-lg-3">
+                    <div class="col-6 col-md-4 col-lg-3">
                         <p class="footer__title">Company</p>
                         <ul class="footer__list">
                             <li class="footer__item"><a href="about.html" class="footer__link">About</a></li>
@@ -400,7 +413,7 @@
                             <li class="footer__item"><a href="team.html" class="footer__link">Our Team</a></li>
                         </ul>
                     </div>
-                    <div class="col-6 col-lg-3">
+                    <div class="col-6 col-md-4 col-lg-3">
                         <p class="footer__title">Services</p>
                         <ul class="footer__list">
                             <li class="footer__item"><a href="web-desgin.html" class="footer__link">Web Design</a></li>
@@ -409,7 +422,7 @@
                             <li class="footer__item"><a href="ads.html" class="footer__link">Ads</a></li>
                         </ul>
                     </div>
-                    <div class="col-6 col-lg-3 mt--5 mt--sm--0">
+                    <div class="col-6 col-md-4 col-lg-3 mt--5 mt--md--0">
                         <p class="footer__title">Other Links</p>
                         <ul class="footer__list">
                             <li class="footer__item"><a href="blogs.html" class="footer__link">Blogs</a></li>
@@ -417,7 +430,7 @@
                             <li class="footer__item"><a href="services.html" class="footer__link">Services</a></li>
                         </ul>
                     </div>
-                    <div class="col-6 col-lg-3 mt--5 mt--sm--0">
+                    <div class="col-6 col-md-4 col-lg-3 mt--5 mt--lg--0">
                         <p class="footer__title">Contact</p>
                         <ul class="footer__list">
                             <li class="footer__item"><a href="contact.html" class="footer__link">Contact</a></li>
@@ -429,7 +442,7 @@
             </div>
             <div class="footer__bottom mt--5 mt--md--7 mt--lg--10">
                 <div class="row">
-                    <div class="col-12 col-md-4 order-2 order-md-1">
+                    <div class="col-12 col-md-4 order--2">
                         <div class="footer__logo">
                             <a href="/" class="">
                                 <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo">
@@ -437,7 +450,7 @@
                             <p class="text-white">2023 Stoleru Martin. All right reserved.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-5 offset-lg-3 mb--5 mb--sm--0">
+                    <div class="col-12 col-md-6 col-lg-5 offset-md-2 offset-lg-3 mb--5 mb--sm--0 order--1">
                         <form action="" id="footer__form">
                             <div class="footer__input">
                                 <input type="email" name="email" value=""  placeholder="Enter Your E-mail" autocomplete="off" class="input__field" onfocus="this.placeholder=''" onblur="this.placeholder='Enter You E-mail'">
@@ -475,7 +488,7 @@
         </div>
 
     </footer>
-    <!-- Footer section end -->
+    <!-- Footer Section End -->
 
     <!-- scripts start -->
      <script src="./dist/bundle.min.js"></script>

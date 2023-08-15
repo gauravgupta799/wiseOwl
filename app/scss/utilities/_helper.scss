@@ -8,6 +8,10 @@
     width: 100%;
     height: auto;
 }
+.img-cover{
+    width:100%;
+    object-fit:cover;
+}
 
 .text-primary{
     color:$clr-primary;
@@ -47,10 +51,7 @@
 .overflow-hidden{
     overflow:hidden;
 }
-.img-cover{
-    width:100%;
-    object-fit:cover;
-}
+
 
 .section-heading{
     margin: 0 auto;

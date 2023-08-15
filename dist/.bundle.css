@@ -386,6 +386,12 @@ p, ul, ol, body {
   height: auto;
 }
 
+.img-cover {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .text-primary {
   color: #050505;
 }
@@ -432,12 +438,6 @@ p, ul, ol, body {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.img-cover {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .section-heading {

@@ -15,7 +15,6 @@ document.getElementById("footer__form").addEventListener("submit", (e) => {
     const inputField = document.querySelector('input[type="email"]');
     if(inputField.value != ""){
         $(".footer__input").removeClass("error");
-        console.log(inputField.value);
         inputField.value = "";
     }else{
         $(".footer__input").addClass("error");
@@ -38,25 +37,25 @@ $(document).ready(function() {
 
 
 // Swiper start
-const aboutSwiper = new Swiper(".mySwiper", {
-    // spaceBetween:20,
-    // centeredSlides:true,
-    // sliderPerView:1,
+const aboutSwiper = new Swiper(".mySwiper--about", {
+    spaceBetween:30,
+    slidesPerView:1,
+    grabCursor:true,
     autoplay:{
-        delay:2500,
+        delay:2000,
         disableOnInteraction:false,
     },
     breakpoints:{
         576:{
-            sliderPerView:1.5,
+            slidesPerView:1.5,
             spaceBetween:10,
         },
         768:{
-            sliderPerView:2,
+            slidesPerView:2,
             spaceBetween:15,
         },
         992:{
-            sliderPerView:3,
+            slidesPerView:3,
             spaceBetween:20,
         },
     }
@@ -65,9 +64,22 @@ const aboutSwiper = new Swiper(".mySwiper", {
 const swiper1 = new Swiper(".swiper-container", {
     grabCursor:true,
     slidePerView:1,
-    spaceBetween:10,
+    spaceBetween:30,
+    // effect:"creative",
+    // creativeEffect:{
+    //     prev:{
+    //         shadow:true,
+    //         translate:["-120%", 0, -500]
+    //     },
+    //     next:{
+    //         shadow:true,
+    //         translate:["120%",0, -500]
+    //     }
+    // },
     navigation:{
         nextEl:".swiper-button-next",
         prevEl:".swiper-button-prev",
     }
 })
+
+

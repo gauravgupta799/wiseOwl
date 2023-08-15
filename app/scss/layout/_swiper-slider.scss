@@ -10,15 +10,34 @@
     margin: 0px !important;
 }
 
+.swiper-slide p{
+    font-family: $ff-light;
+    font-size: rem(28);
+    font-weight: normal;
+    line-height: 1.5;
+    color: $clr-white-100;
+
+    @include breakpoint-sm{
+        font-size: rem(32);
+    }
+    @include breakpoint-md{
+        font-size: rem(36);
+    }
+    @include breakpoint-lg{
+        font-size: rem(40);
+    }
+}
+
 .chevronIcons{
     @include flex-center-vertical;
     justify-content: flex-end;
     gap: 1.5rem;
     height: 100%;
-    @include breakpoint-md{
-        @include flex-center;
+    @include breakpoint-lg{
+        display: flex;
         align-items: flex-end;
         gap: 3rem;
+        margin-top: -20px;
     }
     &__wrapper{
         @include flex-center;
@@ -39,33 +58,16 @@
             width: rem(64);
             height: rem(64);
         }
-    }
-}
 
-.swiper-slide p{
-    font-family: $ff-light;
-    font-size: rem(28);
-    font-weight: normal;
-    line-height: 1.5;
-    color: $clr-white-100;
+        &:hover{
+            cursor: pointer;
+            background-color: $clr-secondary;
+            border-color: $clr-secondary;
 
-    @include breakpoint-sm{
-        font-size: rem(32);
+            svg  path{
+                stroke :$clr-primary;
+                fill:$clr-primary;
+            }
+        }
     }
-    @include breakpoint-md{
-        font-size: rem(36);
-    }
-    @include breakpoint-lg{
-        font-size: rem(40);
-    }
-}
-
-.chevronIcons__wrapper:hover{
-    cursor: pointer;
-    background-color: $clr-secondary;
-    border-color: $clr-secondary;
-}
-
-.chevronIcons__wrapper:hover .chevronIcons__wrapper > svg > path{
-    stroke :$clr-primary;
 }

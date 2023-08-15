@@ -10930,7 +10930,17 @@ p, ul, ol, body {
 
 .about-hero__top {
   background-color: #f8f8f8;
-  padding-block: 12.375em 19.625em;
+  padding-block: 9.75em 9.75em;
+}
+@media only screen and (min-width: 48em) {
+  .about-hero__top {
+    padding-block: 11em 13.375em;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .about-hero__top {
+    padding-block: 12.375em 19.625em;
+  }
 }
 
 .company p {
@@ -10991,7 +11001,7 @@ p, ul, ol, body {
 .team__imgWrapper {
   background: #050505;
   height: 464px;
-  padding: 2.5em;
+  padding: 1rem;
 }
 .team__details {
   display: inline-block;
@@ -11001,7 +11011,19 @@ p, ul, ol, body {
   background-color: #1C1C1C;
 }
 .values__bottom {
-  padding-block: 15em 8.125em;
+  padding-block: 9.375em;
+  text-align: center;
+}
+@media only screen and (min-width: 48em) {
+  .values__bottom {
+    padding-block: 12.5em 8.125em;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .values__bottom {
+    padding-block: 15em 8.125em;
+  }
 }
 .values__counting h3 {
   display: flex;
@@ -11012,15 +11034,42 @@ p, ul, ol, body {
 .values__counting h3::after {
   content: "";
   position: absolute;
-  width: 4.75rem;
-  height: 1px;
+  width: 1px;
+  height: 4.75rem;
   background: #707070;
-  margin-left: 8rem;
+  top: 70px;
+  left: 50%;
+}
+@media only screen and (min-width: 48em) {
+  .values__counting h3::after {
+    width: 4.75rem;
+    height: 1px;
+    margin-left: 5.625rem;
+    left: 50%;
+    top: 50%;
+  }
 }
 .values__detailsWrapper {
   display: flex;
-  justify-content: space-between;
-  gap: 13rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 48em) {
+  .values__detailsWrapper {
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 13rem;
+  }
+}
+.values__details {
+  margin-top: 7.5rem;
+}
+@media only screen and (min-width: 48em) {
+  .values__details {
+    margin-top: 0;
+  }
 }
 .values__details h2 {
   margin-top: -0.625rem;
@@ -11034,6 +11083,9 @@ p, ul, ol, body {
   font-weight: bold;
   font-family: "productSans-medium", sans-serif;
 }
+.counter p {
+  color: #2b2b2b;
+}
 .counter__top h1 {
   font-size: clamp(4.4rem, 6.8vw + 1rem, 12rem) !important;
 }
@@ -11041,18 +11093,36 @@ p, ul, ol, body {
   content: "+";
 }
 .counter__bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-right: 5.75em;
+  margin-top: 3rem !important;
+  color: #575757;
+}
+@media only screen and (min-width: 36em) {
+  .counter__bottom {
+    margin-top: 0 !important;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .counter__bottom {
+    margin-top: 6rem !important;
+  }
+}
+.counter__bottom h1 {
+  font-size: clamp(3.6rem, 4.175vw + 1rem, 8rem) !important;
 }
 
 .btn__wrapper {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+@media only screen and (min-width: 62em) {
+  .btn__wrapper {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
 }
 
 .nav {
@@ -11158,7 +11228,7 @@ p, ul, ol, body {
   top: 70px;
   opacity: 0;
   visibility: hidden;
-  transition: 0.8s 0 ease;
+  transition: 0.5s ease-in ease;
   transform: translateX(-100%);
 }
 @media only screen and (min-width: 36em) {
@@ -11167,10 +11237,9 @@ p, ul, ol, body {
   }
 }
 .header__mobile.open {
-  transition: 0.8s 0 ease;
   opacity: 1;
   visibility: visible;
-  transform: translateX(0%);
+  transform: translateX(0);
 }
 .header__mobile-list {
   width: 100%;
@@ -11206,6 +11275,29 @@ p, ul, ol, body {
   margin: 0px !important;
 }
 
+.swiper-slide p {
+  font-family: "productSans-light", sans-serif;
+  font-size: 1.75rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #ffffff;
+}
+@media only screen and (min-width: 36em) {
+  .swiper-slide p {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .swiper-slide p {
+    font-size: 2.25rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .swiper-slide p {
+    font-size: 2.5rem;
+  }
+}
+
 .chevronIcons {
   display: flex;
   align-items: center;
@@ -11213,13 +11305,12 @@ p, ul, ol, body {
   gap: 1.5rem;
   height: 100%;
 }
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 62em) {
   .chevronIcons {
     display: flex;
-    align-items: center;
-    justify-content: center;
     align-items: flex-end;
     gap: 3rem;
+    margin-top: -20px;
   }
 }
 .chevronIcons__wrapper {
@@ -11249,38 +11340,14 @@ p, ul, ol, body {
     height: 4rem;
   }
 }
-
-.swiper-slide p {
-  font-family: "productSans-light", sans-serif;
-  font-size: 1.75rem;
-  font-weight: normal;
-  line-height: 1.5;
-  color: #ffffff;
-}
-@media only screen and (min-width: 36em) {
-  .swiper-slide p {
-    font-size: 2rem;
-  }
-}
-@media only screen and (min-width: 48em) {
-  .swiper-slide p {
-    font-size: 2.25rem;
-  }
-}
-@media only screen and (min-width: 62em) {
-  .swiper-slide p {
-    font-size: 2.5rem;
-  }
-}
-
 .chevronIcons__wrapper:hover {
   cursor: pointer;
   background-color: #f1b61d;
   border-color: #f1b61d;
 }
-
-.chevronIcons__wrapper:hover .chevronIcons__wrapper > svg > path {
+.chevronIcons__wrapper:hover svg path {
   stroke: #050505;
+  fill: #050505;
 }
 
 .footer {

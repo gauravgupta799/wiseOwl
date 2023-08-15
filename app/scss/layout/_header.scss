@@ -34,16 +34,15 @@
         top: 70px;
         opacity: 0;
         visibility: hidden;
-        @include transition(0.8s);
+        @include transition(0.5s, ease-in);
         @include transform-x(-100%);
         @include breakpoint-sm{
             top: 78px;
         }
         &.open{
-            @include transition(0.8s);
             opacity: 1;
             visibility: visible;
-            @include transform-x(0%);
+            @include transform-x(0);
         }
     
         &-list{

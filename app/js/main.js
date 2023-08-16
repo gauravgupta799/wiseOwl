@@ -1,11 +1,14 @@
 const header = document.querySelector('.header');
 const headerTranparent = document.querySelector('.header--tranparent');
+const barWhite = document.querySelector('.bar-white');
 
 window.addEventListener("scroll", () => {
     if(window.scrollY > 10){
         header.classList.add("sticky");
+        barWhite.classList.add("sticky");
     }else{
         header.classList.remove("sticky");
+        barWhite.classList.remove("sticky")
     }
 })
 

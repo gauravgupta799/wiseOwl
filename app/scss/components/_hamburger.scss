@@ -16,14 +16,21 @@
       &::before{
         @include bar-before(3px, 30px, -8px);
       }
-      
       &::after{
         @include bar-after(3px, 30px , 8px);
       }
     }
-
-    .bar--about{
-      background:$clr-primary;
+    .bar-white{
+        background: $clr-primary;
+        &::before, &::after{
+          background: $clr-primary;
+        }
+        &.sticky{
+            background-color:$clr-white-100;
+            &::before, &::after{
+              background-color:$clr-white-100;
+            }
+        }
     }
     .menu__text-1{
       display: none;

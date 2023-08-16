@@ -35,11 +35,30 @@
     font-weight: 300;
     font-size: rem(16);
     padding-inline:0;
+    display: inline-flex;
+    align-items: center;
+    gap: rem(20);
+    justify-content: center;
     @include breakpoint-md{
         font-size: rem(18);
     }
     &:hover{
         @include transform-x(5px);
+    }
+
+    &:nth-child(2){
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            width: 34px;
+            height: 34px;
+            left: 0;
+            @include border-radius(50%);
+            background: $clr-secondary;
+            z-index: -1;
+            right: calc(100% - 16px);
+        }
     }
 }
 

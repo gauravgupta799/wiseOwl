@@ -7,12 +7,12 @@ window.addEventListener("scroll", () => {
     if(window.scrollY > 10){
         header.classList.add("sticky");
         if(barWhite != null){ barWhite.classList.add("sticky"); }
-        if(barWhite != null){ logo2.src = "../../app/assets/logos/wiseOwl-logo.svg"; }
+        if(logo2 != null){ logo2.src = "../../app/assets/logos/wiseOwl-logo.svg"; }
        
     }else{
         header.classList.remove("sticky");
         if(barWhite != null){ barWhite.classList.remove("sticky"); }
-        if(barWhite != null){ logo2.src = "../../app/assets/logos/logo-black.svg";}
+        if(logo2 != null){ logo2.src = "../../app/assets/logos/logo-black.svg";}
     }
 })
 

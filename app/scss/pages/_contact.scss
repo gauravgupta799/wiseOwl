@@ -1,0 +1,105 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+//?--------- Hero Styles Start ---------
+.contact-hero{
+    padding-block: em(200);
+}
+//?--------- Hero Styles End ---------
+
+
+//?--------- Let's talk Styles Start ---------
+.talk{
+    padding-block: em(154) em(182);
+    background-color: $clr-secondary;
+
+    &__heading{
+        font-size: clamp(4.4rem, 6.8vw + 1rem, 12rem) !important;
+        font-family: $ff-medium; 
+    }
+    &__medium-item{
+        border-top: 1px solid $clr-primary;
+        padding-block: em(36);
+   
+        &:nth-child(3){
+            border-bottom: 1px solid $clr-primary;
+        }
+    }
+    &__medium-link{
+        font-size: rem(24);
+        font-family: $ff-medium;
+
+        @include breakpoint-md{
+            font-size: rem(32);
+        }
+        @include breakpoint-lg{
+            font-size: rem(42);
+        }
+        @include breakpoint-xl{
+            font-size: rem(52);
+        }
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &__item-wrapper{
+        width: 100%;
+        position: relative;
+
+        &::before{
+            content:"";
+            position: absolute;
+            left: 0;
+            width: rem(16);
+            height: rem(16);
+            background: $clr-primary;
+            @include border-radius(50%);
+            display: none;
+
+            @include breakpoint-sm{
+                margin-right: rem(45);
+                display: block;
+                top:8px;
+            }
+        }
+    }
+
+    &__content{
+        margin-left: rem(0);
+
+        @include breakpoint-sm{
+            margin-left: rem(35);
+        }
+        @include breakpoint-md{
+            margin-left: rem(45);
+        }
+        @include breakpoint-lg{
+            margin-left: rem(65);
+        }
+        @include breakpoint-xl{
+            margin-left: rem(85);
+        }
+    }
+}
+//?--------- Let's talk Styles End ---------
+
+
+.contact__socials-link{
+    @include flex-center;
+    padding: em(6);
+    width: 34px;
+    height: 34px;
+    @include border-radius(50%);
+    background: transparent;
+    @include transition(all, 0.4s, ease);
+
+    &:hover{
+        background: $clr-primary;
+        svg path{
+            fill:$clr-white-100;
+        }
+    }
+}

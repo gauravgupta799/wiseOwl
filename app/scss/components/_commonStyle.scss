@@ -34,8 +34,15 @@
 }
 
 .footer__socials-link{
+    @include flex-center;
+    padding: em(6);
+    width: 34px;
+    height: 34px;
+    @include border-radius(50%);
+    background: transparent;
     @include transition(all, 0.4s, ease);
     &:hover{
+        background: $clr-primary;
         svg{
             transform:scale(1.2);
             path{

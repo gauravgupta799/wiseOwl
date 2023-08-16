@@ -46,20 +46,20 @@
         @include transform-x(5px);
     }
 
-    &:nth-child(2){
-        position: relative;
-        &::after{
-            position: absolute;
-            content: '';
-            width: 34px;
-            height: 34px;
-            left: 0;
-            @include border-radius(50%);
-            background: $clr-secondary;
-            z-index: -1;
-            right: calc(100% - 16px);
-        }
-    }
+    // &:nth-child(2){
+    //     position: relative;
+    //     &::after{
+    //         position: absolute;
+    //         content: '';
+    //         width: 34px;
+    //         height: 34px;
+    //         left: 0;
+    //         @include border-radius(50%);
+    //         background: $clr-secondary;
+    //         z-index: -1;
+    //         right: calc(100% - 16px);
+    //     }
+    // }
 }
 
 .btn-tertiary{

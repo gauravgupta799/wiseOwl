@@ -1,14 +1,18 @@
 const header = document.querySelector('.header');
 const headerTranparent = document.querySelector('.header--tranparent');
 const barWhite = document.querySelector('.bar-white');
+const logo2 = document.querySelector('.logo-2')
 
 window.addEventListener("scroll", () => {
     if(window.scrollY > 10){
         header.classList.add("sticky");
-        barWhite.classList.add("sticky");
+        if(barWhite != null){ barWhite.classList.add("sticky"); }
+        if(barWhite != null){ logo2.src = "../../app/assets/logos/wiseOwl-logo.svg"; }
+       
     }else{
         header.classList.remove("sticky");
-        barWhite.classList.remove("sticky")
+        if(barWhite != null){ barWhite.classList.remove("sticky"); }
+        if(barWhite != null){ logo2.src = "../../app/assets/logos/logo-black.svg";}
     }
 })
 

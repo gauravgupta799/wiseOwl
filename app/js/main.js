@@ -103,3 +103,39 @@ const swiper3 = new Swiper(".mySwiper--team", {
 })
 
 
+// Counter script start
+const counterSection = document.querySelector(".company");
+const counters = document.querySelectorAll(".counter__number");
+
+let CounterObserver = new IntersectionObserver(
+    (entries, observer)=>{
+        let [entry] = entries;
+        if(!entry.isIntersecting) return;
+
+        let speed = 200;
+        counters.forEach((counter, index) => {
+            const updateCounter = () =>{
+                let targetNumber = +counter.dataset.target;
+                let initialNumber = +counter.innerText;
+                let incPerCount = targetNumber / speed;
+
+                if(initialNumber  < targetNumber ){
+                    counter.innerText = Math.ceil(initialNumber + incPerCount);
+                    setTimeout(updateCounter, 40);
+                }
+            }
+            updateCounter();
+            // if(counter.parentElement.style.animation){
+            //     counter.parentElement.style.animation = "";
+            // }else{
+            //     counter.parentElement.style.animation = `slide-up 0.3s ease forward ${index / counters.length + 0.5}s`
+            // }
+        })
+        observer.unobserve(counterSection);
+    },{
+        root:null,
+        threshold:0.4,
+    }
+);
+
+CounterObserver.observe(counterSection)

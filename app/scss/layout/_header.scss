@@ -9,7 +9,9 @@
     position: fixed;
     top:0;
     width: 100%;
-    padding-block:em(25);
+    // padding-block:em(25);
+    padding-block:em(16);
+
     @include transition(all, 0.4s, ease);
 
     &.sticky{
@@ -32,13 +34,14 @@
         @include flex-center-vertical;
         flex-direction: column;
         top: 70px;
+        // top: 0;
         opacity: 0;
         visibility: hidden;
         @include transition(0.5s, ease-in);
         @include transform-x(-100%);
-        @include breakpoint-sm{
-            top: 78px;
-        }
+        // @include breakpoint-sm{
+        //     top: 78px;
+        // }
         &.open{
             opacity: 1;
             visibility: visible;
@@ -60,6 +63,10 @@
     }
     &__logo{
         @include flex-center;
+
+        img{
+            display: flex;
+        }
     }
 }
 

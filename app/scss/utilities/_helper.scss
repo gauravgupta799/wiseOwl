@@ -75,6 +75,13 @@
     font-weight: 300;
 }
 
+.fz-18{
+    font-size: rem(16);
+
+    @include breakpoint-sm{
+        font-size: rem(18);  
+    }
+}
 .order--1{
     order:1;
 }

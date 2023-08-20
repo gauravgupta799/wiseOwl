@@ -64,23 +64,24 @@
                     <form class="contact-form">
                         <div class="form-group mb--1 mb--lg--2">
                           <label for="name" class="form-label">Your Full Name*</label>
-                          <input type="name" class="form-control" id="name">
+                          <input type="name" name="name" class="form-control" id="name" required>
                         </div>
                         <div class="form-group mb--1 mb--lg--2">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <label for="email" class="form-label">Email Address*</label>
-                                    <input type="email" class="form-control" id="email">
+                                    <input type="email" name="email" class="form-control" id="email" required>
                                 </div>
                                 <div class="col-12 mt--2 mt--lg--0 col-lg-6">
                                     <label for="phone" class="form-label">Phone Number*</label>
-                                    <input type="phone" class="form-control" id="phone">
+                                    <input type="tel" name="phone" class="form-control" id="phone" 
+                                   inputmode="Numeric" required>
                                 </div>
                             </div>            
                         </div>
                         <div class="form-group mb--2 mb--lg--3">
                             <label for="message" class="form-label">Your Message</label>
-                            <textarea class="form-control" id="message" rows="4" col="6"  style="resize: none;"></textarea>
+                            <textarea class="form-control" name="message" id="message" rows="4" col="6"  style="resize: none;"></textarea>
                         </div>
                         <div class="form-group">
                             <div class="row">
@@ -261,7 +262,7 @@
                     <div class="col-12 col-md-6 col-lg-5 offset-md-2 offset-lg-3 mb--5 mb--sm--0 order--1">
                         <form action="" id="footer__form">
                             <div class="footer__input">
-                                <input type="email" name="email" value=""  placeholder="Enter Your E-mail" autocomplete="off" class="input__field" onfocus="this.placeholder=''" onblur="this.placeholder='Enter You E-mail'">
+                                <input type="email" name="email" value=""  placeholder="Enter Your E-mail" autocomplete="off" class="input__field" onfocus="this.placeholder=''" onblur="this.placeholder='Enter Your E-mail'">
                                  <button class="btn btn-tertiary" id="subscrible">Subscribe</button>
                             </div>
                         </form>

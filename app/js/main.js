@@ -138,4 +138,10 @@ let CounterObserver = new IntersectionObserver(
     }
 );
 
-CounterObserver.observe(counterSection)
+CounterObserver.observe(counterSection);
+
+
+// form Validation
+document.querySelector(".contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
+})

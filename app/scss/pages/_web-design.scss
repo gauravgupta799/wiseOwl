@@ -1,0 +1,102 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.benefits{
+    position: relative;
+    margin-top: 0 !important;
+
+    // background-image: url("../../../app/assets/images/white-pattern.webp");
+    // background-repeat: no-repeat;
+    // background-position: right center;
+
+    &::after{
+        content: url("../../../app/assets/images/white-pattern.webp");
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: -1;
+     
+    }
+}
+
+.webDesign{
+    padding-top: em(115);
+    padding-bottom: em(84);
+    background-color: $clr-secondary;
+
+    &__figure{
+        img{
+            object-fit:cover;
+            mix-blend-mode: darken;
+        }
+    }
+
+    &__top{
+        padding-top: em(128);
+        padding-bottom: em(227);
+        border: solid 1px $clr-grey-10;
+        background-color: $clr-primary;
+    }
+
+    &__process{
+        margin-top: rem(48);
+
+        @include breakpoint-sm{
+            margin-top: 0;  
+        }
+        @media only screen and (max-width: 576px){
+            @include flex-center;
+            flex-direction: column;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            gap: 4rem;
+    
+        }
+    }
+
+    &__circle{
+        @include dimensions(197px,197px);
+        @include border-radius(50%);
+        object-fit: contain;
+        border: solid 1px #b2b2b2;
+        @include flex-center;
+
+        @include breakpoint-sm{
+            @include dimensions(227px,227px);
+        }
+        @include breakpoint-md{
+            @include dimensions(257px,257px);
+        }
+        @include breakpoint-lg{
+            @include dimensions(287px,287px);
+        }
+    }
+}
+
+
+.analyse, .code{
+    @include flex-center;
+}
+
+.design{
+
+}
+
+.code{
+    position: relative;
+
+    .webDesign__circle{
+        
+
+        @include breakpoint-sm{
+            position: absolute;
+            right: 0;
+        }
+    }
+}

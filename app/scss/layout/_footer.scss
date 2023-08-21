@@ -77,7 +77,14 @@
 
     &__secondary{
         background: $clr-secondary;
-        padding-block: em(24);
+        padding-block: em(16);
+
+        @include breakpoint-sm{
+            padding-block: em(20);
+        }
+        @include breakpoint-md{
+            padding-block: em(24);
+        }
     }
 
     &__leftWrapper{

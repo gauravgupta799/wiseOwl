@@ -52,6 +52,13 @@
     overflow:hidden;
 }
 
+.bg--primary{
+    background: $clr-primary;
+}
+.bg--secondary{
+    background: $clr-secondary;
+}
+
 
 .section-heading{
     margin: 0 auto;

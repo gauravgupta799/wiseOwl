@@ -353,7 +353,7 @@ p, ul, ol, body {
 }
 @media screen and (min-width: 36em) {
   p, ul, ol, body {
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.75rem;
   }
 }
@@ -365,7 +365,7 @@ p, ul, ol, body {
 }
 @media screen and (min-width: 62em) {
   p, ul, ol, body {
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 2rem;
   }
 }
@@ -439,6 +439,14 @@ p, ul, ol, body {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.bg--primary {
+  background: #050505;
+}
+
+.bg--secondary {
+  background: #f1b61d;
 }
 
 .section-heading {
@@ -11405,6 +11413,98 @@ p, ul, ol, body {
   border-bottom: 1px solid #000;
 }
 
+.benefits {
+  position: relative;
+  margin-top: 0 !important;
+}
+.benefits::after {
+  content: url("../../../app/assets/images/white-pattern.webp");
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.webDesign {
+  padding-top: 7.1875em;
+  padding-bottom: 5.25em;
+  background-color: #f1b61d;
+}
+.webDesign__figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  mix-blend-mode: darken;
+}
+.webDesign__top {
+  padding-top: 8em;
+  padding-bottom: 14.1875em;
+  border: solid 1px #707070;
+  background-color: #050505;
+}
+.webDesign__process {
+  margin-top: 3rem;
+}
+@media only screen and (min-width: 36em) {
+  .webDesign__process {
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .webDesign__process {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+.webDesign__circle {
+  width: 197px;
+  height: 197px;
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: solid 1px #b2b2b2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 36em) {
+  .webDesign__circle {
+    width: 227px;
+    height: 227px;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .webDesign__circle {
+    width: 257px;
+    height: 257px;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .webDesign__circle {
+    width: 287px;
+    height: 287px;
+  }
+}
+
+.analyse, .code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code {
+  position: relative;
+}
+@media only screen and (min-width: 36em) {
+  .code .webDesign__circle {
+    position: absolute;
+    right: 0;
+  }
+}
+
 .contact-hero {
   padding-block: 12.5em;
 }
@@ -11822,7 +11922,17 @@ p, ul, ol, body {
 }
 .footer__secondary {
   background: #f1b61d;
-  padding-block: 1.5em;
+  padding-block: 1em;
+}
+@media only screen and (min-width: 36em) {
+  .footer__secondary {
+    padding-block: 1.25em;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .footer__secondary {
+    padding-block: 1.5em;
+  }
 }
 .footer__leftWrapper {
   display: flex;

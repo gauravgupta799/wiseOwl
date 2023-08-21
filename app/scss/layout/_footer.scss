@@ -77,12 +77,26 @@
 
     &__secondary{
         background: $clr-secondary;
-        padding-block: em(25);
+        padding-block: em(24);
     }
 
     &__leftWrapper{
         @include flex-center-vertical;
-        gap: rem(64);
+        justify-content: space-between;
+
+        @include breakpoint-sm{
+            gap: rem(20);
+            justify-content: flex-start;
+        }
+        @include breakpoint-md{
+            gap: rem(32);
+        }
+        @include breakpoint-lg{
+            gap: rem(40);
+        }
+        @include breakpoint-xl{
+            gap: rem(64);
+        }
 
         li{
             text-transform: capitalize;

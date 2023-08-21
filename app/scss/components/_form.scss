@@ -14,6 +14,7 @@
 .form-label{
     color: #dedede;
     font-family: $ff-light;
+    font-size: rem(16);
 }
 .form-check-label{
     color: $clr-white-100;
@@ -102,7 +103,3 @@
     cursor: not-allowed;
     opacity: 0.6;
 }
-// #submit[disabled = "false"]{
-//     cursor: pointer;
-//     opacity: 1;
-// }

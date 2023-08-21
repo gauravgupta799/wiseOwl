@@ -10,6 +10,7 @@
 --------------------------------------------------*/
 @use '../abstract/colors' as *; 
 @use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
 
 * {
     padding: 0;
@@ -36,6 +37,7 @@ body {
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
+  font-size: rem(16);
 }
  
   div,

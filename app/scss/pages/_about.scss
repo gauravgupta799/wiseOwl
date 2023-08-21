@@ -24,9 +24,6 @@
 
 //?--------- Company  Styles Start ---------
 .company{
-    p{
-        font-size: rem(18);
-    }
 }
 //?--------- Company  Styles End ---------
 
@@ -80,19 +77,7 @@
     &__imgWrapper{
         background: $clr-primary;
         height: 464px;
-        // min-height: calc(100% - 464px / 2);
-        // padding: em(24) em(16);
         padding: rem(16);
-
-        // @include breakpoint-sm{
-        //     padding: em(30) em(22);
-        // }
-        // @include breakpoint-md{
-        //     padding: em(36) em(28);
-        // }
-        // @include breakpoint-lg{
-        //     padding: em(40) em(34);;
-        // }
     }
     &__details{
         display: inline-block;
@@ -140,11 +125,6 @@
                     left: 50%;
                     top: 50%;
                 }
-                // @include breakpoint-xl{
-                //     margin-left: rem(128);
-                //     left: 0;
-                //     top: 0;
-                // }
             }
         }
     }
@@ -174,7 +154,6 @@
             margin-top: rem(-10);
         }
         p{
-            font-size: rem(18);
             margin-top: 0;
         }
     }

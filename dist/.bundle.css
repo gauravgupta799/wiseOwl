@@ -50,6 +50,7 @@ body {
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
+  font-size: 1rem;
 }
 
 div,
@@ -116,12 +117,12 @@ button {
 }
 
 ::-moz-placeholder {
-  font-size: rem(18) !important;
+  font-size: 1.125rem !important;
   font-family: "productSans", sans-serif !important;
 }
 
 ::placeholder {
-  font-size: rem(18) !important;
+  font-size: 1.125rem !important;
   font-family: "productSans", sans-serif !important;
 }
 
@@ -370,14 +371,14 @@ p, ul, ol, body {
 }
 @media screen and (min-width: 85.375em) {
   p, ul, ol, body {
-    font-size: 1rem;
-    line-height: 2rem;
+    font-size: 1.125rem;
+    line-height: 2.25rem;
   }
 }
 @media screen and (min-width: 100em) {
   p, ul, ol, body {
-    font-size: 1.125rem;
-    line-height: 2.25rem;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -10599,6 +10600,7 @@ p, ul, ol, body {
 .form-label {
   color: #dedede;
   font-family: "productSans-light", sans-serif;
+  font-size: 1rem;
 }
 
 .form-check-label {
@@ -11084,7 +11086,6 @@ p, ul, ol, body {
 }
 
 .faq__details[open] p {
-  font-size: 1.125rem;
   font-family: "productSans", sans-serif;
   line-height: 2;
 }
@@ -11115,10 +11116,6 @@ p, ul, ol, body {
   .about-hero__top {
     padding-block: 12.375em 19.625em;
   }
-}
-
-.company p {
-  font-size: 1.125rem;
 }
 
 .marquee__container {
@@ -11249,7 +11246,6 @@ p, ul, ol, body {
   margin-top: -0.625rem;
 }
 .values__details p {
-  font-size: 1.125rem;
   margin-top: 0;
 }
 
@@ -11471,6 +11467,9 @@ p, ul, ol, body {
     top: 8px;
   }
 }
+.talk__item-wrapper span {
+  font-size: 1rem;
+}
 .talk__content {
   margin-left: 0rem;
 }
@@ -11500,8 +11499,8 @@ p, ul, ol, body {
   align-items: center;
   justify-content: center;
   padding: 0.375em;
-  width: 34px;
-  height: 34px;
+  width: 2.125rem;
+  height: 2.125rem;
   border-radius: 50%;
   background: transparent;
   transition: all 0.4s ease;

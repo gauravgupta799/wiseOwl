@@ -17,7 +17,6 @@ window.addEventListener("scroll", () => {
 })
 
 // form Validation
-// footer
 document.getElementById("footer__form").addEventListener("submit", (e) => {
     e.preventDefault();
     const inputField = document.querySelector('input[type="email"]');
@@ -28,32 +27,6 @@ document.getElementById("footer__form").addEventListener("submit", (e) => {
         $(".footer__input").addClass("error");
     }
 })
-
-// contact form
-const checkAgree = document.querySelector(".form-check-input");
-var submitBtn = document.getElementById("submit");
-submitBtn.disabled = "true";
-checkAgree.checked = false;
-
-checkAgree.addEventListener("change",(e)=>{
-    if(e.target.checked){
-        submitBtn.disabled = false;
-        submitBtn.addEventListener("click",(e)=>{
-            e.preventDefault();
-            document.querySelectorAll(".form-control").forEach((input, i) => {
-                if(input.value != ""){
-                    checkAgree.checked= false;
-                    input.value="";
-                }else{
-                    alert("Please fill the all field.")
-                }
-            })
-        })
-    }else{
-        submitBtn.disabled = "true";
-    }
-})
-
 
 $(document).ready(function() {
     $('.menu').click (function(){
@@ -133,38 +106,63 @@ const swiper3 = new Swiper(".mySwiper--team", {
 // Counter script start
 const counterSection = document.querySelector(".company");
 const counters = document.querySelectorAll(".counter__number");
-
-let CounterObserver = new IntersectionObserver(
-    (entries, observer)=>{
-        let [entry] = entries;
-        if(!entry.isIntersecting) return;
-
-        let speed = 200;
-        counters.forEach((counter, index) => {
-            const updateCounter = () =>{
-                let targetNumber = +counter.dataset.target;
-                let initialNumber = +counter.innerText;
-                let incPerCount = targetNumber / speed;
-
-                if(initialNumber  < targetNumber ){
-                    counter.innerText = Math.ceil(initialNumber + incPerCount);
-                    setTimeout(updateCounter, 40);
+if(counterSection != null && counters != null) {
+    let CounterObserver = new IntersectionObserver(
+        (entries, observer)=>{
+            let [entry] = entries;
+            if(!entry.isIntersecting) return;
+    
+            let speed = 200;
+            counters.forEach((counter, index) => {
+                const updateCounter = () =>{
+                    let targetNumber = +counter.dataset.target;
+                    let initialNumber = +counter.innerText;
+                    let incPerCount = targetNumber / speed;
+    
+                    if(initialNumber  < targetNumber ){
+                        counter.innerText = Math.ceil(initialNumber + incPerCount);
+                        setTimeout(updateCounter, 40);
+                    }
                 }
-            }
-            updateCounter();
-            // if(counter.parentElement.style.animation){
-            //     counter.parentElement.style.animation = "";
-            // }else{
-            //     counter.parentElement.style.animation = `slide-up 0.3s ease forward ${index / counters.length + 0.5}s`
-            // }
+                updateCounter();
+                // if(counter.parentElement.style.animation){
+                //     counter.parentElement.style.animation = "";
+                // }else{
+                //     counter.parentElement.style.animation = `slide-up 0.3s ease forward ${index / counters.length + 0.5}s`
+                // }
+            })
+            observer.unobserve(counterSection);
+        },{
+            root:null,
+            threshold:0.4,
+        }
+    );
+    CounterObserver.observe(counterSection);
+}
+
+
+
+// contact form
+const checkAgree = document.querySelector(".form-check-input");
+var submitBtn = document.getElementById("submit");
+submitBtn.disabled = "true";
+checkAgree.checked = false;
+
+checkAgree.addEventListener("change",(e)=>{
+    if(e.target.checked){
+        submitBtn.disabled = false;
+        submitBtn.addEventListener("click",(e)=>{
+            e.preventDefault();
+            document.querySelectorAll(".form-control").forEach((input, i) => {
+                if(input.value != ""){
+                    checkAgree.checked= false;
+                    input.value="";
+                }else{
+                    alert("Please fill the all field.")
+                }
+            })
         })
-        observer.unobserve(counterSection);
-    },{
-        root:null,
-        threshold:0.4,
+    }else{
+        submitBtn.disabled = "true";
     }
-);
-
-CounterObserver.observe(counterSection);
-
-
+})

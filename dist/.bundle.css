@@ -10688,6 +10688,11 @@ p, ul, ol, body {
   }
 }
 
+#submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .loader {
   position: fixed;
   inset: 0;

@@ -16,7 +16,8 @@ window.addEventListener("scroll", () => {
     }
 })
 
-
+// form Validation
+// footer
 document.getElementById("footer__form").addEventListener("submit", (e) => {
     e.preventDefault();
     const inputField = document.querySelector('input[type="email"]');
@@ -27,6 +28,32 @@ document.getElementById("footer__form").addEventListener("submit", (e) => {
         $(".footer__input").addClass("error");
     }
 })
+
+// contact form
+const checkAgree = document.querySelector(".form-check-input");
+var submitBtn = document.getElementById("submit");
+submitBtn.disabled = "true";
+checkAgree.checked = false;
+
+checkAgree.addEventListener("change",(e)=>{
+    if(e.target.checked){
+        submitBtn.disabled = false;
+        submitBtn.addEventListener("click",(e)=>{
+            e.preventDefault();
+            document.querySelectorAll(".form-control").forEach((input, i) => {
+                if(input.value != ""){
+                    checkAgree.checked= false;
+                    input.value="";
+                }else{
+                    alert("Please fill the all field.")
+                }
+            })
+        })
+    }else{
+        submitBtn.disabled = "true";
+    }
+})
+
 
 $(document).ready(function() {
     $('.menu').click (function(){
@@ -141,7 +168,3 @@ let CounterObserver = new IntersectionObserver(
 CounterObserver.observe(counterSection);
 
 
-// form Validation
-document.querySelector(".contact-form").addEventListener("submit", function(e){
-    e.preventDefault();
-})

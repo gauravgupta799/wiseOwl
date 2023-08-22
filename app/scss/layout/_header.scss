@@ -10,14 +10,15 @@
     top:0;
     width: 100%;
     padding-block:em(16);
-    @include transition(all, 0.4s, ease);
+    @include transition(all, 0.4s, ease-in-out);
 
     &.sticky{
-        background-color:$clr-primary;
+        background-color:rgba(0, 0 , 0 , 0.85);
         color:$clr-white-100;
         z-index: 3;
         border-bottom: 1px solid $clr-grey-100;
         top:-1px;
+        backdrop-filter: blur(4px);
     }
     &__wrapper{
         @include flex-space-between;
@@ -60,7 +61,7 @@
             @include flex-center;
             flex-direction: column;
             gap:rem(40);
-            margin-top:rem(100);
+            margin-top:rem(48);
         }
     
         &-link{

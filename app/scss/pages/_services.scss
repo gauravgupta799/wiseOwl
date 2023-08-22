@@ -6,7 +6,6 @@
 
 
 .company{
-
     &__details{
         padding-block: rem(76);
     }
@@ -85,16 +84,16 @@
 .ourServices{
 
     &__heading{
-        font-size: rem(60);
+        font-size: rem(56);
         font-family: $ff-medium;
         line-height: 1.2;
 
         @include breakpoint-sm{
-            font-size:rem(80);
+            font-size:rem(72);
             line-height: 1.15; 
         }
         @include breakpoint-md{
-            font-size:rem(100);
+            font-size:rem(84);
             line-height: 1.1;  
         }
         @include breakpoint-xl{

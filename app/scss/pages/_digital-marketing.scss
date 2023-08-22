@@ -1,0 +1,19 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+
+.img-mobile{
+    @include breakpoint-sm{
+        display: none;
+    }
+}
+.img-desktop{
+    display: none;
+    @include breakpoint-sm{
+        display: block;
+    }
+}

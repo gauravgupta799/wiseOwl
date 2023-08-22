@@ -54,7 +54,7 @@
         }
     }
     &__circle{
-        @include dimensions(197px,197px);
+        @include dimensions(130px, 130px);
         @include border-radius(50%);
         object-fit: contain;
         border: solid 1px #b2b2b2;
@@ -70,13 +70,10 @@
             @include dimensions(287px,287px);
         }
     }
-
     &__bottom{
         @include flex-center;
-        // flex-wrap: wrap;
         flex-direction: column;
         gap: 70px;
-
         @include breakpoint-sm{
             gap: 110px;
             flex-direction: row;
@@ -92,7 +89,6 @@
         }
     }
 }
-
 
 .code{
     margin-top: 0px;
@@ -177,26 +173,6 @@
     // }
 }
 
-
-
-
-
-
-
-
-
 .analyse{
     @include flex-center;
 }
-
-// .code{
-//     position: relative;
-//     top: -100px;
-//     .webDesign__circle{
-//         @include breakpoint-sm{
-//             position: absolute;
-//             right: 0;
-          
-//         }
-//     }
-// }

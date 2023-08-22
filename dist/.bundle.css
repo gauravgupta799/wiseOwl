@@ -11653,6 +11653,23 @@ p, ul, ol, body {
   justify-content: center;
 }
 
+.arrow-down-btn {
+  background: #f1b61d;
+  width: 5.25rem;
+  height: 5.25rem;
+  border-radius: 50%;
+  transition: all 0.3s ease-out;
+  border: 1px solid #f1b61d;
+}
+.arrow-down-btn:hover {
+  cursor: pointer;
+  border-color: #050505;
+}
+.arrow-down-btn:hover svg path {
+  transition: all 0.3s ease-out;
+  transform: translateY(40px);
+}
+
 .contact-hero {
   padding-block: 12.5em;
 }

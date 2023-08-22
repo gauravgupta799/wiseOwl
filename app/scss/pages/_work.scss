@@ -1,0 +1,25 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.arrow-down-btn{
+    background: $clr-secondary;
+    width: rem(84);
+    height: rem(84);
+    @include border-radius(50%);
+    @include transition(all, 0.3s, ease-out);
+    border:1px solid $clr-secondary;
+    &:hover{
+        cursor: pointer;
+        border-color: $clr-primary;
+        svg{
+            path{
+                @include transition(all, 0.3s, ease-out);
+                transform:translateY(40px);
+            }
+        }
+    }
+}

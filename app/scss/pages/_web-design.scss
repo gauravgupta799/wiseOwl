@@ -20,7 +20,6 @@
         bottom: 0;
         position: absolute;
         z-index: -1;
-     
     }
 }
 
@@ -28,38 +27,32 @@
     padding-top: em(115);
     padding-bottom: em(84);
     background-color: $clr-secondary;
-
     &__figure{
         img{
             object-fit:cover;
             mix-blend-mode: darken;
         }
     }
-
     &__top{
         padding-top: em(128);
         padding-bottom: em(227);
         border: solid 1px $clr-grey-10;
         background-color: $clr-primary;
     }
-
     &__process{
         margin-top: rem(48);
-
-        @include breakpoint-sm{
-            margin-top: 0;  
+        @include breakpoint-md{
+            margin-top: rem(80);
+        }
+        @include breakpoint-lg{
+            margin-top: 0;
         }
         @media only screen and (max-width: 576px){
             @include flex-center;
             flex-direction: column;
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
             gap: 4rem;
-    
         }
     }
-
     &__circle{
         @include dimensions(197px,197px);
         @include border-radius(50%);
@@ -77,26 +70,133 @@
             @include dimensions(287px,287px);
         }
     }
-}
 
-
-.analyse, .code{
-    @include flex-center;
-}
-
-.design{
-
-}
-
-.code{
-    position: relative;
-
-    .webDesign__circle{
-        
+    &__bottom{
+        @include flex-center;
+        // flex-wrap: wrap;
+        flex-direction: column;
+        gap: 70px;
 
         @include breakpoint-sm{
-            position: absolute;
-            right: 0;
+            gap: 110px;
+            flex-direction: row;
+        }
+        @include breakpoint-md{
+            gap: 130px;
+        }
+        @include breakpoint-lg{
+            gap: 150px;
+        }
+        @include breakpoint-xl{
+            gap: 170px;
         }
     }
 }
+
+
+.code{
+    margin-top: 0px;
+
+    @include breakpoint-sm{
+        margin-top: 40px;
+    }
+    @include breakpoint-md{
+        margin-top: 60px;
+    }
+    @include breakpoint-lg{
+        margin-top: 80px;
+    }
+    @include breakpoint-xl{
+        margin-top: 100px;
+    }
+}
+
+.design{
+    position: relative;
+
+    &::after,
+    &::before{
+        @media only screen and (max-width:36em){
+            left: 50%;
+        }
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: -72px;
+        right: 0;
+        width: 1px;
+        height: rem(72);
+        background-color: #b2b2b2;
+        @include breakpoint-sm{
+            height: 115px;
+            transform: rotate(35deg);
+        }
+        @include breakpoint-md{
+            height: 124px;
+        }
+        @include breakpoint-lg{
+            height: 130px;
+        }
+    }
+    &::before{
+        content: '';
+        position: absolute;   
+        background-color: #b2b2b2;
+        width: 1px;
+        height: 72px;
+        // left: 50%;
+        bottom: -71px;
+
+        @include breakpoint-sm{
+            width: 118px;
+            height: 1px;
+            top: 65%;
+            right: -50%;
+            transform: rotate(10deg);
+        }
+        @include breakpoint-md{
+            width: 138px;
+            right: -52%;
+        }
+        @include breakpoint-lg{
+            width: 158px;
+            right: -53%;
+        }
+        @include breakpoint-xl{
+            width: 177px;
+            right: -60%;
+        }
+
+    }
+
+
+    // .webDesign__circle{
+
+    // }
+}
+
+
+
+
+
+
+
+
+
+.analyse{
+    @include flex-center;
+}
+
+// .code{
+//     position: relative;
+//     top: -100px;
+//     .webDesign__circle{
+//         @include breakpoint-sm{
+//             position: absolute;
+//             right: 0;
+          
+//         }
+//     }
+// }

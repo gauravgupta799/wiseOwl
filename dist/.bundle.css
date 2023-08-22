@@ -347,14 +347,14 @@ h6 {
 }
 
 p, ul, ol, body {
-  font-size: 0.875rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 2rem;
   font-family: "productSans", sans-serif;
 }
 @media screen and (min-width: 36em) {
   p, ul, ol, body {
     font-size: 1rem;
-    line-height: 1.75rem;
+    line-height: 2rem;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10530,26 +10530,57 @@ p, ul, ol, body {
   transition-duration: 0.5s;
   position: relative;
   height: 3px;
-  width: 30px;
+  width: 25px;
   background-color: #ffffff;
+}
+@media only screen and (min-width: 36em) {
+  .hamburger .bar {
+    transition-duration: 0.5s;
+    position: relative;
+    height: 3px;
+    width: 30px;
+    background-color: #ffffff;
+  }
 }
 .hamburger .bar::before {
   content: "";
   top: -8px;
   transition-duration: 0.5s;
   position: absolute;
-  width: 30px;
+  width: 25px;
   height: 3px;
   background-color: #ffffff;
+}
+@media only screen and (min-width: 36em) {
+  .hamburger .bar::before {
+    content: "";
+    top: -9px;
+    transition-duration: 0.5s;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+  }
 }
 .hamburger .bar::after {
   content: "";
   top: 8px;
   transition-duration: 0.5s;
   position: absolute;
-  width: 30px;
+  width: 25px;
   height: 3px;
   background-color: #ffffff;
+}
+@media only screen and (min-width: 36em) {
+  .hamburger .bar::after {
+    content: "";
+    top: 9px;
+    transition-duration: 0.5s;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+  }
 }
 .hamburger .bar-white {
   background: #050505;
@@ -10573,6 +10604,7 @@ p, ul, ol, body {
   }
 }
 .hamburger .menu__text-2 {
+  margin-top: 0 !important;
   display: none;
   transition: 0.5s ease-out ease;
 }
@@ -10931,7 +10963,7 @@ p, ul, ol, body {
 }
 
 .testimonials__heading {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: #efefef;
   position: relative;
@@ -11445,7 +11477,12 @@ p, ul, ol, body {
 .webDesign__process {
   margin-top: 3rem;
 }
-@media only screen and (min-width: 36em) {
+@media only screen and (min-width: 48em) {
+  .webDesign__process {
+    margin-top: 5rem;
+  }
+}
+@media only screen and (min-width: 62em) {
   .webDesign__process {
     margin-top: 0;
   }
@@ -11488,21 +11525,132 @@ p, ul, ol, body {
     height: 287px;
   }
 }
-
-.analyse, .code {
+.webDesign__bottom {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 70px;
+}
+@media only screen and (min-width: 36em) {
+  .webDesign__bottom {
+    gap: 110px;
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .webDesign__bottom {
+    gap: 130px;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .webDesign__bottom {
+    gap: 150px;
+  }
+}
+@media only screen and (min-width: 85.375em) {
+  .webDesign__bottom {
+    gap: 170px;
+  }
 }
 
 .code {
-  position: relative;
+  margin-top: 0px;
 }
 @media only screen and (min-width: 36em) {
-  .code .webDesign__circle {
-    position: absolute;
-    right: 0;
+  .code {
+    margin-top: 40px;
   }
+}
+@media only screen and (min-width: 48em) {
+  .code {
+    margin-top: 60px;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .code {
+    margin-top: 80px;
+  }
+}
+@media only screen and (min-width: 85.375em) {
+  .code {
+    margin-top: 100px;
+  }
+}
+
+.design {
+  position: relative;
+}
+@media only screen and (max-width: 36em) {
+  .design::after, .design::before {
+    left: 50%;
+  }
+}
+.design::after {
+  content: "";
+  position: absolute;
+  top: -72px;
+  right: 0;
+  width: 1px;
+  height: 4.5rem;
+  background-color: #b2b2b2;
+}
+@media only screen and (min-width: 36em) {
+  .design::after {
+    height: 115px;
+    transform: rotate(35deg);
+  }
+}
+@media only screen and (min-width: 48em) {
+  .design::after {
+    height: 124px;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .design::after {
+    height: 130px;
+  }
+}
+.design::before {
+  content: "";
+  position: absolute;
+  background-color: #b2b2b2;
+  width: 1px;
+  height: 72px;
+  bottom: -71px;
+}
+@media only screen and (min-width: 36em) {
+  .design::before {
+    width: 118px;
+    height: 1px;
+    top: 65%;
+    right: -50%;
+    transform: rotate(10deg);
+  }
+}
+@media only screen and (min-width: 48em) {
+  .design::before {
+    width: 138px;
+    right: -52%;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .design::before {
+    width: 158px;
+    right: -53%;
+  }
+}
+@media only screen and (min-width: 85.375em) {
+  .design::before {
+    width: 177px;
+    right: -60%;
+  }
+}
+
+.analyse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-hero {
@@ -11695,6 +11843,7 @@ p, ul, ol, body {
   color: #ffffff;
   z-index: 3;
   border-bottom: 1px solid #2b2b2b;
+  top: -1px;
 }
 .header__wrapper {
   display: flex;
@@ -11705,22 +11854,39 @@ p, ul, ol, body {
   position: fixed;
   inset: 0;
   z-index: 99;
-  width: 100%;
+  width: 26.25rem;
+  max-width: 100%;
   height: 100vh;
   background: #050505;
   color: #ffffff;
   display: flex;
   align-items: center;
   flex-direction: column;
-  top: 70px;
+  top: 53px;
   opacity: 0;
   visibility: hidden;
-  transition: 0.5s ease-in ease;
+  transition: 0.3s ease-out ease;
   transform: translateX(-100%);
+}
+@media only screen and (min-width: 36em) {
+  .header__mobile {
+    top: 60px;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .header__mobile {
+    top: 62px;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .header__mobile {
+    top: 66px;
+  }
 }
 .header__mobile.open {
   opacity: 1;
   visibility: visible;
+  transition: transform 0.3s ease-out;
   transform: translateX(0);
 }
 .header__mobile-list {
@@ -11745,9 +11911,9 @@ p, ul, ol, body {
   display: flex;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 36em) {
   .header__logo img {
-    width: 9.375rem;
+    width: 10rem;
   }
 }
 .header-tranparent {
@@ -11758,6 +11924,7 @@ p, ul, ol, body {
 .swiper-button-next {
   position: static !important;
   margin: 0px !important;
+  z-index: 0 !important;
 }
 
 .swiper-slide p {

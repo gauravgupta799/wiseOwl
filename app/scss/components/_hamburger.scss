@@ -11,13 +11,26 @@
     gap:rem(32);
 
     .bar{
-      @include bar(3px, 30px);
+      @include bar(3px, 25px);
+      // @include bar(3px, 30px);
+
+      @include breakpoint-sm{
+        @include bar(3px, 30px);
+      }
       
       &::before{
-        @include bar-before(3px, 30px, -8px);
+        @include bar-before(3px, 25px, -8px);
+
+        @include breakpoint-sm{
+          @include bar-before(3px, 30px, -9px);
+        }
       }
       &::after{
-        @include bar-after(3px, 30px , 8px);
+        @include bar-after(3px, 25px , 8px);
+
+        @include breakpoint-sm{
+          @include bar-before(3px, 30px, 9px);
+        }
       }
     }
     .bar-white{
@@ -41,6 +54,7 @@
       }
     }
     .menu__text-2{
+      margin-top: 0 !important;
       display: none;
       @include transition(0.5s, ease-out);
     }

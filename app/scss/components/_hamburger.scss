@@ -9,6 +9,8 @@
     transition-duration: 0.5s;
     @include flex-center;
     gap:rem(32);
+    
+    // display: block;
 
     .bar{
       @include bar(3px, 25px);
@@ -81,7 +83,6 @@
         }
       }
     }
-
     &:hover {
       cursor: pointer;
     }

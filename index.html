@@ -12,17 +12,22 @@
         <div class="loader__wrapper">
             <div class="loader__top">
                 <img src="./app/assets/logos/wiseOwl-logo.svg" alt="">
+            </div> 
+            <div class="loader__percentWrapper">
+                <span class="loader__count">0</span>
             </div>  
-            <div class="loader__bottom">
-                <p>Loading...</p>
-                <div class="">
-                    <span class="loader__count">100</span>
-                    <span class="loader__percent">%</span>
-                </div>  
-            </div>
         </div>
-    </div> -->
-    
+    </div>
+     -->
+    <div class="page-loader">
+        <div class="content">
+            <div class="loading">
+                <p>Loading</p>
+               <span></span>
+            </div>
+         </div>
+    </div>
+
     <!-- Header Section Start -->
     <header class="header header--home">
          <!-- Desktop menu start -->
@@ -114,7 +119,7 @@
                            <div class="col-12 col-md-8 col-xl-6">
                                 <h1 class="text-white ff-medium">Lorem Ipsum Website Design</h1>
                                 <div class="mt--2">
-                                    <a href="#" class="text-white btn--secondary">
+                                    <a href="#" class="text-white btn--secondary" role="button">
                                         <span>Learn More</span>
                                         <span>-></span>
                                     </a>
@@ -125,9 +130,7 @@
                     <div class="hero__footer py--2">
                         <div class="row">
                             <ul class="hero__footer-list">
-                                <li class="hero__footer-item">
-                                    <a href="" class="hero__footer-link active">SEO</a>
-                                </li>
+                                <li class="hero__footer-item"><a href="" class="hero__footer-link active">SEO</a></li>
                                 <li class="hero__footer-item"><a href="" class="hero__footer-link">Website Design</a></li>
                                 <li class="hero__footer-item"><a href="" class="hero__footer-link">Branding</a></li>
                                 <li class="hero__footer-item"><a href="" class="hero__footer-link">Facebook Ads</a></li>
@@ -144,21 +147,21 @@
             <div class="page-container">
                 <div class="row">
                     <div class="col-12 col-md-10 col-lg-9 col-xl-7 mx-auto text-center">
-                        <a href="#" class="btn btn--primary">
+                        <a href="#" class="btn btn--primary animate-fade-in">
                             Work
                         </a>
-                        <h3 class="section-heading text-capitalize mt--2">
+                        <h3 class="section-heading text-capitalize mt--2 animate-fade-in-up">
                             Always beta, always better. 
                             A mindset of ongoing improvement
                         </h3>
                     </div>
                     <div class="col-12 mt--10 mt--lg--14">
                         <figure class="work__figure">
-                            <img src="./app/assets/images/workImg.webp" alt="work-image" class="img-fluid" loading="lazy">
+                            <img src="./app/assets/images/workImg.webp" alt="work-image" class="img-fluid slide-left" loading="lazy">
                             <figcaption class="work__figcaption">
                                 <div class="work__left">
-                                    <h5 class="">DBT Discount</h5>
-                                    <p class="mt--0">
+                                    <h5 class="animate-fade-in-up">DBT Discount</h5>
+                                    <p class="mt--0 animate-fade-in-up">
                                         Sed Diam Voluptua. At Vero Eos Et Accusam
                                     </p>
                                 </div>
@@ -210,20 +213,20 @@
         <!-- About Section Start -->
         <section class="about-home mt--10 mt--lg--15">
             <div class="page-container">
-                <a href="#" class="btn btn--primary">About</a>
+                <a href="#" class="btn btn--primary animate-fade-in">About</a>
                 <div class="row">
                     <div class="col-12 col-md-10 col-xl-8">
-                        <h3 class="services__heading mt--2">
+                        <h3 class="services__heading mt--2 animate-fade-in-up">
                             The 35-person Big Human team consists of 12 designers, 15 engineers, and 8 strategists.
                         </h3>
-                        <a href="#" class="btn btn--secondary mt--1 mt--sm--2 mt--md--4">
+                        <a href="#" class="btn btn--secondary mt--1 mt--sm--2 mt--md--4 animate-fade-in-up">
                             <span>Learn More</span>
                             <span>-></span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="swiper mySwiper--about mt--10 mt--md--15">
+            <div class="swiper mySwiper--about mt--10 mt--md--15 animate-fade-in-up">
                 <div class="swiper-wrapper">                                                              
                     <div class="swiper-slide">
                         <figure class="about-home__figure">
@@ -556,5 +559,10 @@
     <!-- scripts start -->
      <script src="./dist/bundle.min.js"></script>
     <!-- scripts end -->
+
+
+    <script>
+       
+    </script>
 </body>
 </html>

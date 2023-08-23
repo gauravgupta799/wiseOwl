@@ -33,6 +33,13 @@
     }
 }
 
+.header__mobile-link.active{
+    color:$clr-secondary;
+    &::before{
+        transform:scaleX(1);
+    }
+}
+
 .footer__socials-link{
     @include flex-center;
     padding: em(6);

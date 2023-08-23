@@ -8,11 +8,6 @@
 .benefits{
     position: relative;
     margin-top: 0 !important;
-
-    // background-image: url("../../../app/assets/images/white-pattern.webp");
-    // background-repeat: no-repeat;
-    // background-position: right center;
-
     &::after{
         content: url("../../../app/assets/images/white-pattern.webp");
         right: 0;
@@ -38,6 +33,11 @@
         padding-bottom: em(227);
         border: solid 1px $clr-grey-10;
         background-color: $clr-primary;
+        display: none;
+        @include breakpoint-sm{
+            display: block;
+        }
+
     }
     &__process{
         margin-top: rem(48);
@@ -175,4 +175,15 @@
 
 .analyse{
     @include flex-center;
+}
+
+
+.webDesign--mobile{
+    padding-block: em(200);
+    border: solid 1px $clr-grey-10;
+    background-color: $clr-primary;
+
+    @include breakpoint-sm{
+        display: none;
+    }
 }

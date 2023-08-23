@@ -1,7 +1,41 @@
 const header = document.querySelector('.header');
 const headerTranparent = document.querySelector('.header--tranparent');
 const barWhite = document.querySelector('.bar-white');
-const logo2 = document.querySelector('.logo-2')
+const logo2 = document.querySelector('.logo-2');
+
+const loader = document.querySelector(".page-loader");
+
+// ====== Pre-loader start ======
+window.onload = () =>{
+    loader.style.display = 'none';
+  }
+// ====== Pre-loader end ======
+
+// window.addEventListener("load",()=>{
+//     var c = 0;
+//     const count = setInterval(function(){      
+//         c = c + Math.floor(Math.random() * 20);
+//         if(c < 100){   
+//            document.querySelector(".loader__count").innerHTML = c ;
+//         }else{
+//             c = 100;
+//             document.querySelector(".loader__count").innerHTML = c;  
+//             clearInterval(count);
+//         }
+//     },150);
+// })
+
+
+//======  Active Page Link start ======
+const windowPathname = window.location.pathname;
+const navLinks = document.querySelectorAll(".header__mobile-link");
+navLinks.forEach(link =>{
+  const navLinkPathname = new URL(link.href).pathname;
+  if((windowPathname === navLinkPathname) || (windowPathname === "/index.html" && navLinkPathname === "/")){
+    link.classList.add("active");
+  }
+})
+//======  Active Page Link end ======
 
 window.addEventListener("scroll", () => {
     if(window.scrollY > 10){
@@ -43,7 +77,6 @@ $(document).ready(function() {
         $(".footer__input").removeClass("border-color");
     })
 })
-
 
 // Swiper start
 const swiper1 = new Swiper(".mySwiper--about", {
@@ -143,28 +176,106 @@ if(counterSection != null && counters != null) {
 }
 
 
-
 // contact form
 const checkAgree = document.querySelector(".form-check-input");
-var submitBtn = document.getElementById("submit");
-submitBtn.disabled = "true";
-checkAgree.checked = false;
+var submitBtn = document.getElementById("submit")
 
-checkAgree.addEventListener("change",(e)=>{
-    if(e.target.checked){
-        submitBtn.disabled = false;
-        submitBtn.addEventListener("click",(e)=>{
-            e.preventDefault();
-            document.querySelectorAll(".form-control").forEach((input, i) => {
-                if(input.value != ""){
-                    checkAgree.checked= false;
-                    input.value="";
-                }else{
-                    alert("Please fill the all field.")
-                }
+if(submitBtn != null && checkAgree != null) {
+    submitBtn.disabled = "true";
+    checkAgree.checked = false;
+    checkAgree.addEventListener("change",(e)=>{
+        if(e.target.checked){
+            submitBtn.disabled = false;
+            submitBtn.addEventListener("click",(e)=>{
+                e.preventDefault();
+                document.querySelectorAll(".form-control").forEach((input, i) => {
+                    if(input.value != ""){
+                        checkAgree.checked= false;
+                        input.value="";
+                    }else{
+                        alert("Please fill the all field.")
+                    }
+                })
             })
-        })
-    }else{
-        submitBtn.disabled = "true";
-    }
+        }else{
+            submitBtn.disabled = "true";
+        }
+    })
+}
+
+//====== Animation  start ======
+gsap.registerPlugin(ScrollTrigger);
+const tl = gsap.timeline();
+
+//  animation fade in 
+const fadeIn = gsap.utils.toArray(".animate-fade-in");
+fadeIn.forEach((mainContent, i) => {
+  const anim = gsap.fromTo(
+    mainContent,
+    { opacity: 0 },
+    { duration: 1, opacity: 1, stagger: 0.2 }
+  );
+  ScrollTrigger.create({
+    trigger: mainContent,
+    animation: anim,
+    toggleActions: "play",
+    once: true,
+    duration: 1,
+    ease: Power4.easeOut,
+  });
+});
+
+// animate fade in up
+const textContainers = gsap.utils.toArray(".animate-fade-in-up");
+textContainers.forEach((item, i) => {
+  const anim = gsap.fromTo(
+    item,
+    { opacity: 0, y: 50 },
+    { duration: 1, opacity: 1, y: 0 }
+  );
+  ScrollTrigger.create({
+    trigger: item,
+    animation: anim,
+    toggleActions: "play",
+    once: true,
+    duration: 1,
+    stagger:0.1,
+    ease: Power4.easeOut,
+  });
+});
+
+
+// slider left
+const leftSlide = gsap.utils.toArray(".slide-left");
+leftSlide.forEach((left, i) =>{
+  const anim = gsap.fromTo(left, 
+    { opacity: 0, width:0},
+    { opacity: 1, width:"100%", duration:1}
+  );
+  ScrollTrigger.create({
+    trigger: left,
+    animation: anim,
+    toggleActions: "play",
+    delay:0.4,
+    duration: 3,
+    ease: Power4.easeInOut,
+  });
 })
+
+// slide right
+const rightSlide = gsap.utils.toArray(".slide-right");
+rightSlide.forEach((right, i) =>{
+  const anim = gsap.fromTo(right, 
+    { opacity: 0, x:100},
+    { opacity: 1, x:0, duration:1}
+  );
+  ScrollTrigger.create({
+    trigger: right,
+    animation: anim,
+    toggleActions: "play",
+    delay:0.6,
+    duration: 3,
+    ease: Power4.easeInOut,
+  });
+})
+

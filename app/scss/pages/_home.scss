@@ -8,6 +8,7 @@
 //?--------- Hero Styles Start ---------
 .hero{
     background-color: $clr-primary;
+    background-color: #161616;
 
     &__container{
         background-image: url("../../../app/assets/images/hero-bg-pattern-1.webp");
@@ -280,9 +281,9 @@
 }
 
 .faq__details[open] p{
-//   font-size: rem(18);
-  font-family: $ff-regular;
+  font-family: $ff-light;
   line-height: 2;
+  text-transform: capitalize;
 }
 //?--------- FAQs Styles End ---------
 
@@ -290,12 +291,10 @@
 //?--------- COntact Styles Start ---------
 .contactShine{
     padding-block:em(170);
-    background-image: radial-gradient(circle at 50% 50%, #373737, $clr-primary 56%);
     border-width: 1px 0px 1px 0px;
     border-style: solid;
     border-color:$clr-grey-10;
-    @include breakpoint-lg{
-        background-color: $clr-primary;
-    }
+    background-color: $clr-primary;
 }
+
 //?--------- COntact Styles End ---------

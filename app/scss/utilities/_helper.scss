@@ -59,7 +59,7 @@
     background: $clr-secondary;
 }
 .bg-light-dark{
-    background: $clr-light-dark;
+    background: $clr-light-dark !important;
 }
 
 .section-heading{
@@ -103,3 +103,6 @@
     }
 }
 
+.radial-gradient{
+    background-image: radial-gradient(circle at 50% 50%, #373737, $clr-primary 56%);
+}

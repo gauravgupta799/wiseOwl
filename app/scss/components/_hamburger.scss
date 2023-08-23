@@ -12,8 +12,6 @@
 
     .bar{
       @include bar(3px, 25px);
-      // @include bar(3px, 30px);
-
       @include breakpoint-sm{
         @include bar(3px, 30px);
       }
@@ -60,6 +58,7 @@
     }
     
     &.open {
+      z-index: 999;
       .bar{
         transition-duration: 0.5s;
         background: transparent;
@@ -67,7 +66,6 @@
         &::before{
           transform: rotateZ(45deg) scaleX(1) translate(6px, 6px);
         }
-  
         &::after{
           transform: rotateZ(-45deg) scaleX(1) translate(6px, -6px);
         }

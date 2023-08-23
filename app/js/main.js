@@ -32,6 +32,8 @@ $(document).ready(function() {
     $('.menu').click (function(){
         $(this).toggleClass('open');
         $(".header__mobile").toggleClass('open');
+        $(".overlay").toggleClass('active');
+        // $('#body').toggleClass("fixed-position");
     });
     $(".footer__input input").focusin(function(){
         $(".footer__input").addClass("border-color");

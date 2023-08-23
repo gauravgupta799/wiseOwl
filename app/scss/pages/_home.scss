@@ -22,6 +22,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             box-sizing: border-box;
+            row-gap: rem(16);
             @include breakpoint-sm{
                 gap:rem(56);
                 justify-content: flex-start;

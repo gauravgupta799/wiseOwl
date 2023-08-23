@@ -9,7 +9,7 @@
 .header__mobile-link{
     position: relative;
     display: inline-block;
-    @include transition(0.5s, ease-in-out);
+    @include transition(0.5s, ease-out);
 
     &::before{
         content:"";
@@ -40,14 +40,32 @@
     height: 34px;
     @include border-radius(50%);
     background: transparent;
-    @include transition(all, 0.4s, ease);
+    @include transition(all, 0.4s, ease-out);
     &:hover{
-        background: $clr-primary;
+        // background: $clr-primary;
+        background: $clr-secondary;
         svg{
             transform:scale(1.2);
             path{
-                fill:$clr-secondary !important;
+                fill:$clr-primary !important;
             }
+        }
+    }
+}
+
+.contact__socials-link{
+    @include flex-center;
+    padding: em(6);
+    width: rem(34);
+    height: rem(34);
+    @include border-radius(50%);
+    background: transparent;
+    @include transition(all, 0.4s, ease-out);
+
+    &:hover{
+        background: $clr-primary;
+        svg path{
+            fill:$clr-white-100;
         }
     }
 }

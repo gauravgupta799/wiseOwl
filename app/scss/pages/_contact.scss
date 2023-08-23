@@ -88,21 +88,3 @@
     }
 }
 //?--------- Let's talk Styles End ---------
-
-
-.contact__socials-link{
-    @include flex-center;
-    padding: em(6);
-    width: rem(34);
-    height: rem(34);
-    @include border-radius(50%);
-    background: transparent;
-    @include transition(all, 0.4s, ease);
-
-    &:hover{
-        background: $clr-primary;
-        svg path{
-            fill:$clr-white-100;
-        }
-    }
-}

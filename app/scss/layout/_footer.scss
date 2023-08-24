@@ -45,9 +45,10 @@
         gap: rem(32);
         border-bottom: 2px solid $clr-grey-50;
         padding-bottom: em(16);
+        caret-color: $clr-secondary;
 
         &.border-color{
-            border-color:$clr-white-100;
+            border-color:$clr-secondary;
         }
         &.error{
             border-color: $clr-error;
@@ -74,7 +75,6 @@
             justify-content: flex-end;
         }
     }
-
     &__secondary{
         background: $clr-secondary;
         padding-block: em(16);

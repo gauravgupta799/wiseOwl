@@ -71,9 +71,6 @@
         @include breakpoint-xl{
             font-size: rem(52);
         }
-        &:hover{
-            text-decoration: underline;
-        }
     }
     &__item-wrapper{
         width: 100%;

@@ -10674,6 +10674,7 @@ p, ul, ol, body {
   color: #ffffff;
   font-size: 1.125rem;
   font-family: "productSans", sans-serif;
+  caret-color: #f1b61d;
 }
 @media only screen and (min-width: 62em) {
   .form-control {
@@ -10681,7 +10682,7 @@ p, ul, ol, body {
   }
 }
 .form-control:focus {
-  border-color: #ffffff;
+  border-color: #f1b61d;
 }
 
 .form-group .form-check-input {
@@ -10712,7 +10713,7 @@ p, ul, ol, body {
 }
 
 .form-group .form-check-input:checked + .form-check-label::before {
-  border-color: #ffffff;
+  border-color: #f1b61d;
 }
 
 .form-group .form-check-input:checked + .form-check-label::after {
@@ -10723,7 +10724,7 @@ p, ul, ol, body {
   left: 8px;
   width: 0.375rem;
   height: 0.75rem;
-  border: solid #ffffff;
+  border: 1px solid #f1b61d;
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
 }
@@ -10760,6 +10761,7 @@ p, ul, ol, body {
   z-index: 100;
   background-color: #f1b61d;
   flex-direction: column;
+  overflow: hidden;
 }
 
 #percent {
@@ -10836,8 +10838,8 @@ p, ul, ol, body {
   align-items: center;
   justify-content: center;
   padding: 0.375em;
-  width: 34px;
-  height: 34px;
+  width: 2.8125rem;
+  height: 2.8125rem;
   border-radius: 50%;
   background: transparent;
   transition: all 0.4s ease-out;
@@ -10857,8 +10859,8 @@ p, ul, ol, body {
   align-items: center;
   justify-content: center;
   padding: 0.375em;
-  width: 2.125rem;
-  height: 2.125rem;
+  width: 2.8125rem;
+  height: 2.8125rem;
   border-radius: 50%;
   background: transparent;
   transition: all 0.4s ease-out;
@@ -11830,9 +11832,6 @@ p, ul, ol, body {
     font-size: 3.25rem;
   }
 }
-.talk__medium-link:hover {
-  text-decoration: underline;
-}
 .talk__item-wrapper {
   width: 100%;
   position: relative;
@@ -12183,9 +12182,10 @@ p, ul, ol, body {
   gap: 2rem;
   border-bottom: 2px solid #4d4d4d;
   padding-bottom: 1em;
+  caret-color: #f1b61d;
 }
 .footer__input.border-color {
-  border-color: #ffffff;
+  border-color: #f1b61d;
 }
 .footer__input.error {
   border-color: crimson;

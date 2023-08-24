@@ -2,13 +2,32 @@ const header = document.querySelector('.header');
 const headerTranparent = document.querySelector('.header--tranparent');
 const barWhite = document.querySelector('.bar-white');
 const logo2 = document.querySelector('.logo-2');
-
 const loader = document.querySelector(".page-loader");
 
 // ====== Pre-loader start ======
+// window.onload = () =>{
+//     loader.style.display = 'none';
+// }
+
 window.onload = () =>{
-    loader.style.display = 'none';
-  }
+    const percent = document.getElementById("percent");
+    const bar = document.getElementById("barconfirm");
+    let width = 0;
+    let id;
+    function frame(){
+        width = width + Math.floor(Math.random() * 10);
+        if(width >= 100){
+            clearInterval(id);
+            till.play();
+        }else{
+            width++;
+            bar.style.width = width + "%";
+            percent.innerHTML = width + "%";
+        }
+    }
+
+    id = setInterval(frame, 100);
+}
 // ====== Pre-loader end ======
 
 // window.addEventListener("load",()=>{
@@ -25,7 +44,6 @@ window.onload = () =>{
 //     },150);
 // })
 
-
 //======  Active Page Link start ======
 const windowPathname = window.location.pathname;
 const navLinks = document.querySelectorAll(".header__mobile-link");
@@ -37,6 +55,7 @@ navLinks.forEach(link =>{
 })
 //======  Active Page Link end ======
 
+//======  Sticky header start ======
 window.addEventListener("scroll", () => {
     if(window.scrollY > 10){
         header.classList.add("sticky");
@@ -49,6 +68,8 @@ window.addEventListener("scroll", () => {
         if(logo2 != null){ logo2.src = "../../app/assets/logos/logo-black.svg";}
     }
 })
+
+//======  Sticky header end ======
 
 // form Validation
 document.getElementById("footer__form").addEventListener("submit", (e) => {
@@ -67,7 +88,6 @@ $(document).ready(function() {
         $(this).toggleClass('open');
         $(".header__mobile").toggleClass('open');
         $(".overlay").toggleClass('active');
-        // $('#body').toggleClass("fixed-position");
     });
     $(".footer__input input").focusin(function(){
         $(".footer__input").addClass("border-color");
@@ -137,7 +157,6 @@ const swiper3 = new Swiper(".mySwiper--team", {
     }
 })
 
-
 // Counter script start
 const counterSection = document.querySelector(".company");
 const counters = document.querySelectorAll(".counter__number");
@@ -175,7 +194,6 @@ if(counterSection != null && counters != null) {
     CounterObserver.observe(counterSection);
 }
 
-
 // contact form
 const checkAgree = document.querySelector(".form-check-input");
 var submitBtn = document.getElementById("submit")
@@ -205,15 +223,77 @@ if(submitBtn != null && checkAgree != null) {
 
 //====== Animation  start ======
 gsap.registerPlugin(ScrollTrigger);
-const tl = gsap.timeline();
 
+const till = gsap.timeline({
+    paused:"true"
+});
+
+till.to("#percent, #bar",{
+    duration:0.2,
+    opacity:0,
+    zIndex:-1,
+});
+
+till.to("#preloader", {
+    duration:0.8,
+    width:"0%",
+});
+
+
+const tl = gsap.timeline();
+window.addEventListener("load",() => {
+    tl.from(".header__logo, .switch",1, {
+        opacity:0,
+        y:-100,
+        delay:-1,
+        stagger:0.5,
+        ease:Expo.easeInOut
+    });
+    tl.from(".menu",{
+        opacity:0,
+        delay:-1,
+        ease:Expo.easeInOut
+    })
+    tl.from(".heading, .subHeading",{
+        opacity:0,
+        duration:1,
+        y:50,
+        stagger:0.8,
+        ease: Power4.easeInOut,
+    });
+    tl.from(".hero-btn", {
+        opacity:0,
+        x:-50,
+        ease:Power4.easeOut,
+    })
+    tl.from(".h-divider",{
+        opacity:0,
+        scaleX:0,
+        x:-10,
+        ease:Expo.easeInOut
+    })
+    tl.from(".hero__footer-link ",1.05, {
+        opacity:0,
+        x:-50,
+        stagger:0.2,
+        ease:Power4.easeInOut
+    });
+
+    // tl.from(".btn-fade-in",{
+    //     opacity:0,
+    //     y:-30,
+    //     duration:1,
+    //     ease:Power4.easeInOut
+    // })
+   
+})
 //  animation fade in 
 const fadeIn = gsap.utils.toArray(".animate-fade-in");
 fadeIn.forEach((mainContent, i) => {
   const anim = gsap.fromTo(
     mainContent,
     { opacity: 0 },
-    { duration: 1, opacity: 1, stagger: 0.2 }
+    {opacity: 1, stagger: 0.2, duration:1}
   );
   ScrollTrigger.create({
     trigger: mainContent,
@@ -239,7 +319,7 @@ textContainers.forEach((item, i) => {
     toggleActions: "play",
     once: true,
     duration: 1,
-    stagger:0.1,
+    stagger:1,
     ease: Power4.easeOut,
   });
 });
@@ -249,8 +329,8 @@ textContainers.forEach((item, i) => {
 const leftSlide = gsap.utils.toArray(".slide-left");
 leftSlide.forEach((left, i) =>{
   const anim = gsap.fromTo(left, 
-    { opacity: 0, width:0},
-    { opacity: 1, width:"100%", duration:1}
+    { opacity: 0,x:-5, scaleX:0},
+    { opacity: 1, x:0, scaleX:1, duration:1}
   );
   ScrollTrigger.create({
     trigger: left,
@@ -275,7 +355,41 @@ rightSlide.forEach((right, i) =>{
     toggleActions: "play",
     delay:0.6,
     duration: 3,
+    stagger:1,
     ease: Power4.easeInOut,
   });
 })
 
+
+// divider
+tl.fromTo(".divider", 
+    {  opacity:0, scaleX:0, x:-10 },
+    { opacity:1, scaleX:1, x:0},
+    ScrollTrigger({
+        trigger: ".divider",
+        delay:0.6,
+        duration: 1.5,
+        start:"20% 50%",
+        end:"50%",
+        ease: Power4.easeInOut,
+    })
+)
+
+// stagger
+
+const staggerSlide = gsap.utils.toArray(".stg");
+staggerSlide.forEach((stg,i)=>{
+    const anim = gsap.fromTo(stg,
+        { opacity:0, x:50},
+        { opacity:1, x:0, duration:1}
+    )
+    ScrollTrigger.create({
+        trigger: stg,
+        animation: anim,
+        toggleActions: "play",
+        delay:0.6,
+        duration: 1.5,
+        stagger:1,
+        ease: Power4.easeInOut,
+    });
+})

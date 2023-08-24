@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="167" height="38" viewBox="0 0 167 38">
+    <g data-name="Group 222">
+        <text data-name="Learn More" transform="translate(0 25)" style="fill:#1c1c1c;font-size:18px;font-family:ProductSans-Light,Product Sans Light;font-weight:300"><tspan x="0" y="0">Learn More</tspan></text>
+        <g data-name="Ellipse 15" transform="translate(129)" style="stroke-width:1.5px;fill:#fff;stroke:#161616">
+            <circle cx="19" cy="19" r="19" style="stroke:none"/>
+            <circle cx="19" cy="19" r="18.25" style="fill:none"/>
+        </g>
+        <g data-name="Group 220">
+            <path data-name="Path 195" d="M0 0h43.451" transform="translate(107.359 19.803)" style="stroke:#242424;stroke-linecap:round;fill:none;stroke-width:1.5px"/>
+            <path data-name="Path 196" d="m11.526-.94 6.564 6.864" transform="translate(132.665 13.769)" style="stroke:#242424;stroke-linecap:round;fill:none;stroke-width:1.5px"/>
+            <path data-name="Path 197" d="M11.526 5.924 18.09-.94" transform="translate(132.665 20.853)" style="stroke:#242424;stroke-linecap:round;fill:none;stroke-width:1.5px"/>
+        </g>
+    </g>
+</svg>

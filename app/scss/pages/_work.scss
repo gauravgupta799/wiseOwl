@@ -7,8 +7,8 @@
 
 .arrow-down-btn{
     background: $clr-secondary;
-    width: rem(84);
-    height: rem(84);
+    width: rem(54);
+    height: rem(54);
     @include border-radius(50%);
     @include transition(all, 0.3s, ease-out);
     border:1px solid $clr-secondary;
@@ -21,5 +21,17 @@
                 transform:translateY(40px);
             }
         }
+    }
+    @include breakpoint-sm{
+        width: rem(64);
+        height: rem(64);
+    }
+    @include breakpoint-md{
+        width: rem(74);
+        height: rem(74);
+    }
+    @include breakpoint-lg{
+        width: rem(84);
+        height: rem(84);
     }
 }

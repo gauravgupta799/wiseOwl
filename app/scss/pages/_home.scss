@@ -13,10 +13,11 @@
     &__container{
         background-image: url("../../../app/assets/images/hero-bg-pattern-1.webp");
         background-repeat: no-repeat;
-        background-position: right center;
+        // background-position: right center;
+        background-position: right 100%;
     }
     &__footer{
-        border-top: 1px solid $clr-grey-50;
+        // border-top: 1px solid $clr-grey-50;
     
         &-list{
             @include flex-center-vertical;
@@ -58,6 +59,9 @@
             }
         }
     }
+}
+.h-divider{
+    background: $clr-grey-50;
 }
 //?--------- Hero Styles End ---------
 

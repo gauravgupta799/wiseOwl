@@ -1,0 +1,47 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+// Preloader
+
+#preloader {
+   position: fixed;
+   inset:0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+   z-index:100;
+   background-color:$clr-secondary;
+   flex-direction: column;
+}
+#percent{
+   color:$clr-primary;
+   font-size: clamp(3rem, 4.7vw + 1rem, 10rem);
+   position: absolute;
+   bottom: 10px;
+   right: 0;
+
+   @include breakpoint-sm{
+    bottom: 30px;
+   }
+   @include breakpoint-md{
+    bottom: 50px;
+   }
+   @include breakpoint-lg{
+    bottom: 70px;
+   }
+}
+#bar{
+   width: 100%;
+   margin-top: 20px;
+}
+#barconfirm{
+   width: 0%;
+   padding: 1px 0px;
+   background-color: $clr-primary;
+}

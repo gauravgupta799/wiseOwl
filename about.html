@@ -8,14 +8,30 @@
     <title>WiseOwl - About Page</title>
 </head>
 <body id ="body">
-    <div class="page-loader">
+    <!-- <div class="page-loader">
         <div class="content">
             <div class="loading">
                 <p>Loading</p>
                <span></span>
             </div>
          </div>
+    </div> -->
+    <div id="preloader">
+        <div id="percent">0%</div>
+        <div id="bar">
+            <div id="barconfirm"></div>
+        </div>
     </div>
+    
+    <!-- <div class="page-loader">
+        <div class="content">
+            <div class="loading">
+                <p>Loading</p>
+               <span></span>
+            </div>
+         </div>
+    </div> -->
+
     <!-- Header section start -->
     <header class="header ">
         <!-- Desktop menu start -->
@@ -42,7 +58,7 @@
         <!-- Mobile menu start -->
         <div class="header__mobile">
             <div class="page-container">
-                <div class="header__logo mt--2">
+                <div class="header__logo mt--1">
                     <a href="/">
                         <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo" loading="lazy">
                     </a>
@@ -100,10 +116,10 @@
                 <div class="page-container">
                     <div class="row">
                         <div class="col-md-10 col-lg-8 mx-auto text-center">
-                            <h1 class="text-capitalize ff-medium">Meet the company</h1>                       
+                            <h1 class="text-capitalize ff-medium heading">Meet the company</h1>                       
                         </div>
                         <div class="col-md-9 col-lg-6 mx-auto text-center">
-                            <p class="text-capitalize mt--1">
+                            <p class="text-capitalize mt--1 subHeading">
                                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
                             </p>
                         </div>
@@ -112,8 +128,8 @@
             </div>
             <div class="heroImg__container">
                 <figure>
-                    <img src="./app/assets/images/about-mobile.webp" alt="" class="img-fluid img-mobile"> 
-                    <img src="./app/assets/images/services/about-big-first.webp" alt="" class="img-fluid img-desktop">
+                    <img src="./app/assets/images/about-mobile.webp" alt="" class="img-fluid img-mobile animate-fade-in-up"> 
+                    <img src="./app/assets/images/services/about-big-first.webp" alt="" class="img-fluid img-desktop animate-fade-in-up">
                 </figure>
             </div>
         </section>
@@ -122,13 +138,13 @@
         <!-- Company Section Start -->
         <section class="company mt--10 mt--lg--15">
             <div class="page-container">
-                <a href="#" class="btn btn--primary">Comapany</a>
+                <a href="#" class="btn btn--primary animate-fade-in">Comapany</a>
                 <div class="row mt--2">
                     <div class="col-12 col-md-8 col-lg-5">
-                        <h3 class="text-capitalize">
+                        <h3 class="text-capitalize animate-fade-in-up">
                             Jouw go-to creatieve team: vol passie, ambitie
                         </h3>  
-                        <p class="">
+                        <p class="animate-fade-in-up">
                             Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                         </p>
                     </div>
@@ -136,25 +152,25 @@
                         <div class="row counter">
                             <div class="col-12 col-sm-6 col-lg-12">
                                 <div class="counter__top">
-                                    <h1 class="counter__number" data-target="85">0</h1>
-                                    <div class="divider my--1"></div>
-                                    <p class="">Projects Done</p>
+                                    <h1 class="counter__number animate-fade-in" data-target="85">0</h1>
+                                    <div class="divider my--1 animate-fade-in-up"></div>
+                                    <p class="animate-fade-in-up">Projects Done</p>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-lg-12 counter__bottom">
                                 <div class="row">
                                     <div class="col-5">
                                         <div class="counter__left">
-                                            <h1 class="counter__number" data-target="46">0</h1>
-                                            <div class="divider my--1"></div>
-                                            <p class="">Experience</p>
+                                            <h1 class="counter__number animate-fade-in" data-target="46">0</h1>
+                                            <div class="divider my--1 animate-fade-in-up"></div>
+                                            <p class="animate-fade-in-up">Experience</p>
                                         </div>
                                     </div>
                                     <div class="col-5 offset-2">
                                         <div class="counter__right">
-                                            <h1 class="counter__number" data-target="65">0</h1>
-                                            <div class="divider my--1"></div>
-                                            <p class="">Clients</p>
+                                            <h1 class="counter__number animate-fade-in" data-target="65">0</h1>
+                                            <div class="divider my--1 animate-fade-in-up"></div>
+                                            <p class="animate-fade-in-up">Clients</p>
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +184,7 @@
 
         <!-- Marquee Section Start -->
         <section class="marquee mt--10 mt--md--15 mt--lg--20 mt--xl--25">
-            <div class="marquee__container">
+            <div class="marquee__container animate-fade-in-up">
                 <h1 class="marquee__text">Est. 2021</h1>
                 <h1 class="marquee__text">Est. 2022</h1>
                 <h1 class="marquee__text">Est. 2023</h1>
@@ -178,12 +194,12 @@
             <div class="gallery mt--6">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <figure class="">
+                        <figure class="animate-fade-in-up">
                             <img src="./app/assets/images/about/img-1.jpg" alt="" class="img-fluid">
                         </figure>
                     </div>
                     <div class="col-12 col-lg-6 mt--1 mt--lg--0">
-                        <figure class="">
+                        <figure class="animate-fade-in-up">
                             <img src="./app/assets/images/about/img-1.jpg" alt="" class="img-fluid">
                         </figure>
                     </div>
@@ -195,10 +211,10 @@
         <!-- Team Section Start -->
         <section class="team mt--10 mt--md--15 mt--lg--20">
             <div class="page-container">
-                <a href="#" class="btn btn--primary">Our Team</a>
+                <a href="#" class="btn btn--primary animate-fade-in">Our Team</a>
                 <div class="row mt--2">
                     <div class="col-12 col-md-10 col-xl-7">
-                        <h3 class="text-capitalize">
+                        <h3 class="text-capitalize animate-fade-in-up">
                             The 35-person Big Human team of 12 designers, 15 engineers,
                         </h3>  
                     </div>
@@ -208,47 +224,47 @@
                 <div class="swiper mySwiper--team">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <figure class="team__imgWrapper">
+                            <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover">
                                 <figcaption class="team__details">
-                                    <div class="team__member-name text-white">aditya</div>
-                                    <div class="clr-g-10">founder</div>
+                                    <div class="team__member-name text-white animate-fade-in">aditya</div>
+                                    <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
                             </figure>
                         </div>
                         <div class="swiper-slide">
-                            <figure class="team__imgWrapper">
+                            <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover">
                                 <figcaption class="team__details">
-                                    <div class="team__member-name text-white">aditya</div>
-                                    <div class="clr-g-10">founder</div>
+                                    <div class="team__member-name text-white animate-fade-in">aditya</div>
+                                    <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
                             </figure>
                         </div>
                         <div class="swiper-slide">
-                            <figure class="team__imgWrapper">
+                            <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover">
                                 <figcaption class="team__details">
-                                    <div class="team__member-name text-white">aditya</div>
-                                    <div class="clr-g-10">founder</div>
+                                    <div class="team__member-name text-white animate-fade-in">aditya</div>
+                                    <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
                             </figure>
                         </div>
                         <div class="swiper-slide">
-                            <figure class="team__imgWrapper">
+                            <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover">
                                 <figcaption class="team__details">
-                                    <div class="team__member-name text-white">aditya</div>
-                                    <div class="clr-g-10">founder</div>
+                                    <div class="team__member-name text-white animate-fade-in">aditya</div>
+                                    <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
                             </figure>
                         </div>
                         <div class="swiper-slide">
-                            <figure class="team__imgWrapper">
+                            <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover">
                                 <figcaption class="team__details">
-                                    <div class="team__member-name text-white">aditya</div>
-                                    <div class="clr-g-10">founder</div>
+                                    <div class="team__member-name text-white animate-fade-in">aditya</div>
+                                    <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
                             </figure>
                         </div>
@@ -261,7 +277,7 @@
         <!-- Our Values Section Start -->
         <section class="values mt--10 mt--md--15 mt--lg--20">
             <div class="values__top">
-                <figure>
+                <figure class="animate-fade-in-up">
                     <img src="./app/assets/images/about/img-1.jpg" alt="" class="img-fluid">
                 </figure>
             </div>
@@ -269,34 +285,34 @@
                 <div class="page-container">
                     <div class="row">
                         <div class="col-12 col-lg-3 col-xl-5">
-                            <h3 class="text-capitalize text-white">Our Values</h3>  
+                            <h3 class="text-capitalize text-white animate-fade-in">Our Values</h3>  
                         </div>
                         <div class="col-12 col-lg-8 col-xl-6 offset-lg-1 mt--2 mt--md--4 mt--lg--0">
                             <div class="row">
                                 <div class="col-12 text-white">
                                     <div class="values__detailsWrapper">
-                                        <div class="values__counting"><h3>01</h3></div>
+                                        <div class="values__counting animate-fade-in-up"><h3>01</h3></div>
                                         <div class="values__details">
-                                            <h2 class="">relentless</h2>
-                                            <p class="">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
+                                            <h2 class="animate-fade-in-up">relentless</h2>
+                                            <p class="animate-fade-in-up">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
                                         </div> 
                                     </div>                              
                                 </div>
                                 <div class="col-12 mt--4 mt--md--9 text-white">
                                     <div class="values__detailsWrapper">
-                                        <div class="values__counting"><h3>02</h3></div>
+                                        <div class="values__counting animate-fade-in-up"><h3>02</h3></div>
                                         <div class="values__details">
-                                            <h2 class="">authentic</h2>
-                                            <p class="">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
+                                            <h2 class="animate-fade-in-up">authentic</h2>
+                                            <p class="animate-fade-in-up">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
                                         </div> 
                                     </div>  
                                 </div>
                                 <div class="col-12 mt--4 mt--md--9 text-white">
                                     <div class="values__detailsWrapper">
-                                        <div class="values__counting"><h3>03</h3></div>
+                                        <div class="values__counting animate-fade-in-up"><h3>03</h3></div>
                                         <div class="values__details">
-                                            <h2 class="">accountable</h2>
-                                            <p class="">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
+                                            <h2 class="animate-fade-in-up">accountable</h2>
+                                            <p class="animate-fade-in-up">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
                                         </div> 
                                     </div>   
                                 </div>
@@ -311,18 +327,34 @@
         <!-- Join-Us Section Start -->
         <section class="join-us mt--10 mt--lg--15">
             <div class="page-container">
-                <a href="#" class="btn btn--primary">Join Us</a>
+                <a href="#" class="btn btn--primary animate-fade-in">Join Us</a>
                 <div class="row mt--2">
                     <div class="col-12 col-md-8 col-lg-7">
-                        <h3 class="text-capitalize">
+                        <h3 class="text-capitalize animate-fade-in-up">
                             The 35-person Big Human team of 12 designers, 15 engineers,
                         </h3>           
                     </div>
                     <div class="col-12 col-md-8 col-lg-5">
-                        <div class="btn__wrapper">
+                        <div class="btn__wrapper animate-fade-in-up">
                             <a href="#" class="btn btn--secondary">
-                                <span>Learn More</span>
-                                <span>-></span>
+                                <a href="#" class="btn btn--secondary mt--1 mt--sm--2 animate-fade-in-up">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="167" height="38" viewBox="0 0 167 38">
+                                            <g data-name="Group 222">
+                                                <text data-name="Learn More" transform="translate(0 25)" style="font-size:18px;font-family:ProductSans-Light,Product Sans Light;font-weight:300" fill="#1c1c1c"><tspan x="0" y="0">Learn More</tspan></text>
+                                                <g data-name="Ellipse 15" transform="translate(129)" style="stroke-width:1.5px;stroke:#161616" fill="#fff">
+                                                    <circle cx="19" cy="19" r="19" style="stroke:none"/>
+                                                    <circle cx="19" cy="19" r="18.25" style="fill:none"/>
+                                                </g>
+                                                <g data-name="Group 220">
+                                                    <path data-name="Path 195" d="M0 0h43.451" transform="translate(107.359 19.803)" style="stroke:#242424;stroke-linecap:round;fill:none;stroke-width:1.5px"/>
+                                                    <path data-name="Path 196" d="m11.526-.94 6.564 6.864" transform="translate(132.665 13.769)" style="stroke:#242424;stroke-linecap:round;fill:none;stroke-width:1.5px"/>
+                                                    <path data-name="Path 197" d="M11.526 5.924 18.09-.94" transform="translate(132.665 20.853)" style="stroke:#242424;stroke-linecap:round;fill:none;stroke-width:1.5px"/>
+                                                </g>
+                                            </g>
+                                        </svg>                      
+                                    </span>
+                                </a>
                             </a>
                         </div>
                     </div>
@@ -336,12 +368,26 @@
             <div class="page-container">
                 <div class="row">
                     <div class="col-12 col-sm-8 col-xl-6 mx-auto text-center">
-                        <h2 class="text-white text-capitalize">
+                        <h2 class="text-white text-capitalize animate-fade-in-up">
                             Let's make your  Website shine Lorem
                         </h2>
-                        <a href="#" class="btn btn--secondary mt--2">
-                            <span class="text-white">Contact Us</span>
-                            <span class="text-white">-></span>
+                        <a href="#" class="btn btn--secondary mt--2 animate-fade-in">
+                            <span class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="38" viewBox="0 0 167 38">
+                                    <g data-name="Group 221">
+                                        <text data-name="Learn More" transform="translate(0 25)" style="font-size:18px;font-family:ProductSans-Light,Product Sans Light;font-weight:300" fill="#fff"><tspan x="0" y="0">Contact Us</tspan></text>
+                                        <g data-name="Ellipse 15" transform="translate(129)" style="stroke:#fff;stroke-width:1.5px;" fill="#161616">
+                                            <circle cx="19" cy="19" r="19" style="stroke:none"/>
+                                            <circle cx="19" cy="19" r="18.25" style="fill:none"/>
+                                        </g>
+                                        <g data-name="Group 220">
+                                            <path data-name="Path 195" d="M0 0h43.451" transform="translate(107.359 19.803)" style="stroke-linecap:round;fill:none;stroke:#fff;stroke-width:1.5px"/>
+                                            <path data-name="Path 196" d="m11.526-.94 6.564 6.864" transform="translate(132.665 13.769)" style="stroke-linecap:round;fill:none;stroke:#fff;stroke-width:1.5px"/>
+                                            <path data-name="Path 197" d="M11.526 5.924 18.09-.94" transform="translate(132.665 20.853)" style="stroke-linecap:round;fill:none;stroke:#fff;stroke-width:1.5px"/>
+                                        </g>
+                                    </g>
+                                </svg>                                                          
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -358,38 +404,38 @@
             <div class="footer__top">
                 <div class="row">
                     <div class="col-6 col-md-4 col-lg-3">
-                        <p class="footer__title">Company</p>
+                        <p class="footer__title animate-fade">Company</p>
                         <ul class="footer__list">
-                            <li class="footer__item"><a href="about.html" class="footer__link">About</a></li>
-                            <li class="footer__item"><a href="our-values.html" class="footer__link">Our Values</a></li>
-                            <li class="footer__item"><a href="resources.html" class="footer__link">Resources</a></li>
-                            <li class="footer__item"><a href="team.html" class="footer__link">Our Team</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="about.html" class="footer__link">About</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="our-values.html" class="footer__link">Our Values</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="resources.html" class="footer__link">Resources</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="team.html" class="footer__link">Our Team</a></li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-4 col-lg-3">
-                        <p class="footer__title">Services</p>
+                        <p class="footer__title animate-fade-in">Services</p>
                         <ul class="footer__list">
-                            <li class="footer__item"><a href="web-design.html" class="footer__link">Web Design</a></li>
-                            <li class="footer__item"><a href="seo.html" class="footer__link">SEO</a></li>
-                            <li class="footer__item"><a href="branding.html" class="footer__link">Branding</a></li>
-                            <li class="footer__item"><a href="ads.html" class="footer__link">Ads</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="web-design.html" class="footer__link">Web Design</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="seo.html" class="footer__link">SEO</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="branding.html" class="footer__link">Branding</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="ads.html" class="footer__link">Ads</a></li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-4 col-lg-3 mt--5 mt--md--0">
-                        <p class="footer__title">Other Links</p>
+                        <p class="footer__title animate-fade-in">Other Links</p>
                         <ul class="footer__list">
-                            <li class="footer__item"><a href="blogs.html" class="footer__link">Blogs</a></li>
-                            <li class="footer__item"><a href="digital-marketing.html" class="footer__link">Go Digital</a></li>
-                            <li class="footer__item"><a href="services.html" class="footer__link">Services</a></li>
-                            <li class="footer__item"><a href="work.html" class="footer__link">Work</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="blogs.html" class="footer__link">Blogs</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="digital-marketing.html" class="footer__link">Go Digital</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="services.html" class="footer__link">Services</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="work.html" class="footer__link">Work</a></li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-4 col-lg-3 mt--5 mt--lg--0">
-                        <p class="footer__title">Contact</p>
+                        <p class="footer__title animate-fade-in">Contact</p>
                         <ul class="footer__list">
-                            <li class="footer__item"><a href="contact.html" class="footer__link">Contact</a></li>
-                            <li class="footer__item"><a href="blogs.html" class="footer__link">Blogs</a></li>
-                            <li class="footer__item"><a href="resoures.html" class="footer__link">Resource</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="contact.html" class="footer__link">Contact</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="blogs.html" class="footer__link">Blogs</a></li>
+                            <li class="footer__item animate-fade-in-up"><a href="resoures.html" class="footer__link">Resource</a></li>
                         </ul>
                     </div>
                 </div>
@@ -399,27 +445,27 @@
                     <div class="col-12 col-md-4 order--2">
                         <div class="footer__logo">
                             <a href="/" class="">
-                                <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo">
+                                <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo" class="animate-fade-in">
                             </a>
-                            <p class="text-white">2023 Stoleru Martin. All right reserved.</p>
+                            <p class="text-white animate-fade-in-up">2023 Stoleru Martin. All right reserved.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-5 offset-md-2 offset-lg-3 mb--5 mb--sm--0 order--1">
                         <form action="" id="footer__form">
-                            <div class="footer__input">
+                            <div class="footer__input animate-fade-in-up">
                                 <input type="email" name="email" value=""  placeholder="Enter Your E-mail" autocomplete="off" class="input__field" onfocus="this.placeholder=''" onblur="this.placeholder='Enter Your E-mail'">
                                  <button class="btn btn-tertiary" id="subscrible">Subscribe</button>
                             </div>
                         </form>
                         <ul class="footer__socials">
-                            <li class="footer__socials-item">
+                            <li class="footer__socials-item animate-fade-in-up">
                                 <a href="www.facebook.com" class="footer__socials-link" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10.431" height="19.476" viewBox="0 0 10.431 19.476">
                                         <path data-name="Icon awesome-facebook-f" d="M11.357 10.955 11.9 7.43H8.516V5.143a1.762 1.762 0 0 1 1.987-1.9h1.537v-3A18.75 18.75 0 0 0 9.311 0C6.526 0 4.705 1.688 4.705 4.744V7.43h-3.1v3.525h3.1v8.521h3.81v-8.521z" transform="translate(-1.609)" style="fill:#cbcbcb"/>
                                     </svg>                        
                                 </a>
                             </li>
-                            <li class="footer__socials-item">
+                            <li class="footer__socials-item animate-fade-in-up">
                                 <a href="www.instagra.comm" class="footer__socials-link" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="19.476" height="19.476" viewBox="0 0 19.476 19.476">
                                         <path data-name="Icon simple-instagram" d="M9.738 0C7.092 0 6.762.012 5.723.058A7.18 7.18 0 0 0 3.36.511a4.769 4.769 0 0 0-1.726 1.123A4.751 4.751 0 0 0 .511 3.36a7.159 7.159 0 0 0-.453 2.363C.01 6.762 0 7.092 0 9.738s.012 2.976.058 4.014a7.185 7.185 0 0 0 .453 2.364 4.775 4.775 0 0 0 1.123 1.725 4.762 4.762 0 0 0 1.726 1.123 7.189 7.189 0 0 0 2.364.453c1.039.049 1.369.058 4.014.058s2.976-.012 4.014-.058a7.206 7.206 0 0 0 2.364-.453 4.977 4.977 0 0 0 2.848-2.848 7.185 7.185 0 0 0 .453-2.364c.049-1.039.058-1.369.058-4.014s-.012-2.976-.058-4.014a7.2 7.2 0 0 0-.453-2.364 4.779 4.779 0 0 0-1.123-1.725A4.745 4.745 0 0 0 16.116.511a7.164 7.164 0 0 0-2.364-.453C12.714.01 12.383 0 9.738 0zm0 1.753c2.6 0 2.909.013 3.936.058a5.365 5.365 0 0 1 1.807.337 3.2 3.2 0 0 1 1.849 1.848 5.376 5.376 0 0 1 .334 1.804c.046 1.027.057 1.336.057 3.936s-.012 2.909-.06 3.936a5.48 5.48 0 0 1-.342 1.807 3.092 3.092 0 0 1-.73 1.121 3.038 3.038 0 0 1-1.12.727 5.416 5.416 0 0 1-1.814.335c-1.034.046-1.338.057-3.943.057s-2.91-.012-3.943-.06a5.522 5.522 0 0 1-1.814-.342 3.016 3.016 0 0 1-1.119-.73 2.957 2.957 0 0 1-.73-1.12 5.526 5.526 0 0 1-.341-1.814c-.037-1.022-.05-1.338-.05-3.931s.013-2.91.05-3.945a5.52 5.52 0 0 1 .341-1.813 2.887 2.887 0 0 1 .73-1.121 2.88 2.88 0 0 1 1.119-.729 5.39 5.39 0 0 1 1.8-.342C6.793 1.741 7.1 1.728 9.7 1.728l.037.024zm0 2.985a5 5 0 1 0 5 5 5 5 0 0 0-5-5.001zm0 8.246a3.246 3.246 0 1 1 3.246-3.246 3.245 3.245 0 0 1-3.246 3.246zM16.1 4.54a1.169 1.169 0 1 1-1.169-1.168A1.169 1.169 0 0 1 16.1 4.54z" style="fill:#cbcbcb"/>
@@ -427,7 +473,7 @@
                                     
                                 </a>
                             </li>
-                            <li class="footer__socials-item">
+                            <li class="footer__socials-item animate-fade-in-up">
                                 <a href="www.linkedin.com" class="footer__socials-link" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17.041" height="17.04" viewBox="0 0 17.041 17.04">
                                         <path data-name="Icon awesome-linkedin-in" d="M3.814 17.041H.281V5.664h3.533zM2.046 4.112a2.056 2.056 0 1 1 2.046-2.065 2.063 2.063 0 0 1-2.046 2.065zm14.991 12.929h-3.525V11.5c0-1.32-.027-3.013-1.837-3.013-1.837 0-2.118 1.434-2.118 2.918v5.633H6.028V5.664h3.388v1.552h.049a3.712 3.712 0 0 1 3.343-1.837c3.576 0 4.233 2.355 4.233 5.413v6.25z" transform="translate(0 -.001)" style="fill:#cbcbcb"/>

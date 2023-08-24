@@ -43,23 +43,15 @@
         font-size: rem(18);
     }
     &:hover{
-        @include transform-x(5px);
+       svg{
+            text{
+                fill:$clr-secondary;
+            }
+            g[data-name="Ellipse 15"]{
+                fill:$clr-secondary;
+            }
+       }
     }
-
-    // &:nth-child(2){
-    //     position: relative;
-    //     &::after{
-    //         position: absolute;
-    //         content: '';
-    //         width: 34px;
-    //         height: 34px;
-    //         left: 0;
-    //         @include border-radius(50%);
-    //         background: $clr-secondary;
-    //         z-index: -1;
-    //         right: calc(100% - 16px);
-    //     }
-    // }
 }
 
 .btn-tertiary{
@@ -72,3 +64,4 @@
         border-color: $clr-primary;
     }
 }
+

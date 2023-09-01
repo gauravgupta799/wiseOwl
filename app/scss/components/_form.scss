@@ -11,7 +11,7 @@
     }
 }
 .form-label{
-    color: #dedede;
+    color: $clr-white-15;
     font-family: $ff-light;
     font-size: rem(16);
 }
@@ -24,8 +24,8 @@
     background: transparent;
     border:none;
     outline: none;
-    border: solid 1px #818181;
-    background-color: #161616;
+    border: solid 1px $clr-light-grey;
+    background-color: $clr-dark;
     padding: em(12) em(20);
     margin-top: rem(16);
     color:$clr-white-100;
@@ -57,8 +57,8 @@
 .form-group .form-check-label::before {
     content:'';
     background-color: transparent;
-    border: 1px solid #707070;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    border: 1px solid $clr-grey-10;
+    box-shadow: 0 1px 2px $clr-boxShadow, inset 0px -15px 10px -12px $clr-boxShadow;
     padding: em(11);
     display: inline-block;
     position: relative;
@@ -81,7 +81,6 @@
     border: 1px solid $clr-secondary;
     border-width: 0 1px 1px 0;
     transform: rotate(45deg);
-
     @include breakpoint-lg{
         top: 8px;
         left: 9px;

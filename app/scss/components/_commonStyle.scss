@@ -23,10 +23,8 @@
         transform:scaleX(0);
         transform-origin: left;
     }
-    
     &:hover{
         color:$clr-secondary;
-    
         &::before{
             transform:scaleX(1);
         }
@@ -48,7 +46,6 @@
     background: transparent;
     @include transition(all, 0.4s, ease-out);
     &:hover{
-        // background: $clr-primary;
         background: $clr-secondary;
         svg{
             transform:scale(1.2);
@@ -66,7 +63,6 @@
     @include border-radius(50%);
     background: transparent;
     @include transition(all, 0.4s, ease-out);
-
     &:hover{
         background: $clr-primary;
         svg path{

@@ -78,7 +78,6 @@
     &__secondary{
         background: $clr-secondary;
         padding-block: em(16);
-
         @include breakpoint-sm{
             padding-block: em(20);
         }
@@ -90,7 +89,6 @@
     &__leftWrapper{
         @include flex-center-vertical;
         justify-content: space-between;
-
         @include breakpoint-sm{
             gap: rem(20);
             justify-content: flex-start;
@@ -104,14 +102,12 @@
         @include breakpoint-xl{
             gap: rem(64);
         }
-
         li{
             text-transform: capitalize;
             font-weight: 300 !important;
             line-height: 2.25;
             color: $clr-primary;
         }
-
     }
 }
 

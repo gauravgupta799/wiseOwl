@@ -10,8 +10,9 @@ const browserSync = require('browser-sync').create();
 
 
 const cssFilesArray = [
-    "app/scss/main.scss",
     "app/venders/swiper/css/swiper.css",
+    'app/venders/locomotive-scroll/locomotive-scroll.css',
+    "app/scss/main.scss",
 ];
 
 // sass task for style css
@@ -37,7 +38,9 @@ function scssTaskMinified(){
 const jsFilesArray = [
     "app/venders/jquery/jquery-3.7.0.min.js",
     "app/venders/gsap/gsap.min.js",
-    "app/venders/gsap/ScrollTrigger.min.js",
+    // "app/venders/gsap/ScrollTrigger.min.js",
+    "app/venders/gsap/ScrollTrigger-3.6.1.min.js",
+    'app/venders/locomotive-scroll/locomotive-scroll.min.js',
     "app/venders/swiper/js/swiper-bundle.min.js",
     "app/js/main.js",
 ];

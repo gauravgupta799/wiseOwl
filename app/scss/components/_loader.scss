@@ -21,7 +21,6 @@
         @include flex-center;
         flex-direction: column;
         position: relative;
-
         &::before{
             content:"Loading";
             position:absolute;
@@ -48,12 +47,12 @@
         font-size: rem(120);
         font-family: $ff-medium;
         position: relative;
-        &::after{
+         &::after{
             content:"%";
             position: absolute;
             font-size: rem(64);
-        }
-    }
+         }
+      }
     &__top{
         img{
             animation:sliding 4s linear infinite;

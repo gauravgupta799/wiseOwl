@@ -7,9 +7,7 @@
 
 //?--------- Hero Styles Start ---------
 .hero{
-    background-color: $clr-primary;
-    background-color: #161616;
-
+    background-color: $clr-dark;
     &__container{
         background-image: url("../../../app/assets/images/hero-bg-pattern-1.webp");
         background-repeat: no-repeat;
@@ -17,8 +15,6 @@
         background-position: right 100%;
     }
     &__footer{
-        // border-top: 1px solid $clr-grey-50;
-    
         &-list{
             @include flex-center-vertical;
             flex-wrap: wrap;
@@ -59,9 +55,6 @@
             }
         }
     }
-}
-.h-divider{
-    background: $clr-grey-50;
 }
 //?--------- Hero Styles End ---------
 
@@ -122,14 +115,26 @@
 //?--------- Services Styles Start ---------
 .services{
 
+    &.sticks{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        height: 100dvh;
+    }
     &__heading{
         font-family: $ff-light;
         text-transform: capitalize;
     }
 
     &__categoriesWrapper{
-        border-bottom: 1px solid #d6d6d6;
+        border-bottom: 1px solid $clr-border-2;
         padding-bottom: em(72);
+        h2{
+            &.visible{
+                opacity: 1;
+                color:$clr-secondary;
+            }
+        }
         
     }
     &__category{
@@ -215,7 +220,6 @@
 .faq{
     font-family: $ff-regular;
     font-size:rem(18);
-
     &__wrapper{
         @include breakpoint-sm{
             padding-inline:2rem;

@@ -18,11 +18,26 @@ $clr-white-100:#ffffff;
 $clr-white-50:#f8f8f8;
 $clr-white-30:#efefef;
 $clr-white-20:#cecece;
+$clr-white-15:#dedede;
 
 $clr-border:#d9d9d9;
+$clr-border-2:#d6d6d6;
+
+$clr-boxShadow:rgba(0, 0, 0, 0.05);
+$clr-bglightDark:rgba(0,0,0, 0.85);
+
+$clr-divider:#ccc;
 
 $clr-error:crimson;
 
-// #707070;
-// color: #2b2b2b;
-$clr:#575757;
+// $clr:#575757;
+// $clr-2:#818181;
+// $clr-3:#373737
+
+
+
+// Dark Theme Colors
+body[data-theme="dark"]{
+    background: $clr-primary;
+    color: $clr-white-100;
+}

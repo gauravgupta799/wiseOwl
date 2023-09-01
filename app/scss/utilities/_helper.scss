@@ -69,10 +69,14 @@
     font-weight: 300;
 }
 
+.h-divider{
+    background: $clr-grey-50;
+}
+
 .divider{
     height: 1px;
     width: 100%;
-    background-color: #ccc;
+    background-color: $clr-divider;
 }
 
 .ff-medium{
@@ -104,5 +108,5 @@
 }
 
 .radial-gradient{
-    background-image: radial-gradient(circle at 50% 50%, #373737, $clr-primary 56%);
+    background-image: radial-gradient(circle at 50% 50%, $clr-grey-30, $clr-primary 56%);
 }

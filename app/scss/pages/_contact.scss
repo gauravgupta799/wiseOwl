@@ -85,11 +85,9 @@
             background: $clr-primary;
             @include border-radius(50%);
             display: none;
-
             @include breakpoint-sm{
                 margin-right: rem(45);
                 display: block;
-                // top:8px;
                 top:rem(14);
             }
         }
@@ -99,7 +97,6 @@
     }
     &__content{
         margin-left: rem(0);
-
         @include breakpoint-sm{
             margin-left: rem(35);
         }

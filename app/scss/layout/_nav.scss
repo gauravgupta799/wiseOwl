@@ -7,8 +7,6 @@
 
 .nav{
    @include flex-center;
-    // color:$clr-white-100;
-
     @include breakpoint-md{
         gap:rem(48);
     }
@@ -20,14 +18,12 @@
     }
 }
 
-
 // ========== Slider styles start ========
 .switch{
     position: relative;
     display: none;
     width: rem(60);
     height: rem(24);
-
     @include breakpoint-md{
         display: inline-block;
     }
@@ -37,7 +33,7 @@
     position: absolute;
     cursor: pointer;
     inset:0;
-    @include transition(0.4s);
+    @include transition(all, 0.35s, ease-out);
     @include border-radius(12px);
     border:1px solid $clr-primary;
     background-color: $clr-white-100;
@@ -57,7 +53,7 @@
     left: 2px;
     bottom: 2px;
     background-color: $clr-primary;
-    @include transition(all, 0.3s, ease-in-out);
+    @include transition(all, 0.35s, ease-out);
     @include border-radius(50%);
 }
 

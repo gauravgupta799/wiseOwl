@@ -2,12 +2,24 @@ const header = document.querySelector('.header');
 const headerTranparent = document.querySelector('.header--tranparent');
 const barWhite = document.querySelector('.bar-white');
 const logo2 = document.querySelector('.logo-2');
-const loader = document.querySelector(".page-loader");
+// const loader = document.querySelector(".page-loader");
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 // ====== Pre-loader start ======
-// window.onload = () =>{
-//     loader.style.display = 'none';
-// }
+const till = gsap.timeline({
+    paused:"true"
+});
+till.to("#percent, #bar",{
+    duration:0.2,
+    opacity:0,
+    zIndex:-1,
+});
+till.to("#preloader",{
+    duration:1,
+    yPercent:-100
+})
 
 window.onload = () =>{
     const percent = document.getElementById("percent");
@@ -25,66 +37,86 @@ window.onload = () =>{
             percent.innerHTML = width + "%";
         }
     }
-
-    id = setInterval(frame, 100);
+    id = setInterval(frame, 50);
 }
 // ====== Pre-loader end ======
 
-// window.addEventListener("load",()=>{
-//     var c = 0;
-//     const count = setInterval(function(){      
-//         c = c + Math.floor(Math.random() * 20);
-//         if(c < 100){   
-//            document.querySelector(".loader__count").innerHTML = c ;
-//         }else{
-//             c = 100;
-//             document.querySelector(".loader__count").innerHTML = c;  
-//             clearInterval(count);
+
+const locoScroll = new LocomotiveScroll({
+    el:document.querySelector("#body"),
+    smooth:true
+});
+
+ScrollTrigger.scrollerProxy("#body",{
+    scrollTop(value){
+        return arguments.length ? locoScroll.scrollTo(value, 0,0,): 
+        locoScroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect(){
+        return{
+            top:0, left:0, 
+            width:window.innerWidth,
+            height:window.innerHeight
+        }
+    },
+    pinType:document.querySelector("#body").style.transform ? "transform" : "fixed"
+});
+
+locoScroll.on("scroll", ScrollTrigger.update);
+
+//======  Sticky header start ======
+window.addEventListener("scroll", () => {
+    if(window.scrollY  > 10){
+        header.classList.add("sticky");
+        if(barWhite != null && logo2 != null){ 
+            barWhite.classList.add("sticky"); 
+            logo2.src = "../../app/assets/logos/wiseOwl-logo.svg"; 
+        }
+    }else{
+        header.classList.remove("sticky");
+        if(barWhite != null && logo2 != null){ 
+            barWhite.classList.remove("sticky"); 
+            logo2.src = "../../app/assets/logos/logo-black.svg";
+        }
+    }
+})
+
+// locoScroll.on("scroll", function(position){
+//     const scrollY = position.scroll.y;
+//     const threshold = 10;
+//     if(scrollY  > threshold){
+//         header.classList.add("sticky");
+//         if(barWhite != null && logo2 != null){ 
+//             barWhite.classList.add("sticky"); 
+//             logo2.src = "../../app/assets/logos/wiseOwl-logo.svg"; 
 //         }
-//     },150);
+//     }else{
+//         header.classList.remove("sticky");
+//         if(barWhite != null && logo2 != null){ 
+//             barWhite.classList.remove("sticky"); 
+//             logo2.src = "../../app/assets/logos/logo-black.svg";
+//         }
+//     }
 // })
+//======  Sticky header end ======
+
 
 //======  Active Page Link start ======
 const windowPathname = window.location.pathname;
 const navLinks = document.querySelectorAll(".header__mobile-link");
 navLinks.forEach(link =>{
   const navLinkPathname = new URL(link.href).pathname;
-  if((windowPathname === navLinkPathname) || (windowPathname === "/index.html" && navLinkPathname === "/")){
+  if((windowPathname === navLinkPathname) || 
+    (windowPathname === "/index.html" && navLinkPathname === "/")){
     link.classList.add("active");
   }
 })
 //======  Active Page Link end ======
 
-//======  Sticky header start ======
-window.addEventListener("scroll", () => {
-    if(window.scrollY > 10){
-        header.classList.add("sticky");
-        if(barWhite != null){ barWhite.classList.add("sticky"); }
-        if(logo2 != null){ logo2.src = "../../app/assets/logos/wiseOwl-logo.svg"; }
-       
-    }else{
-        header.classList.remove("sticky");
-        if(barWhite != null){ barWhite.classList.remove("sticky"); }
-        if(logo2 != null){ logo2.src = "../../app/assets/logos/logo-black.svg";}
-    }
-})
 
-//======  Sticky header end ======
-
-// form Validation
-document.getElementById("footer__form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const inputField = document.querySelector('input[type="email"]');
-    if(inputField.value != ""){
-        $(".footer__input").removeClass("error");
-        inputField.value = "";
-    }else{
-        $(".footer__input").addClass("error");
-    }
-})
-
+// Mobile Menu Toggle start
 $(document).ready(function() {
-    $('.menu').click (function(){
+    $('.menu').click(function(){
         $(this).toggleClass('open');
         $(".header__mobile").toggleClass('open');
         $(".overlay").toggleClass('active');
@@ -97,6 +129,22 @@ $(document).ready(function() {
         $(".footer__input").removeClass("border-color");
     })
 })
+// Mobile Menu Toggle End
+
+
+// form Validation start
+document.getElementById("footer__form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const inputField = document.querySelector('input[type="email"]');
+    if(inputField.value != ""){
+        $(".footer__input").removeClass("error");
+        inputField.value = "";
+    }else{
+        $(".footer__input").addClass("error");
+    }
+})
+// form Validation end 
+
 
 // Swiper start
 const swiper1 = new Swiper(".mySwiper--about", {
@@ -156,6 +204,57 @@ const swiper3 = new Swiper(".mySwiper--team", {
         },
     }
 })
+// Swiper end 
+
+
+// stick services start
+const sSections =document.querySelectorAll(".services__categoriesWrapper");
+if(sSections != null) {
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry) => {
+            const heading = entry.target.children[0];
+            if (entry.intersectionRatio > 0){
+                heading.classList.add("visible");
+            }else{
+                heading.classList.remove("visible");
+            }
+        })
+    });
+    sSections.forEach((section) =>{
+        observer.observe(section);
+    });
+}
+// stick services end 
+
+
+// stick values start
+const valuesSection = document.querySelector(".values__bottom");
+const valuesWrapper = document.querySelectorAll(".values__detailsWrapper");
+if(valuesWrapper != null){
+    const io = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            const target = entry.target
+            const heading = target.children[0];
+            console.log("Entry",target);
+            if(entry.intersectionRatio > 0){
+                heading.classList.add("sticks");
+                target.classList.add("visible");
+                document.querySelector(".values__headingWrapper").classList.add("sticks")
+            }else{
+                target.classList.remove("visible");
+                document.querySelector(".values__headingWrapper").classList.remove("sticks")
+            }
+        })
+        
+    })
+
+    valuesWrapper.forEach((value)=>{
+        io.observe(value);
+    })
+    
+}
+// stick values end
+
 
 // Counter script start
 const counterSection = document.querySelector(".company");
@@ -179,11 +278,6 @@ if(counterSection != null && counters != null) {
                     }
                 }
                 updateCounter();
-                // if(counter.parentElement.style.animation){
-                //     counter.parentElement.style.animation = "";
-                // }else{
-                //     counter.parentElement.style.animation = `slide-up 0.3s ease forward ${index / counters.length + 0.5}s`
-                // }
             })
             observer.unobserve(counterSection);
         },{
@@ -193,8 +287,10 @@ if(counterSection != null && counters != null) {
     );
     CounterObserver.observe(counterSection);
 }
+// Counter script end
 
-// contact form
+
+// contact form start
 const checkAgree = document.querySelector(".form-check-input");
 var submitBtn = document.getElementById("submit")
 
@@ -220,27 +316,49 @@ if(submitBtn != null && checkAgree != null) {
         }
     })
 }
+// contact form end 
+
+
+//====== custome cursor start ======
+var cursor = document.querySelector('.cursor'),
+cursorScale = document.querySelectorAll('.cursor-scale')
+mouseX = 0,
+mouseY = 0;
+gsap.to({}, 0.016, {
+    repeat:-1,
+    onRepeat:function(){
+        gsap.set(cursor,{
+            css:{
+                left:mouseX,
+                top:mouseY
+            }
+        })
+    }
+})
+cursorScale.forEach((link)=>{
+    link.addEventListener("mousemove", ()=>{
+        cursor.classList.add('grow');
+        if(link.classList.contains('small')){
+            cursor.classList.remove('grow');
+            cursor.classList.add('grow-small');
+        }
+    });
+    link.addEventListener("mouseleave", ()=>{
+        cursor.classList.remove('grow');
+        cursor.classList.remove('grow-small');
+    });
+})
+window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+})
+//====== custome cursor end ======
+
 
 //====== Animation  start ======
-gsap.registerPlugin(ScrollTrigger);
-
-const till = gsap.timeline({
-    paused:"true"
-});
-
-till.to("#percent, #bar",{
-    duration:0.2,
-    opacity:0,
-    zIndex:-1,
-});
-
-till.to("#preloader", {
-    duration:0.8,
-    width:"0%",
-});
-
-
+// gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline();
+
 window.addEventListener("load",() => {
     tl.from(".header__logo, .switch",1, {
         opacity:0,
@@ -277,16 +395,9 @@ window.addEventListener("load",() => {
         x:-50,
         stagger:0.2,
         ease:Power4.easeInOut
-    });
-
-    // tl.from(".btn-fade-in",{
-    //     opacity:0,
-    //     y:-30,
-    //     duration:1,
-    //     ease:Power4.easeInOut
-    // })
-   
+    }); 
 })
+
 //  animation fade in 
 const fadeIn = gsap.utils.toArray(".animate-fade-in");
 fadeIn.forEach((mainContent, i) => {
@@ -298,6 +409,7 @@ fadeIn.forEach((mainContent, i) => {
   ScrollTrigger.create({
     trigger: mainContent,
     animation: anim,
+    scroller:"#body",
     toggleActions: "play",
     once: true,
     duration: 1,
@@ -317,6 +429,7 @@ textContainers.forEach((item, i) => {
     trigger: item,
     animation: anim,
     toggleActions: "play",
+    scroller:"#body",
     once: true,
     duration: 1,
     stagger:1,
@@ -324,18 +437,18 @@ textContainers.forEach((item, i) => {
   });
 });
 
-
 // slider left
 const leftSlide = gsap.utils.toArray(".slide-left");
 leftSlide.forEach((left, i) =>{
   const anim = gsap.fromTo(left, 
-    { opacity: 0,x:-5, scaleX:0},
-    { opacity: 1, x:0, scaleX:1, duration:1}
+    { opacity: 0,x:-100},
+    { opacity: 1, x:0, duration:1}
   );
   ScrollTrigger.create({
     trigger: left,
     animation: anim,
     toggleActions: "play",
+    scroller:"#body",
     delay:0.4,
     duration: 3,
     ease: Power4.easeInOut,
@@ -353,6 +466,7 @@ rightSlide.forEach((right, i) =>{
     trigger: right,
     animation: anim,
     toggleActions: "play",
+    scroller:"#body",
     delay:0.6,
     duration: 3,
     stagger:1,
@@ -360,13 +474,13 @@ rightSlide.forEach((right, i) =>{
   });
 })
 
-
 // divider
 tl.fromTo(".divider", 
     {  opacity:0, scaleX:0, x:-10 },
     { opacity:1, scaleX:1, x:0},
-    ScrollTrigger({
+    ScrollTrigger.create({
         trigger: ".divider",
+        scroller:"#body",
         delay:0.6,
         duration: 1.5,
         start:"20% 50%",
@@ -375,21 +489,87 @@ tl.fromTo(".divider",
     })
 )
 
-// stagger
+ScrollTrigger.addEventListener("refresh", () => {
+    locoScroll.update();
+});
+ScrollTrigger.refresh();
 
-const staggerSlide = gsap.utils.toArray(".stg");
-staggerSlide.forEach((stg,i)=>{
-    const anim = gsap.fromTo(stg,
-        { opacity:0, x:50},
-        { opacity:1, x:0, duration:1}
-    )
-    ScrollTrigger.create({
-        trigger: stg,
-        animation: anim,
-        toggleActions: "play",
-        delay:0.6,
-        duration: 1.5,
-        stagger:1,
-        ease: Power4.easeInOut,
-    });
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// stagger
+// const staggerSlide = gsap.utils.toArray(".stg");
+// staggerSlide.forEach((stg,i)=>{
+//     const anim = gsap.fromTo(stg,
+//         { opacity:0, x:50},
+//         { opacity:1, x:0, duration:1}
+//     )
+//     ScrollTrigger.create({
+//         trigger: stg,
+//         animation: anim,
+//         toggleActions: "play",
+//         delay:0.6,
+//         duration: 1.5,
+//         stagger:1,
+//         ease: Power4.easeInOut,
+//     });
+// })
+
+
+//======  Dark/Light theme start ======
+// localStorage.setItem('theme', 'light');
+// const switchToggler = document.querySelector("#switchToggle");
+// if(switchToggler != null){ 
+//     if(switchToggler.checked){
+//         body.setAttribute('data-theme', 'dark');
+//     }else{
+//         switchToggler.addEventListener("change", (e) => {
+//             const themeValue = localStorage.getItem("theme");
+//             let checkedEvent = e.target.checked;
+//             if( checkedEvent && themeValue ==='light'){
+//                localStorage.setItem('theme', 'dark');
+//                document.body.setAttribute('data-theme', 'dark');
+//             }
+//             if( checkedEvent === false && themeValue === 'dark'){
+//                 localStorage.setItem('theme', 'light');
+//                 document.body.removeAttribute('data-theme', 'dark');
+//             }
+//         })
+//     }
+// }
+//======  Dark/Light theme end ======
+
+
+
+
+
+
+// Counter
+// window.addEventListener("load",()=>{
+//     var c = 0;
+//     const count = setInterval(function(){      
+//         c = c + Math.floor(Math.random() * 20);
+//         if(c < 100){   
+//            document.querySelector(".loader__count").innerHTML = c ;
+//         }else{
+//             c = 100;
+//             document.querySelector(".loader__count").innerHTML = c;  
+//             clearInterval(count);
+//         }
+//     },150);
+// })

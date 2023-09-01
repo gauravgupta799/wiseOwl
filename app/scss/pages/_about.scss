@@ -62,7 +62,6 @@
                 margin-left: rem(124); 
             }
         }
-
        @include keyframes(marquee-text){
         from { @include transform-x(-100%); }
         to { @include transform-x(0); }
@@ -76,7 +75,7 @@
 .team{
     &__imgWrapper{
         background: $clr-primary;
-        height: 464px;
+        height: rem(464);
         padding: rem(16);
     }
     &__details{
@@ -89,6 +88,15 @@
 //?--------- Our Values Styles Start ---------
 .values{
     background-color: $clr-light-dark;
+    &__headingWrapper{
+        display: flex;
+        align-self:flex-start;
+        &.sticks{
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+        }
+    }
     &__bottom{
         padding-block:em(150);
         text-align: center;
@@ -98,8 +106,7 @@
             text-align: left;
         }
         @include breakpoint-lg{
-            padding-block: em(240) em(130);
-            
+            padding-block: em(240) em(130); 
         }
     }
     &__counting{
@@ -116,8 +123,6 @@
                 background: $clr-grey-10;
                 top: 70px;
                 left: 50%;
-               
-
                 @include breakpoint-md{
                     width: rem(76);
                     height: 1px;
@@ -126,27 +131,35 @@
                     top: 50%;
                 }
             }
+            &.visible{
+                @include transition(color, 1s , ease-out);
+                color:$clr-white-100;
+                opacity: 1;
+
+                &::after{
+                    background: $clr-white-100;
+                    opacity: 1;
+                }
+            }
         }
     }
-
     &__detailsWrapper{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-center;
         flex-wrap: wrap;
-     
-
+        opacity: 0.2;
         @include breakpoint-md{
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: nowrap;
             gap: 13rem;
         }
+        &.visible{
+            @include transition(color, 1s , ease-out);
+            opacity: 1;
+        }
     }
-
     &__details{
         margin-top: rem(120);
-
         @include breakpoint-md{
             margin-top: 0;
         }
@@ -174,13 +187,11 @@
     p{
         color:$clr-gey-75;
     }
-    
     &__top {
         h1{
             font-size: clamp(4.4rem, 6.8vw + 1rem, 12rem) !important;
         }
     }
-
     &__number{
         &::after{
             content:"+"
@@ -189,7 +200,6 @@
     &__bottom{
         margin-top: rem(48) !important;
         color: $clr-grey-10;
-
         @include breakpoint-sm{
             margin-top: 0 !important; 
         }
@@ -206,8 +216,7 @@
 
 .btn__wrapper{
     @include full-dimensions;
-    display: flex;
-    align-items: center;
+   @include flex-center-vertical;
     justify-content: flex-start;
     margin-top: rem(16);
   

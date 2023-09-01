@@ -9,27 +9,26 @@
     transition-duration: 0.5s;
     @include flex-center;
     gap:rem(32);
-    
-    // display: block;
-
     .bar{
-      @include bar(3px, 25px);
+      @include bar(2px, 25px);
+      right: 0;
+
       @include breakpoint-sm{
-        @include bar(3px, 30px);
-      }
-      
+        @include bar(2px, 25px);
+      } 
       &::before{
-        @include bar-before(3px, 25px, -8px);
+        @include bar-before(2px, 25px, -8px);
 
         @include breakpoint-sm{
-          @include bar-before(3px, 30px, -9px);
+          @include bar-before(2px, 25px, -8px);
         }
       }
       &::after{
-        @include bar-after(3px, 25px , 8px);
+        @include bar-after(2px, 25px , 8px);
+        right: 0;
 
         @include breakpoint-sm{
-          @include bar-before(3px, 30px, 9px);
+          @include bar-before(2px, 34px, 8px);
         }
       }
     }
@@ -48,7 +47,6 @@
     .menu__text-1{
       display: none;
       @include transition(0.5s, ease-out);
-
       @include breakpoint-md{
         display: block;
       }
@@ -64,12 +62,12 @@
       .bar{
         transition-duration: 0.5s;
         background: transparent;
-        
         &::before{
           transform: rotateZ(45deg) scaleX(1) translate(6px, 6px);
         }
         &::after{
           transform: rotateZ(-45deg) scaleX(1) translate(6px, -6px);
+          width: 28px;
         }
       }
       .menu__text-1{

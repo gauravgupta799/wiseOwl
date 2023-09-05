@@ -6,16 +6,15 @@
 
 
 .header{
-    position: fixed !important;
-    top:0v !important;
+    position: fixed;
+    top:0;
     width: 100%;
     padding-block:em(16);
     @include transition(all, 0.4s, ease-out);
-    z-index: 3;
+    z-index: 5;
     &.sticky{
         background-color: $clr-primary;
         color:$clr-white-100;
-        z-index: 3;
         top:-1px;
         padding-block:em(8);
     }
@@ -24,7 +23,7 @@
     }
     &__mobile{
         position: fixed !important;
-        inset:0 !important;
+        // inset:0 !important;
         z-index: 99;
         width: rem(240);
         max-width: 100%;
@@ -35,6 +34,7 @@
         flex-direction: column;
         opacity: 0;
         visibility: hidden;
+        // right: -100%;
         left: -100%;
         @include breakpoint-sm{
             width: rem(360);
@@ -49,6 +49,7 @@
             visibility: visible;
             @include transition(left, 0.3s, ease-out);
             left: 0;
+            // right: 0;
         }
         &-list{
             width: 100%;

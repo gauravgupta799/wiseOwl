@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="197" height="38" viewBox="0 0 197 38">
+    <g data-name="Group 249" transform="translate(-50 -482)">
+        <text data-name="Submit Details" transform="translate(50 508)" style="fill:#fff;font-size:20px;font-family:ProductSans-Light,Product Sans Light;font-weight:300"><tspan x="0" y="0">Submit Details</tspan></text>
+        <circle data-name="Ellipse 15" cx="19" cy="19" r="19" transform="translate(209 482)" style="fill:#f1b61d"/>
+        <g data-name="Group 220">
+            <path data-name="Path 195" d="M0 0h43.451" transform="translate(187.359 501.803)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-width:1.5px"/>
+            <path data-name="Path 196" d="m11.526-.94 6.564 6.864" transform="translate(212.665 495.769)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-width:1.5px"/>
+            <path data-name="Path 197" d="M11.526 5.924 18.09-.94" transform="translate(212.665 502.853)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-width:1.5px"/>
+        </g>
+    </g>
+</svg>

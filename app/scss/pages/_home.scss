@@ -62,17 +62,21 @@
 //?--------- Work Styles Start ---------
 .work{
 
-    &__figcaption{
-        @include breakpoint-md{
-            @include flex-space-between;
-        }
-    }
     &__figure{
+        position: relative;
+        width: 100%;
+        height: 100%;
         img{
+            object-fit: cover;
             @media only screen and (max-width:36em){
                 height: rem(280);
-                object-fit: cover;
             }
+        }
+    }
+    &__figcaption{
+        position: relative;
+        @include breakpoint-md{
+            @include flex-space-between;
         }
     }
     &__left{

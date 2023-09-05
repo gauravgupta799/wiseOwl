@@ -858,6 +858,9 @@ body {
   letter-spacing: normal;
   font-size: 1rem;
 }
+body.hidden {
+  overflow: hidden;
+}
 
 div,
 ul,
@@ -11324,7 +11327,7 @@ p, ul, ol, body {
 .btn--secondary:hover svg text {
   fill: #f1b61d;
 }
-.btn--secondary:hover svg g[data-name="Ellipse 15"] {
+.btn--secondary:hover svg [data-name="Ellipse 15"] {
   fill: #f1b61d;
 }
 .btn--secondary .dark svg text {
@@ -11779,18 +11782,28 @@ p, ul, ol, body {
   color: #f1b61d;
 }
 
+.work__figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.work__figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (max-width: 36em) {
+  .work__figure img {
+    height: 17.5rem;
+  }
+}
+.work__figcaption {
+  position: relative;
+}
 @media only screen and (min-width: 48em) {
   .work__figcaption {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-}
-@media only screen and (max-width: 36em) {
-  .work__figure img {
-    height: 17.5rem;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
 }
 .work__left p {
@@ -12119,13 +12132,8 @@ p, ul, ol, body {
 .values {
   background-color: #1C1C1C;
 }
-.values__headingWrapper {
-  display: flex;
-  align-self: flex-start;
-}
 .values__headingWrapper.sticks {
   position: sticky;
-  position: -webkit-sticky;
   top: 0;
 }
 .values__bottom {
@@ -12181,7 +12189,6 @@ p, ul, ol, body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  opacity: 0.2;
 }
 @media only screen and (min-width: 48em) {
   .values__detailsWrapper {
@@ -12197,6 +12204,7 @@ p, ul, ol, body {
 }
 .values__details {
   margin-top: 7.5rem;
+  color: white;
 }
 @media only screen and (min-width: 48em) {
   .values__details {
@@ -12439,6 +12447,7 @@ p, ul, ol, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.5s ease-out;
 }
 @media only screen and (min-width: 36em) {
   .webDesign__circle {
@@ -12457,6 +12466,13 @@ p, ul, ol, body {
     width: 287px;
     height: 287px;
   }
+}
+.webDesign__circle:hover {
+  cursor: pointer;
+  background: #f1b61d;
+}
+.webDesign__circle:hover h4 {
+  color: #050505;
 }
 .webDesign__bottom {
   display: flex;
@@ -12527,6 +12543,7 @@ p, ul, ol, body {
   width: 1px;
   height: 4.5rem;
   background-color: #cecece;
+  transition: background-color 0.35s ease-out;
 }
 @media only screen and (min-width: 36em) {
   .design::after {
@@ -12551,6 +12568,7 @@ p, ul, ol, body {
   width: 1px;
   height: 4.5rem;
   bottom: -71px;
+  transition: background-color 0.8s ease-out;
 }
 @media only screen and (min-width: 36em) {
   .design::before {
@@ -12579,6 +12597,15 @@ p, ul, ol, body {
     right: -60%;
   }
 }
+.design:hover {
+  cursor: pointer;
+}
+.design:hover::after {
+  background-color: #f1b61d;
+}
+.design:hover::before {
+  background-color: #f1b61d;
+}
 
 .analyse {
   display: flex;
@@ -12595,6 +12622,10 @@ p, ul, ol, body {
   .webDesign--mobile {
     display: none;
   }
+}
+
+.process__heading:hover h1 {
+  color: #f1b61d;
 }
 
 .arrow-down-btn {
@@ -12831,17 +12862,16 @@ p, ul, ol, body {
 }
 
 .header {
-  position: fixed !important;
-  top: 0v !important;
+  position: fixed;
+  top: 0;
   width: 100%;
   padding-block: 1em;
   transition: all 0.4s ease-out;
-  z-index: 3;
+  z-index: 5;
 }
 .header.sticky {
   background-color: #050505;
   color: #ffffff;
-  z-index: 3;
   top: -1px;
   padding-block: 0.5em;
 }
@@ -12852,7 +12882,6 @@ p, ul, ol, body {
 }
 .header__mobile {
   position: fixed !important;
-  inset: 0 !important;
   z-index: 99;
   width: 15rem;
   max-width: 100%;

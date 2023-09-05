@@ -89,11 +89,10 @@
 .values{
     background-color: $clr-light-dark;
     &__headingWrapper{
-        display: flex;
-        align-self:flex-start;
+        // position: sticky !important;
+        // top: 0 !important;
         &.sticks{
             position: sticky;
-            position: -webkit-sticky;
             top: 0;
         }
     }
@@ -146,7 +145,7 @@
     &__detailsWrapper{
         @include flex-center;
         flex-wrap: wrap;
-        opacity: 0.2;
+        // opacity: 0.2;
         @include breakpoint-md{
             justify-content: space-between;
             align-items: flex-start;
@@ -160,6 +159,7 @@
     }
     &__details{
         margin-top: rem(120);
+        color:white;
         @include breakpoint-md{
             margin-top: 0;
         }

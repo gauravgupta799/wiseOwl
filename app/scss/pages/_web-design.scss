@@ -58,7 +58,7 @@
         object-fit: contain;
         border: solid 1px $clr-white-20;
         @include flex-center;
-
+        @include transition(background, 0.5s, ease-out);
         @include breakpoint-sm{
             @include dimensions(227px,227px);
         }
@@ -67,6 +67,13 @@
         }
         @include breakpoint-lg{
             @include dimensions(287px,287px);
+        }
+        &:hover{
+            cursor: pointer;
+            background: $clr-secondary;
+           h4{
+            color:$clr-primary;
+           }
         }
     }
     &__bottom{
@@ -123,6 +130,7 @@
         width: 1px;
         height: rem(72);
         background-color: $clr-white-20;
+        @include transition(background-color, 0.35s, ease-out);
         @include breakpoint-sm{
             height: 115px;
             transform: rotate(35deg);
@@ -141,6 +149,7 @@
         width: 1px;
         height: rem(72);
         bottom: -71px;
+        @include transition(background-color, 0.8s, ease-out);
 
         @include breakpoint-sm{
             width: 118px;
@@ -162,6 +171,15 @@
             right: -60%;
         }
     }
+    &:hover{
+        cursor: pointer;
+        &::after{
+            background-color:$clr-secondary;
+        }
+        &::before{
+            background-color:$clr-secondary;
+        }
+    }
 }
 
 .analyse{
@@ -174,5 +192,13 @@
     background-color: $clr-primary;
     @include breakpoint-sm{
         display: none;
+    }
+}
+
+.process__heading{
+    &:hover{
+      h1{
+        color:$clr-secondary;
+      }
     }
 }

@@ -23,8 +23,7 @@
     width: 100%;
     background: transparent;
     border:none;
-    outline: none;
-    border: solid 1px $clr-light-grey;
+    outline:1.5px solid $clr-light-grey;
     background-color: $clr-dark;
     padding: em(12) em(20);
     margin-top: rem(16);
@@ -36,8 +35,18 @@
         padding: em(16) em(24);
     }
     &:focus{
-        border-color: $clr-secondary;
+        outline-color: $clr-secondary;
     }
+}
+
+.form-group:nth-child(1):focus-within label,
+.form-group:nth-child(3):focus-within label{
+    color: $clr-secondary;
+}
+
+.form-group-email:focus-within label,
+.form-group-phone:focus-within label{
+    color: $clr-secondary;
 }
 
 .form-group .form-check-input {

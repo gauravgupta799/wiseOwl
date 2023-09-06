@@ -1,4 +1,4 @@
-/**
+/*
  * Swiper 9.1.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
@@ -242,7 +242,11 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 
 .swiper-virtual .swiper-slide {
     -webkit-backface-visibility: hidden;
-    transform: translateZ(0)
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
 }
 
 .swiper-virtual.swiper-css-mode .swiper-wrapper::after {

@@ -6,7 +6,6 @@ const logo2 = document.querySelector('.logo-2');
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 // ====== Pre-loader start ======
 const till = gsap.timeline({
     paused:"true"
@@ -83,44 +82,35 @@ ScrollTrigger.scrollerProxy("#body",{
 
 
 // Function to toggle the "sticky" class on the header
-function toggleHeaderSticky(scrollY) {
-    if (scrollY > 50) {
+function toggleHeaderSticky(scrollY){
+    if (scrollY > 50){
       header.classList.add("sticky");
-    } else {
+    } else{
       header.classList.remove("sticky");
     }
 }
 
 // Function to handle the "barWhite" and "logo2" elements
 function handleBarWhiteAndLogo2(scrollY) {
-    if (barWhite !== null && logo2 !== null) {
-      if (scrollY > 50) {
+    if (barWhite !== null && logo2 !== null){
+      if (scrollY > 50){
         barWhite.classList.add("sticky");
         logo2.src = "../../app/assets/logos/wiseOwl-logo.svg";
-      } else {
+      }else{
         barWhite.classList.remove("sticky");
         logo2.src = "../../app/assets/logos/logo-black.svg";
       }
     }
   }
-
+//======  Sticky header start ======
 locoScroll.on("scroll", (position) => {
     const scrollY = position.scroll.y;
     toggleHeaderSticky(scrollY);
     handleBarWhiteAndLogo2(scrollY);
 })
-
-
-//======  Sticky header start ======
-// window.addEventListener("scroll", () => {
-//     const scrollY = window.scrollY;
-//     toggleHeaderSticky(scrollY);
-//     handleBarWhiteAndLogo2(scrollY);
-// })
-
-locoScroll.on("scroll", ScrollTrigger.update);
 //======  Sticky header end ======
 
+locoScroll.on("scroll", ScrollTrigger.update);
 
 //======  Active Page Link start ======
 const windowPathname = window.location.pathname;
@@ -248,32 +238,6 @@ if(sSections != null) {
 }
 // stick services end 
 
-
-// stick values start
-// const valuesSection = document.querySelector(".values__bottom");
-// const valuesWrapper = document.querySelectorAll(".values__detailsWrapper");
-// if(valuesWrapper != null){
-//     const io = new IntersectionObserver((entries)=>{
-//         entries.forEach((entry)=>{
-//             const target = entry.target
-//             const heading = target.children[0];
-//             if(entry.intersectionRatio > 0){
-//                 heading.classList.add("sticks");
-//                 target.classList.add("visible");
-//                 document.querySelector(".values__headingWrapper").classList.add("sticks")
-//             }else{
-//                 target.classList.remove("visible");
-//                 document.querySelector(".values__headingWrapper").classList.remove("sticks")
-//             }
-//         })
-//     })
-//     valuesWrapper.forEach((value)=>{
-//         io.observe(value);
-//     })
-// }
-// stick values end
-
-
 // Counter script start
 const counterSection = document.querySelector(".company");
 const counters = document.querySelectorAll(".counter__number");
@@ -388,7 +352,7 @@ window.addEventListener("load",() => {
         delay:-1,
         ease:Expo.easeInOut
     })
-    tl.from(".heading, .subHeading",{
+    tl.from(".heading, .subHeading, .form-group",{
         opacity:0,
         duration:1,
         y:50,
@@ -412,6 +376,23 @@ window.addEventListener("load",() => {
         stagger:0.2,
         ease:Power4.easeInOut
     }); 
+    // tl.from(".form-group",{
+    //     opacity:0,
+    //     y:50,
+    //     delay:-0.1,
+    //     stagger:0.35,
+    //     ease:Power4.easeOut
+    // })
+    // const formFadeUp = gsap.utils.toArray(".form-group");
+    // formFadeUp.forEach((form) => {
+    //     tl.from(form,{
+    //         opacity:0,
+    //         y:50,
+    //         stagger:0.1,
+    //         duration:1,
+    //         ease:Power4.easeInOut
+    //     })
+    // })
 })
 
 //  animation fade in 
@@ -492,26 +473,24 @@ rightSlide.forEach((right, i) =>{
 });
 
 
+// const circles = document.querySelectorAll(".webDesign__circle");
+// circles.forEach((circle, i) =>{
+//     const animCircle = gsap.from(circle,{
+//         opacity: 0, scale:0, duration:1,
+//     });
+//     ScrollTrigger.create({
+//         trigger:circle,
+//         animation:animCircle,
+//         toggleActions:'play',
+//         delay:0.8,
+//         start:"top 80%",
+//         end:"bottom 40%",
+//         scrub:true,
+//         stagger:1,
+//         ease:Power4.easeIn
+//     })
+// });     
 
-// const circles = gsap.utlils.toArray(".webDesign__circle");
-const circles = document.querySelectorAll(".webDesign__circle");
-circles.forEach((circle, i) =>{
-    const animCircle = gsap.from(circle,{
-        opacity: 0, scale:0, duration:1,
-        backgroundColor:"#f1b61d", 
-    });
-    ScrollTrigger.create({
-        trigger:circle,
-        animation:animCircle,
-        toggleActions:'play',
-        delay:0.8,
-        start:"top 80%",
-        end:"bottom 40%",
-        scrub:true,
-        stagger:0.8,
-        ease:Power4.easeIn
-    })
-});
 
 const values = document.querySelectorAll(".values__detailsWrapper");
 values.forEach((value, i) =>{
@@ -599,6 +578,32 @@ ScrollTrigger.refresh();
 //         ease: Power4.easeInOut,
 //     });
 // })
+
+
+// stick values start
+// const valuesSection = document.querySelector(".values__bottom");
+// const valuesWrapper = document.querySelectorAll(".values__detailsWrapper");
+// if(valuesWrapper != null){
+//     const io = new IntersectionObserver((entries)=>{
+//         entries.forEach((entry)=>{
+//             const target = entry.target
+//             const heading = target.children[0];
+//             if(entry.intersectionRatio > 0){
+//                 heading.classList.add("sticks");
+//                 target.classList.add("visible");
+//                 document.querySelector(".values__headingWrapper").classList.add("sticks")
+//             }else{
+//                 target.classList.remove("visible");
+//                 document.querySelector(".values__headingWrapper").classList.remove("sticks")
+//             }
+//         })
+//     })
+//     valuesWrapper.forEach((value)=>{
+//         io.observe(value);
+//     })
+// }
+// stick values end
+
 
 
 //======  Dark/Light theme start ======

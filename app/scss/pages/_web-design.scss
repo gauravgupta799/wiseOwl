@@ -71,9 +71,9 @@
         &:hover{
             cursor: pointer;
             background: $clr-secondary;
-           h4{
-            color:$clr-primary;
-           }
+            h4{
+                color:$clr-primary;
+            }
         }
     }
     &__bottom{
@@ -96,40 +96,28 @@
     }
 }
 
-.code{
-    margin-top: 0px;
-
-    @include breakpoint-sm{
-        margin-top: 40px;
-    }
-    @include breakpoint-md{
-        margin-top: 60px;
-    }
-    @include breakpoint-lg{
-        margin-top: 80px;
-    }
-    @include breakpoint-xl{
-        margin-top: 100px;
-    }
+.analyse{
+    @include flex-center;
+    animation-delay:0.3s;
 }
 
 .design{
     position: relative;
+    animation-delay:0.6s;
     &::after,
     &::before{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: rem(72);
+        background-color: $clr-white-20;
         @media only screen and (max-width:36em){
             left: 50%;
         }
     }
-
     &::after{
-        content: '';
-        position: absolute;
         top: -72px;
         right: 0;
-        width: 1px;
-        height: rem(72);
-        background-color: $clr-white-20;
         @include transition(background-color, 0.35s, ease-out);
         @include breakpoint-sm{
             height: 115px;
@@ -142,12 +130,7 @@
             height: 130px;
         }
     }
-    &::before{
-        content: '';
-        position: absolute;   
-        background-color: $clr-white-20;
-        width: 1px;
-        height: rem(72);
+    &::before{  
         bottom: -71px;
         @include transition(background-color, 0.8s, ease-out);
 
@@ -182,9 +165,24 @@
     }
 }
 
-.analyse{
-    @include flex-center;
+.code{
+    margin-top: 0px;
+    animation-delay:0.9s;
+
+    @include breakpoint-sm{
+        margin-top: 40px;
+    }
+    @include breakpoint-md{
+        margin-top: 60px;
+    }
+    @include breakpoint-lg{
+        margin-top: 80px;
+    }
+    @include breakpoint-xl{
+        margin-top: 100px;
+    }
 }
+
 
 .webDesign--mobile{
     padding-block: em(200);

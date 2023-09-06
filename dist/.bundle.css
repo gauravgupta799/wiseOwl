@@ -1,4 +1,4 @@
-/**
+/*
  * Swiper 9.1.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
@@ -238,6 +238,10 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
 .swiper-virtual .swiper-slide {
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
 }
 
 .swiper-virtual.swiper-css-mode .swiper-wrapper::after {
@@ -800,9 +804,8 @@ html.has-scroll-dragging {
   cursor: grabbing;
 }
 @charset "UTF-8";
-/*!-----------------------------
+/*-----------------------------
   [wiseowl]
-
   Project:WiseOwl
   Version:1.0
   Last change: 07-08-2023 04:30pm [Home page mockup]
@@ -11488,8 +11491,7 @@ p, ul, ol, body {
   width: 100%;
   background: transparent;
   border: none;
-  outline: none;
-  border: solid 1px #929292;
+  outline: 1.5px solid #929292;
   background-color: #161616;
   padding: 0.75em 1.25em;
   margin-top: 1rem;
@@ -11504,7 +11506,17 @@ p, ul, ol, body {
   }
 }
 .form-control:focus {
-  border-color: #f1b61d;
+  outline-color: #f1b61d;
+}
+
+.form-group:nth-child(1):focus-within label,
+.form-group:nth-child(3):focus-within label {
+  color: #f1b61d;
+}
+
+.form-group-email:focus-within label,
+.form-group-phone:focus-within label {
+  color: #f1b61d;
 }
 
 .form-group .form-check-input {
@@ -12503,32 +12515,23 @@ p, ul, ol, body {
   }
 }
 
-.code {
-  margin-top: 0px;
-}
-@media only screen and (min-width: 36em) {
-  .code {
-    margin-top: 40px;
-  }
-}
-@media only screen and (min-width: 48em) {
-  .code {
-    margin-top: 60px;
-  }
-}
-@media only screen and (min-width: 62em) {
-  .code {
-    margin-top: 80px;
-  }
-}
-@media only screen and (min-width: 85.375em) {
-  .code {
-    margin-top: 100px;
-  }
+.analyse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-delay: 0.3s;
 }
 
 .design {
   position: relative;
+  animation-delay: 0.6s;
+}
+.design::after, .design::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 4.5rem;
+  background-color: #cecece;
 }
 @media only screen and (max-width: 36em) {
   .design::after, .design::before {
@@ -12536,13 +12539,8 @@ p, ul, ol, body {
   }
 }
 .design::after {
-  content: "";
-  position: absolute;
   top: -72px;
   right: 0;
-  width: 1px;
-  height: 4.5rem;
-  background-color: #cecece;
   transition: background-color 0.35s ease-out;
 }
 @media only screen and (min-width: 36em) {
@@ -12562,11 +12560,6 @@ p, ul, ol, body {
   }
 }
 .design::before {
-  content: "";
-  position: absolute;
-  background-color: #cecece;
-  width: 1px;
-  height: 4.5rem;
   bottom: -71px;
   transition: background-color 0.8s ease-out;
 }
@@ -12607,10 +12600,29 @@ p, ul, ol, body {
   background-color: #f1b61d;
 }
 
-.analyse {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.code {
+  margin-top: 0px;
+  animation-delay: 0.9s;
+}
+@media only screen and (min-width: 36em) {
+  .code {
+    margin-top: 40px;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .code {
+    margin-top: 60px;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .code {
+    margin-top: 80px;
+  }
+}
+@media only screen and (min-width: 85.375em) {
+  .code {
+    margin-top: 100px;
+  }
 }
 
 .webDesign--mobile {
@@ -12882,10 +12894,10 @@ p, ul, ol, body {
 }
 .header__mobile {
   position: fixed !important;
+  inset: 0 !important;
   z-index: 99;
   width: 15rem;
   max-width: 100%;
-  height: 100vh;
   background: #050505;
   color: #ffffff;
   display: flex;
@@ -12948,7 +12960,6 @@ p, ul, ol, body {
   position: fixed !important;
   inset: 0 !important;
   width: 100%;
-  height: 100vh;
   background-color: rgba(0, 0, 0, 0.85);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);

@@ -11,7 +11,7 @@ const browserSync = require('browser-sync').create();
 
 const cssFilesArray = [
     "app/venders/swiper/css/swiper.css",
-    'app/venders/locomotive-scroll/locomotive-scroll.css',
+    // 'app/venders/locomotive-scroll/locomotive-scroll.css',
     "app/scss/main.scss",
 ];
 

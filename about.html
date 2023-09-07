@@ -8,6 +8,7 @@
     <title>WiseOwl - About Page</title>
 </head>
 <body id ="body">
+    <!-- <div class="cursor"></div> -->
     <!-- <div class="page-loader">
         <div class="content">
             <div class="loading">
@@ -22,7 +23,6 @@
             <div id="barconfirm"></div>
         </div>
     </div>
-
     <!-- Header section start -->
     <header class="header ">
         <!-- Desktop menu start -->
@@ -30,8 +30,8 @@
             <div class="page-container">
                 <div class="header__wrapper">
                     <div class="header__logo">
-                        <a href="/">
-                            <img src="./app/assets/logos/logo-black.svg" alt="company's logo" class="logo-2">
+                        <a href="/index.html">
+                            <img src="./app/assets/logos/logo-black.svg" alt="company's logo" class="logo-2" loading="lazy">
                         </a>
                     </div>
                     <nav class="nav">
@@ -49,8 +49,8 @@
         <!-- Mobile menu start -->
         <div class="header__mobile">
             <div class="page-container">
-                <div class="header__logo mt--1">
-                    <a href="/">
+                <div class="header__logo mt--5">
+                    <a href="/index.html">
                         <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo" loading="lazy">
                     </a>
                 </div>
@@ -107,10 +107,12 @@
                 <div class="page-container">
                     <div class="row">
                         <div class="col-md-10 col-lg-8 mx-auto text-center">
-                            <h1 class="text-capitalize ff-medium heading">Meet the company</h1>                       
+                            <div class="heading-wrapper">
+                                <h1 class="text-capitalize ff-medium heading">Meet the company</h1>                       
+                            </div>
                         </div>
                         <div class="col-md-9 col-lg-6 mx-auto text-center">
-                            <p class="text-capitalize mt--1 subHeading">
+                            <p class="text-capitalize mt--1 subHeading ff-light">
                                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
                             </p>
                         </div>
@@ -119,8 +121,8 @@
             </div>
             <div class="heroImg__container">
                 <figure>
-                    <img src="./app/assets/images/about-mobile.webp" alt="" class="img-fluid img-mobile animate-fade-in-up"> 
-                    <img src="./app/assets/images/services/about-big-first.webp" alt="" class="img-fluid img-desktop animate-fade-in-up">
+                    <img src="./app/assets/images/about-mobile.webp" alt="" class="img-fluid img-mobile animate-fade-in-up" loading="lazy"> 
+                    <img src="./app/assets/images/services/about-big-first.webp" alt="" class="img-fluid img-desktop animate-fade-in-up" loading="lazy">
                 </figure>
             </div>
         </section>
@@ -132,10 +134,12 @@
                 <a href="#" class="btn btn--primary animate-fade-in">Comapany</a>
                 <div class="row mt--2">
                     <div class="col-12 col-md-8 col-lg-5">
-                        <h3 class="text-capitalize animate-fade-in-up">
-                            Jouw go-to creatieve team: vol passie, ambitie
-                        </h3>  
-                        <p class="animate-fade-in-up">
+                        <div class="heading-wrapper">
+                            <h3 class="text-capitalize animate-fade-in-up">
+                                Jouw go-to creatieve team: vol passie, ambitie
+                            </h3>  
+                        </div>
+                        <p class="animate-fade-in-up ff-light">
                             Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                         </p>
                     </div>
@@ -143,25 +147,31 @@
                         <div class="row counter">
                             <div class="col-12 col-sm-6 col-lg-12">
                                 <div class="counter__top">
-                                    <h1 class="counter__number animate-fade-in" data-target="85">0</h1>
+                                    <div class="heading-wrapper">
+                                        <h1 class="counter__number animate-fade-in" data-target="85">0</h1>                         
+                                    </div>
                                     <div class="divider my--1 animate-fade-in-up"></div>
-                                    <p class="animate-fade-in-up">Projects Done</p>
+                                    <p class="animate-fade-in-up ff-light">Projects Done</p>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-lg-12 counter__bottom">
                                 <div class="row">
                                     <div class="col-5">
                                         <div class="counter__left">
-                                            <h1 class="counter__number animate-fade-in" data-target="46">0</h1>
+                                            <div class="heading-wrapper">
+                                                <h1 class="counter__number animate-fade-in" data-target="46">0</h1>
+                                            </div>
                                             <div class="divider my--1 animate-fade-in-up"></div>
-                                            <p class="animate-fade-in-up">Experience</p>
+                                            <p class="animate-fade-in-up ff-light">Experience</p>
                                         </div>
                                     </div>
                                     <div class="col-5 offset-2">
                                         <div class="counter__right">
-                                            <h1 class="counter__number animate-fade-in" data-target="65">0</h1>
+                                            <div class="heading-wrapper">
+                                                <h1 class="counter__number animate-fade-in" data-target="65">0</h1>
+                                            </div>
                                             <div class="divider my--1 animate-fade-in-up"></div>
-                                            <p class="animate-fade-in-up">Clients</p>
+                                            <p class="animate-fade-in-up ff-light">Clients</p>
                                         </div>
                                     </div>
                                 </div>
@@ -186,12 +196,12 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <figure class="animate-fade-in-up">
-                            <img src="./app/assets/images/about/img-1.jpg" alt="" class="img-fluid">
+                            <img src="./app/assets/images/about/img-1.jpg" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
                     <div class="col-12 col-lg-6 mt--1 mt--lg--0">
                         <figure class="animate-fade-in-up">
-                            <img src="./app/assets/images/about/img-1.jpg" alt="" class="img-fluid">
+                            <img src="./app/assets/images/about/img-1.jpg" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
                 </div>
@@ -205,9 +215,11 @@
                 <a href="#" class="btn btn--primary animate-fade-in">Our Team</a>
                 <div class="row mt--2">
                     <div class="col-12 col-md-10 col-xl-7">
-                        <h3 class="text-capitalize animate-fade-in-up">
-                            The 35-person Big Human team of 12 designers, 15 engineers,
-                        </h3>  
+                        <div class="heading-wrapper">
+                            <h3 class="text-capitalize animate-fade-in-up">
+                                The 35-person Big Human team of 12 designers, 15 engineers,
+                            </h3>  
+                        </div>
                     </div>
                 </div>
             </div>
@@ -216,7 +228,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
-                                <img src="" alt="" class="img-fluid img-cover">
+                                <img src="" alt="" class="img-fluid img-cover" loading="lazy">
                                 <figcaption class="team__details">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
@@ -225,7 +237,7 @@
                         </div>
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
-                                <img src="" alt="" class="img-fluid img-cover">
+                                <img src="" alt="" class="img-fluid img-cover" loading="lazy">
                                 <figcaption class="team__details">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
@@ -234,7 +246,7 @@
                         </div>
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
-                                <img src="" alt="" class="img-fluid img-cover">
+                                <img src="" alt="" class="img-fluid img-cover" loading="lazy">
                                 <figcaption class="team__details">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
@@ -243,7 +255,7 @@
                         </div>
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
-                                <img src="" alt="" class="img-fluid img-cover">
+                                <img src="" alt="" class="img-fluid img-cover" loading="lazy">
                                 <figcaption class="team__details">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
@@ -252,7 +264,7 @@
                         </div>
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
-                                <img src="" alt="" class="img-fluid img-cover">
+                                <img src="" alt="" class="img-fluid img-cover" loading="lazy">
                                 <figcaption class="team__details">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
@@ -270,14 +282,16 @@
         <section class="values mt--10 mt--md--15 mt--lg--20">
             <div class="values__top">
                 <figure class="animate-fade-in-up">
-                    <img src="./app/assets/images/about/img-1.jpg" alt="" class="img-fluid">
+                    <img src="./app/assets/images/about/img-1.jpg" alt="" class="img-fluid" loading="lazy">
                 </figure>
             </div>
             <div class="values__bottom">
                 <div class="page-container">
                     <div class="row d-flex align-items-start">
                         <div class="col-12 col-lg-3 col-xl-5 values__headingWrapper">
-                            <h3 class="text-capitalize text-white animate-fade-in">Our Values</h3>  
+                            <div class="heading-wrapper">
+                                <h3 class="text-capitalize text-white animate-fade-in-up">Our Values</h3>  
+                            </div>
                         </div>
                         <div class="col-12 col-lg-8 col-xl-6 offset-lg-1 mt--2 mt--md--4 mt--lg--0">
                             <div class="row">
@@ -288,7 +302,7 @@
                                         </div>
                                         <div class="values__details">
                                             <h2 class="">relentless</h2>
-                                            <p class="">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
+                                            <p class="ff-light">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
                                         </div> 
                                     </div>                              
                                 </div>
@@ -299,7 +313,7 @@
                                         </div>
                                         <div class="values__details">
                                             <h2 class="">authentic</h2>
-                                            <p class="">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
+                                            <p class="ff-light">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
                                         </div> 
                                     </div>  
                                 </div>
@@ -308,7 +322,7 @@
                                         <div class="values__counting "><h3>03</h3></div>
                                         <div class="values__details">
                                             <h2 class="">accountable</h2>
-                                            <p class="">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
+                                            <p class="ff-light">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
                                         </div> 
                                     </div>   
                                 </div>
@@ -326,9 +340,11 @@
                 <a href="#" class="btn btn--primary animate-fade-in">Join Us</a>
                 <div class="row mt--2">
                     <div class="col-12 col-md-8 col-lg-7">
-                        <h3 class="text-capitalize animate-fade-in-up">
-                            The 35-person Big Human team of 12 designers, 15 engineers,
-                        </h3>           
+                        <div class="heading-wrapper">
+                            <h3 class="text-capitalize animate-fade-in-up">
+                                The 35-person Big Human team of 12 designers, 15 engineers,
+                            </h3>           
+                        </div>
                     </div>
                     <div class="col-12 col-md-8 col-lg-5">
                         <div class="btn__wrapper animate-fade-in-up">
@@ -364,9 +380,11 @@
             <div class="page-container">
                 <div class="row">
                     <div class="col-12 col-sm-8 col-xl-6 mx-auto text-center">
-                        <h2 class="text-white text-capitalize animate-fade-in-up">
-                            Let's make your  Website shine Lorem
-                        </h2>
+                        <div class="heading-wrapper">
+                            <h2 class="text-white text-capitalize animate-fade-in-up">
+                                Let's make your  Website shine Lorem
+                            </h2>
+                        </div>
                         <a href="#" class="btn btn--secondary mt--2 animate-fade-in">
                             <span class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="150" height="38" viewBox="0 0 167 38">
@@ -400,7 +418,7 @@
             <div class="footer__top">
                 <div class="row">
                     <div class="col-6 col-md-4 col-lg-3">
-                        <p class="footer__title animate-fade">Company</p>
+                        <p class="footer__title animate-fade-in-up">Company</p>
                         <ul class="footer__list">
                             <li class="footer__item animate-fade-in-up"><a href="about.html" class="footer__link">About</a></li>
                             <li class="footer__item animate-fade-in-up"><a href="our-values.html" class="footer__link">Our Values</a></li>
@@ -409,7 +427,7 @@
                         </ul>
                     </div>
                     <div class="col-6 col-md-4 col-lg-3">
-                        <p class="footer__title animate-fade-in">Services</p>
+                        <p class="footer__title animate-fade-in-up">Services</p>
                         <ul class="footer__list">
                             <li class="footer__item animate-fade-in-up"><a href="web-design.html" class="footer__link">Web Design</a></li>
                             <li class="footer__item animate-fade-in-up"><a href="seo.html" class="footer__link">SEO</a></li>
@@ -418,7 +436,7 @@
                         </ul>
                     </div>
                     <div class="col-6 col-md-4 col-lg-3 mt--5 mt--md--0">
-                        <p class="footer__title animate-fade-in">Other Links</p>
+                        <p class="footer__title animate-fade-in-up">Other Links</p>
                         <ul class="footer__list">
                             <li class="footer__item animate-fade-in-up"><a href="blogs.html" class="footer__link">Blogs</a></li>
                             <li class="footer__item animate-fade-in-up"><a href="digital-marketing.html" class="footer__link">Go Digital</a></li>
@@ -427,7 +445,7 @@
                         </ul>
                     </div>
                     <div class="col-6 col-md-4 col-lg-3 mt--5 mt--lg--0">
-                        <p class="footer__title animate-fade-in">Contact</p>
+                        <p class="footer__title animate-fade-in-up">Contact</p>
                         <ul class="footer__list">
                             <li class="footer__item animate-fade-in-up"><a href="contact.html" class="footer__link">Contact</a></li>
                             <li class="footer__item animate-fade-in-up"><a href="blogs.html" class="footer__link">Blogs</a></li>
@@ -440,10 +458,11 @@
                 <div class="row">
                     <div class="col-12 col-md-4 order--2">
                         <div class="footer__logo">
-                            <a href="/" class="">
-                                <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo" class="animate-fade-in">
+                            <a href="/index.html" class="">
+                                <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo" class="animate-fade-in" loading="lazy">
                             </a>
-                            <p class="text-white animate-fade-in-up">2023 Stoleru Martin. All right reserved.</p>
+                            <p class="text-white animate-fade-in-up">
+                                <span id="year"></span> Stoleru Martin. All right reserved.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-5 offset-md-2 offset-lg-3 mb--5 mb--sm--0 order--1">

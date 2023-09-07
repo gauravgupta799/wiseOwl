@@ -43,7 +43,6 @@
         }
         &:hover{
             color:$clr-white-100;
-
             .talk__medium-link{
                 color:$clr-white-100;
             }
@@ -52,21 +51,30 @@
                     background: $clr-white-100;
                 }
             }
+            .talk__content{
+                svg path{
+                    fill:$clr-white-100;
+                }
+            }
             &::after{
                 left: 0;
             }
-
         }
     }
     &__medium-link{
         font-size: rem(24);
         font-family: $ff-medium;
-
+        margin-left:rem(16);
+        @include breakpoint-sm{
+            margin-left: rem(32);
+        }
         @include breakpoint-md{
             font-size: rem(32);
+            margin-left: rem(38);
         }
         @include breakpoint-lg{
             font-size: rem(42);
+            margin-left: rem(48);
         }
         @include breakpoint-xl{
             font-size: rem(52);
@@ -76,38 +84,42 @@
         width: 100%;
         position: relative;
 
-        &::before{
-            content:"";
-            position: absolute;
-            left: 0;
-            width: rem(16);
-            height: rem(16);
-            background: $clr-primary;
-            @include border-radius(50%);
-            display: none;
-            @include breakpoint-sm{
-                margin-right: rem(45);
-                display: block;
-                top:rem(14);
-            }
-        }
+        // &::before{
+        //     content:"";
+        //     position: absolute;
+        //     left: 0;
+        //     width: rem(16);
+        //     height: rem(16);
+        //     background: $clr-primary;
+        //     @include border-radius(50%);
+        //     display: none;
+        //     @include breakpoint-sm{
+        //         margin-right: rem(45);
+        //         display: block;
+        //         top:rem(14);
+        //     }
+        // }
         span{
             font-size: rem(16);
         }
     }
     &__content{
-        margin-left: rem(0);
+        display: flex;
+        align-items: center;
         @include breakpoint-sm{
-            margin-left: rem(35);
+            align-items: baseline;
         }
-        @include breakpoint-md{
-            margin-left: rem(45);
-        }
-        @include breakpoint-lg{
-            margin-left: rem(65);
-        }
-        @include breakpoint-xl{
-            margin-left: rem(85);
+        svg{
+           @include dimensions(20px, 20px); 
+           @include breakpoint-sm{
+                @include dimensions(22px, 22px); 
+           }
+           @include breakpoint-md{
+                @include dimensions(24px, 24px); 
+           }
+           @include breakpoint-lg{
+                @include dimensions(26px, 26px); 
+           }
         }
     }
 }

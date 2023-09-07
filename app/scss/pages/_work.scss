@@ -9,17 +9,41 @@
     background: $clr-secondary;
     width: rem(54);
     height: rem(54);
+    border:1px solid transparent;
     @include border-radius(50%);
     @include transition(all, 0.3s, ease-out);
-    border:1px solid $clr-secondary;
+    position: relative;
     &:hover{
         cursor: pointer;
         border-color: $clr-primary;
+        animation: circular-border 1s linear forwards infinite;
         svg{
             path{
                 @include transition(all, 0.3s, ease-out);
-                transform:translateY(40px);
+                animation:svg-animate 1s linear forwards infinite;
             }
+        }
+    }
+    @include keyframes(svg-animate){
+        0%{
+            transform:translateY(0);
+        }
+        50%{
+            transform:translateY(120%);
+        }
+        100%{
+            transform:translateY(0);
+        }
+    }
+    @include keyframes(circular-border){
+        0% {
+            border-width: 1px;
+        }
+        50% {
+            border-width: 4px;
+        }
+        100% {
+            border-width: 1px;
         }
     }
     @include breakpoint-sm{

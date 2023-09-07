@@ -1,8 +1,9 @@
+document.getElementById("year").innerHTML = new Date().getFullYear();
 const header = document.querySelector('.header');
 const headerTranparent = document.querySelector('.header--tranparent');
 const barWhite = document.querySelector('.bar-white');
 const logo2 = document.querySelector('.logo-2');
-// const loader = document.querySelector(".page-loader");
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,7 @@ till.to("#preloader",{
 })
 
 window.onload = () =>{
+    document.querySelector("#body").classList.add("disable-scroll")
     const percent = document.getElementById("percent");
     const bar = document.getElementById("barconfirm");
     let width = 0;
@@ -67,7 +69,6 @@ ScrollTrigger.scrollerProxy("#body",{
     pinType:document.querySelector("#body").style.transform ? "transform" : "fixed"
 });
 
-
 // locoScroll.on("scroll", (instance)=>{
 //     let headerHeight = header.getBoundingClientRect().height;
 //     console.log("instance", instance.direction)
@@ -78,7 +79,7 @@ ScrollTrigger.scrollerProxy("#body",{
 //     }else{
 //         header.classList.remove("sticky");
 //     }
-// })
+// });
 
 
 // Function to toggle the "sticky" class on the header
@@ -95,10 +96,10 @@ function handleBarWhiteAndLogo2(scrollY) {
     if (barWhite !== null && logo2 !== null){
       if (scrollY > 50){
         barWhite.classList.add("sticky");
-        logo2.src = "../../app/assets/logos/wiseOwl-logo.svg";
+        logo2.src = "./app/assets/logos/wiseOwl-logo.svg";
       }else{
         barWhite.classList.remove("sticky");
-        logo2.src = "../../app/assets/logos/logo-black.svg";
+        logo2.src = "./app/assets/logos/logo-black.svg";
       }
     }
   }
@@ -131,7 +132,7 @@ $(document).ready(function() {
         $(this).toggleClass('open');
         $(".header__mobile").toggleClass('open');
         $(".overlay").toggleClass('active');
-        $('body').toggleClass('hidden');
+        $('html').toggleClass('disable-scroll');
     });
     $(".footer__input input").focusin(function(){
         $(".footer__input").addClass("border-color");
@@ -273,8 +274,7 @@ if(counterSection != null && counters != null) {
 
 // contact form start
 const checkAgree = document.querySelector(".form-check-input");
-var submitBtn = document.getElementById("submit")
-
+var submitBtn = document.getElementById("submit");
 if(submitBtn != null && checkAgree != null) {
     submitBtn.disabled = "true";
     checkAgree.checked = false;
@@ -301,43 +301,42 @@ if(submitBtn != null && checkAgree != null) {
 
 
 //====== custome cursor start ======
-var cursor = document.querySelector('.cursor'),
-cursorScale = document.querySelectorAll('.cursor-scale')
-mouseX = 0,
-mouseY = 0;
-gsap.to({}, 0.016, {
-    repeat:-1,
-    onRepeat:function(){
-        gsap.set(cursor,{
-            css:{
-                left:mouseX,
-                top:mouseY
-            }
-        })
-    }
-})
-cursorScale.forEach((link)=>{
-    link.addEventListener("mousemove", ()=>{
-        cursor.classList.add('grow');
-        if(link.classList.contains('small')){
-            cursor.classList.remove('grow');
-            cursor.classList.add('grow-small');
-        }
-    });
-    link.addEventListener("mouseleave", ()=>{
-        cursor.classList.remove('grow');
-        cursor.classList.remove('grow-small');
-    });
-})
-window.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-})
+// var cursor = document.querySelector('.cursor'),
+// cursorScale = document.querySelectorAll('.cursor-scale')
+// mouseX = 0,
+// mouseY = 0;
+// gsap.to({}, 0.016, {
+//     repeat:-1,
+//     onRepeat:function(){
+//         gsap.set(cursor,{
+//             css:{
+//                 left:mouseX,
+//                 top:mouseY
+//             }
+//         })
+//     }
+// })
+// cursorScale.forEach((link)=>{
+//     link.addEventListener("mousemove", ()=>{
+//         cursor.classList.add('grow');
+//         if(link.classList.contains('small')){
+//             cursor.classList.remove('grow');
+//             cursor.classList.add('grow-small');
+//         }
+//     });
+//     link.addEventListener("mouseleave", ()=>{
+//         cursor.classList.remove('grow');
+//         cursor.classList.remove('grow-small');
+//     });
+// })
+// window.addEventListener("mousemove", (e) => {
+//     mouseX = e.clientX;
+//     mouseY = e.clientY;
+// })
 //====== custome cursor end ======
 
 
 //====== Animation  start ======
-// gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline();
 window.addEventListener("load",() => {
     tl.from(".header__logo, .switch",1, {
@@ -356,7 +355,7 @@ window.addEventListener("load",() => {
         opacity:0,
         duration:1,
         y:50,
-        stagger:0.8,
+        stagger:0.5,
         ease: Power4.easeInOut,
     });
     tl.from(".hero-btn", {
@@ -367,7 +366,8 @@ window.addEventListener("load",() => {
     tl.from(".h-divider",{
         opacity:0,
         scaleX:0,
-        x:-10,
+        duration:1,
+        transformOrigin:"left",
         ease:Expo.easeInOut
     })
     tl.from(".hero__footer-link ",1.05, {
@@ -376,23 +376,6 @@ window.addEventListener("load",() => {
         stagger:0.2,
         ease:Power4.easeInOut
     }); 
-    // tl.from(".form-group",{
-    //     opacity:0,
-    //     y:50,
-    //     delay:-0.1,
-    //     stagger:0.35,
-    //     ease:Power4.easeOut
-    // })
-    // const formFadeUp = gsap.utils.toArray(".form-group");
-    // formFadeUp.forEach((form) => {
-    //     tl.from(form,{
-    //         opacity:0,
-    //         y:50,
-    //         stagger:0.1,
-    //         duration:1,
-    //         ease:Power4.easeInOut
-    //     })
-    // })
 })
 
 //  animation fade in 
@@ -411,6 +394,23 @@ fadeIn.forEach((mainContent, i) => {
     once: true,
     duration: 1,
     stagger:0.5,
+    ease: Power4.easeOut,
+  });
+});
+
+const fadeIn2 = gsap.utils.toArray(".fade-in");
+fadeIn2.forEach((mainContent, i) => {
+  const anim = gsap.fromTo(mainContent,
+    { opacity: 0,},
+    {opacity: 1, duration:1}
+  );
+  ScrollTrigger.create({
+    trigger: mainContent,
+    animation: anim,
+    scroller:"#body",
+    toggleActions: "play",
+    once: true,
+    stagger:0.2,
     ease: Power4.easeOut,
   });
 });
@@ -495,18 +495,8 @@ rightSlide.forEach((right, i) =>{
 const values = document.querySelectorAll(".values__detailsWrapper");
 values.forEach((value, i) =>{
     const animValue = gsap.fromTo(value,
-        {
-            opacity: 0, 
-            scale:0, 
-            xPercent:100,
-        },
-        {
-            opacity: 1, 
-            scale:1, 
-            xPercent:0,
-            duration:1,
-            color:"#f1b61d"
-        }
+        { opacity: 0,  scale:0, xPercent:100 },
+        { opacity: 1, scale:1, xPercent:0, duration:1 }
     );
     ScrollTrigger.create({
         trigger:value,
@@ -522,34 +512,23 @@ values.forEach((value, i) =>{
 });
 
 // divider
-tl.fromTo(".divider", 
-    {  opacity:0, scaleX:0, x:-10 },
-    { opacity:1, scaleX:1, x:0},
-    ScrollTrigger.create({
-        trigger: ".divider",
+tl.from(".divider", {
+    ScrollTrigger:{
+        trigger: ".about-home",
         scroller:"#body",
-        delay:0.6,
-        duration: 1.5,
-        start:"20% 50%",
-        end:"50%",
-        ease: Power4.easeInOut,
-    })
-);
-
-
+        duration: 1,
+        scrub: true,
+        ease: Power4.easeOut,
+    },
+    scaleX:0, 
+    transformOrigin:"left",
+    ease: Power4.easeOut
+});
 
 ScrollTrigger.addEventListener("refresh", () => {
     locoScroll.update();
 });
 ScrollTrigger.refresh();
-
-
-
-
-
-
-
-
 
 
 

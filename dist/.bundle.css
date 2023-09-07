@@ -749,60 +749,6 @@ swiper-container .swiper-notification {
   backface-visibility: hidden;
   overflow: hidden;
 }
-html.has-scroll-smooth {
-  overflow: hidden;
-}
-
-html.has-scroll-dragging {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-.has-scroll-smooth body {
-  overflow: hidden;
-}
-
-.has-scroll-smooth [data-scroll-container] {
-  min-height: 100vh;
-}
-
-.c-scrollbar {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 11px;
-  height: 100vh;
-  transform-origin: center right;
-  transition: transform 0.3s, opacity 0.3s;
-  opacity: 0;
-}
-
-.c-scrollbar:hover {
-  transform: scaleX(1.45);
-}
-
-.c-scrollbar:hover,
-.has-scroll-scrolling .c-scrollbar,
-.has-scroll-dragging .c-scrollbar {
-  opacity: 1;
-}
-
-.c-scrollbar_thumb {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #050505;
-  opacity: 0.5;
-  width: 7px;
-  border-radius: 10px;
-  margin: 2px;
-  cursor: grab;
-}
-
-.has-scroll-dragging .c-scrollbar_thumb {
-  cursor: grabbing;
-}
 @charset "UTF-8";
 /*-----------------------------
   [wiseowl]
@@ -820,20 +766,20 @@ body[data-theme=dark] {
 
 @font-face {
   font-family: "productSans-light";
-  src: url("../../../app/assets/fonts/productSans-light/productSans-light.eot");
-  src: url("../../../app/assets/fonts/productSans-light/productSans-light.woff2") format("woff2"), url("../../../app/assets/fonts/productSans-light/productSans-light.woff") format("woff"), url("../../../app/assets/fonts/productSans-light/productSans-light.ttf") format("truetype"), url("../../../app/assets/fonts/productSans-light/productSans-light.svg") format("svg");
+  src: url("../app/assets/fonts/productSans-light/productSans-light.eot");
+  src: url("../app/assets/fonts/productSans-light/productSans-light.woff2") format("woff2"), url("../app/assets/fonts/productSans-light/productSans-light.woff") format("woff"), url("../app/assets/fonts/productSans-light/productSans-light.ttf") format("truetype"), url("../app/assets/fonts/productSans-light/productSans-light.svg") format("svg");
   font-weight: 300 !important;
 }
 @font-face {
   font-family: "productSans";
-  src: url("../../../app/assets/fonts/productSans-regular/productSans-regular.eot");
-  src: url("../../../app/assets/fonts/productSans-regular/productSans-regular.woff2") format("woff2"), url("../../../app/assets/fonts/productSans-regular/productSans-regular.woff") format("woff"), url("../../../app/assets/fonts/productSans-regular/productSans-regular.ttf") format("truetype"), url("../../../app/assets/fonts/productSans-regular/productSans-regular.svg") format("svg");
+  src: url("../app/assets/fonts/productSans-regular/productSans-regular.eot");
+  src: url("../app/assets/fonts/productSans-regular/productSans-regular.woff2") format("woff2"), url("../app/assets/fonts/productSans-regular/productSans-regular.woff") format("woff"), url("../app/assets/fonts/productSans-regular/productSans-regular.ttf") format("truetype"), url("../app/assets/fonts/productSans-regular/productSans-regular.svg") format("svg");
   font-weight: 400 !important;
 }
 @font-face {
   font-family: "productSans-medium";
-  src: url("../../../app/assets/fonts/productSans-medium/productSans-medium.eot");
-  src: url("../../../app/assets/fonts/productSans-medium/productSans-medium.woff2") format("woff2"), url("../../../app/assets/fonts/productSans-medium/productSans-medium.woff") format("woff"), url("../../../app/assets/fonts/productSans-medium/productSans-medium.ttf") format("truetype"), url("../../../app/assets/fonts/productSans-medium/productSans-medium.svg") format("svg");
+  src: url("../app/assets/fonts/productSans-medium/productSans-medium.eot");
+  src: url("../app/assets/fonts/productSans-medium/productSans-medium.woff2") format("woff2"), url("../app/assets/fonts/productSans-medium/productSans-medium.woff") format("woff"), url("../app/assets/fonts/productSans-medium/productSans-medium.ttf") format("truetype"), url("../app/assets/fonts/productSans-medium/productSans-medium.svg") format("svg");
   font-weight: 500 !important;
 }
 * {
@@ -861,8 +807,9 @@ body {
   letter-spacing: normal;
   font-size: 1rem;
 }
-body.hidden {
-  overflow: hidden;
+
+body.disable-scroll {
+  overflow: hidden !important;
 }
 
 div,
@@ -950,42 +897,42 @@ button {
 
 h1 {
   font-size: 3rem;
-  line-height: 3.75rem;
+  line-height: 4.375rem;
 }
 @media screen and (min-width: 36em) {
   h1 {
     font-size: 3.5rem;
-    line-height: 4.5rem;
+    line-height: 4.875rem;
   }
 }
 @media screen and (min-width: 48em) {
   h1 {
     font-size: 3.5rem;
-    line-height: 4.5rem;
+    line-height: 4.875rem;
   }
 }
 @media screen and (min-width: 62em) {
   h1 {
     font-size: 4.25rem;
-    line-height: 4.875rem;
+    line-height: 5.25rem;
   }
 }
 @media screen and (min-width: 85.375em) {
   h1 {
     font-size: 4.75rem;
-    line-height: 5.3125rem;
+    line-height: 5.6875rem;
   }
 }
 @media screen and (min-width: 100em) {
   h1 {
     font-size: 5rem;
-    line-height: 5.5625rem;
+    line-height: 6.0625rem;
   }
 }
 
 h2 {
-  font-size: 3rem;
-  line-height: 4.1875rem;
+  font-size: 2.75rem;
+  line-height: 4.25rem;
 }
 @media screen and (min-width: 36em) {
   h2 {
@@ -996,19 +943,19 @@ h2 {
 @media screen and (min-width: 48em) {
   h2 {
     font-size: 3.5rem;
-    line-height: 4.875rem;
+    line-height: 4.5rem;
   }
 }
 @media screen and (min-width: 62em) {
   h2 {
     font-size: 3.5rem;
-    line-height: 4.875rem;
+    line-height: 4.75rem;
   }
 }
 @media screen and (min-width: 85.375em) {
   h2 {
     font-size: 3.75rem;
-    line-height: 5.25rem;
+    line-height: 5.125rem;
   }
 }
 @media screen and (min-width: 100em) {
@@ -1089,43 +1036,43 @@ h4 {
 }
 
 h5 {
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   line-height: 3rem;
 }
 @media screen and (min-width: 36em) {
   h5 {
     font-size: 1.5rem;
-    line-height: 3.25rem;
+    line-height: 3rem;
   }
 }
 @media screen and (min-width: 48em) {
   h5 {
     font-size: 1.625rem;
-    line-height: 3.5rem;
+    line-height: 3.25rem;
   }
 }
 @media screen and (min-width: 62em) {
   h5 {
     font-size: 1.625rem;
-    line-height: 3.5rem;
+    line-height: 3.25rem;
   }
 }
 @media screen and (min-width: 85.375em) {
   h5 {
     font-size: 1.75rem;
-    line-height: 4rem;
+    line-height: 3.5rem;
   }
 }
 @media screen and (min-width: 100em) {
   h5 {
     font-size: 2rem;
-    line-height: 4.25rem;
+    line-height: 4rem;
   }
 }
 
 h6 {
-  font-size: 1.25rem;
-  line-height: 2.625rem;
+  font-size: 1.375rem;
+  line-height: 2.75rem;
 }
 @media screen and (min-width: 36em) {
   h6 {
@@ -11707,37 +11654,16 @@ p, ul, ol, body {
   fill: #ffffff;
 }
 
-.cursor {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  margin-left: -20px;
-  margin-top: -20px;
-  border: 2px solid #f1b61d;
-  border-radius: 50%;
-  transition: transform 0.35s ease-out;
-  transform-origin: center center;
-  pointer-events: none;
-  z-index: 100;
-}
-
-.grow,
-.grow-small {
-  transform: scale(4.5);
-  background: #fff;
-  mix-blend-mode: difference;
-  border: none;
-}
-
-.grow-small {
-  transform: scale(2.2);
+.heading-wrapper {
+  overflow: hidden;
+  position: relative;
 }
 
 .hero {
   background-color: #161616;
 }
 .hero__container {
-  background-image: url("../../../app/assets/images/hero-bg-pattern-1.webp");
+  background-image: url("../app/assets/images/hero-bg-pattern-1.webp");
   background-repeat: no-repeat;
   background-position: right 100%;
 }
@@ -11865,11 +11791,35 @@ p, ul, ol, body {
 }
 .services__categoriesWrapper {
   border-bottom: 1px solid #d6d6d6;
-  padding-bottom: 4.5em;
+  padding-bottom: 4.25em;
 }
 .services__categoriesWrapper h2.visible {
   opacity: 1;
-  color: #f1b61d;
+}
+.services__categoriesWrapper p {
+  font-family: "productSans-light", sans-serif;
+  padding-right: 6.25em;
+  text-transform: capitalize;
+}
+@media only screen and (min-width: 36em) {
+  .services__categoriesWrapper p {
+    padding-right: 8.75em;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .services__categoriesWrapper p {
+    padding-right: 10.625em;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .services__categoriesWrapper p {
+    padding-right: 13.125em;
+  }
+}
+@media only screen and (min-width: 85.375em) {
+  .services__categoriesWrapper p {
+    padding-right: 15.625em;
+  }
 }
 .services__category {
   display: flex;
@@ -12216,7 +12166,7 @@ p, ul, ol, body {
 }
 .values__details {
   margin-top: 7.5rem;
-  color: white;
+  color: #ffffff;
 }
 @media only screen and (min-width: 48em) {
   .values__details {
@@ -12397,7 +12347,7 @@ p, ul, ol, body {
   margin-top: 0 !important;
 }
 .benefits::after {
-  content: url("../../../app/assets/images/white-pattern.webp");
+  content: url("../app/assets/images/white-pattern.webp");
   right: 0;
   top: 0;
   bottom: 0;
@@ -12644,17 +12594,41 @@ p, ul, ol, body {
   background: #f1b61d;
   width: 3.375rem;
   height: 3.375rem;
+  border: 1px solid transparent;
   border-radius: 50%;
   transition: all 0.3s ease-out;
-  border: 1px solid #f1b61d;
+  position: relative;
 }
 .arrow-down-btn:hover {
   cursor: pointer;
   border-color: #050505;
+  animation: circular-border 1s linear forwards infinite;
 }
 .arrow-down-btn:hover svg path {
   transition: all 0.3s ease-out;
-  transform: translateY(40px);
+  animation: svg-animate 1s linear forwards infinite;
+}
+@keyframes svg-animate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(120%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes circular-border {
+  0% {
+    border-width: 1px;
+  }
+  50% {
+    border-width: 4px;
+  }
+  100% {
+    border-width: 1px;
+  }
 }
 @media only screen and (min-width: 36em) {
   .arrow-down-btn {
@@ -12732,21 +12706,32 @@ p, ul, ol, body {
 .talk__medium-item:hover .talk__item-wrapper::before {
   background: #ffffff;
 }
+.talk__medium-item:hover .talk__content svg path {
+  fill: #ffffff;
+}
 .talk__medium-item:hover::after {
   left: 0;
 }
 .talk__medium-link {
   font-size: 1.5rem;
   font-family: "productSans-medium", sans-serif;
+  margin-left: 1rem;
+}
+@media only screen and (min-width: 36em) {
+  .talk__medium-link {
+    margin-left: 2rem;
+  }
 }
 @media only screen and (min-width: 48em) {
   .talk__medium-link {
     font-size: 2rem;
+    margin-left: 2.375rem;
   }
 }
 @media only screen and (min-width: 62em) {
   .talk__medium-link {
     font-size: 2.625rem;
+    margin-left: 3rem;
   }
 }
 @media only screen and (min-width: 85.375em) {
@@ -12758,47 +12743,38 @@ p, ul, ol, body {
   width: 100%;
   position: relative;
 }
-.talk__item-wrapper::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 1rem;
-  height: 1rem;
-  background: #050505;
-  border-radius: 50%;
-  display: none;
-}
-@media only screen and (min-width: 36em) {
-  .talk__item-wrapper::before {
-    margin-right: 2.8125rem;
-    display: block;
-    top: 0.875rem;
-  }
-}
 .talk__item-wrapper span {
   font-size: 1rem;
 }
 .talk__content {
-  margin-left: 0rem;
+  display: flex;
+  align-items: center;
 }
 @media only screen and (min-width: 36em) {
   .talk__content {
-    margin-left: 2.1875rem;
+    align-items: baseline;
+  }
+}
+.talk__content svg {
+  width: 20px;
+  height: 20px;
+}
+@media only screen and (min-width: 36em) {
+  .talk__content svg {
+    width: 22px;
+    height: 22px;
   }
 }
 @media only screen and (min-width: 48em) {
-  .talk__content {
-    margin-left: 2.8125rem;
+  .talk__content svg {
+    width: 24px;
+    height: 24px;
   }
 }
 @media only screen and (min-width: 62em) {
-  .talk__content {
-    margin-left: 4.0625rem;
-  }
-}
-@media only screen and (min-width: 85.375em) {
-  .talk__content {
-    margin-left: 5.3125rem;
+  .talk__content svg {
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -12894,10 +12870,11 @@ p, ul, ol, body {
 }
 .header__mobile {
   position: fixed !important;
-  inset: 0 !important;
+  top: 0;
   z-index: 99;
   width: 15rem;
   max-width: 100%;
+  height: 100%;
   background: #050505;
   color: #ffffff;
   display: flex;
@@ -12905,7 +12882,7 @@ p, ul, ol, body {
   flex-direction: column;
   opacity: 0;
   visibility: hidden;
-  left: -100%;
+  right: -100%;
   transition: all 0.3s ease-out;
 }
 @media only screen and (min-width: 36em) {
@@ -12922,8 +12899,8 @@ p, ul, ol, body {
   overflow: hidden;
   opacity: 1;
   visibility: visible;
-  transition: left 0.3s ease-out;
-  left: 0;
+  transition: right 0.3s ease-out;
+  right: 0;
 }
 .header__mobile-list {
   width: 100%;

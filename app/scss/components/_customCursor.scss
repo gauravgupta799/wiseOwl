@@ -21,8 +21,8 @@
 .grow,
 .grow-small {
     transform:scale(4.5);
-    background: #fff;
-    mix-blend-mode: difference;
+    background: $clr-white-100;
+    mix-blend-mode: multiply;
     border:none;
 }
 

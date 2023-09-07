@@ -159,7 +159,7 @@
     }
     &__details{
         margin-top: rem(120);
-        color:white;
+        color:$clr-white-100;
         @include breakpoint-md{
             margin-top: 0;
         }

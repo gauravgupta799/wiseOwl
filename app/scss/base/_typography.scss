@@ -27,20 +27,20 @@ $p-font-sizes: (
 
 
 $h1-font-sizes: (
-  null: (rem(48), rem(60)),   
-  sm: (rem(56), rem(72)),
-  md: (rem(56), rem(72)),
-  lg: (rem(68), rem(78)),
-  xl: (rem(76), rem(85)),
-  xxl: (rem(80), rem(89)),
+  null: (rem(48), rem(70)),   
+  sm: (rem(56), rem(78)),
+  md: (rem(56), rem(78)),
+  lg: (rem(68), rem(84)),
+  xl: (rem(76), rem(91)),
+  xxl: (rem(80), rem(97)),
 );
 
 $h2-font-sizes:(
-  null:(rem(48), rem(67)), 
+  null:(rem(44), rem(68)), 
   sm:(rem(52), rem(72)),
-  md:(rem(56), rem(78)),
-  lg:(rem(56), rem(78)),
-  xl:(rem(60), rem(84)),
+  md:(rem(56), rem(72)),
+  lg:(rem(56), rem(76)),
+  xl:(rem(60), rem(82)),
   xxl:(rem(64), rem(88)),
 );
 
@@ -63,17 +63,17 @@ $h4-font-sizes: (
 );
 
 $h5-font-sizes: (
-  null:(rem(22), rem(48)), 
-  sm :(rem(24), rem(52)),
-  md :(rem(26), rem(56)),
-  lg :(rem(26), rem(56)),
-  xl :(rem(28), rem(64)),
-  xxl:(rem(32), rem(68)),
+  null:(rem(24), rem(48)), 
+  sm :(rem(24), rem(48)),
+  md :(rem(26), rem(52)),
+  lg :(rem(26), rem(52)),
+  xl :(rem(28), rem(56)),
+  xxl:(rem(32), rem(64)),
 ); 
 
 
 $h6-font-sizes: (
-  null: (rem(20), rem(42)),
+  null: (rem(22), rem(44)),
   sm : (rem(22), rem(46)),
   md : (rem(22), rem(46)),
   lg : (rem(24), rem(52)),

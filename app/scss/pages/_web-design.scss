@@ -68,6 +68,10 @@
         @include breakpoint-lg{
             @include dimensions(287px,287px);
         }
+        h4{
+            color:$clr-secondary;
+            font-family: $ff-medium;
+        }
         &:hover{
             cursor: pointer;
             background: $clr-secondary;
@@ -190,6 +194,10 @@
     background-color: $clr-primary;
     @include breakpoint-sm{
         display: none;
+    }
+    p{
+        color:$clr-white-100;
+        font-family: $ff-light;
     }
 }
 

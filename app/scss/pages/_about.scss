@@ -89,17 +89,18 @@
 .values{
     background-color: $clr-light-dark;
     &__headingWrapper{
-        // position: sticky !important;
-        // top: 0 !important;
         &.sticks{
             position: sticky;
             top: 0;
         }
     }
     &__bottom{
-        padding-block:em(150);
+        padding-block:em(100);
         text-align: center;
 
+        @include breakpoint-sm{
+            padding-block:em(150);
+        }
         @include breakpoint-md{
             padding-block: em(200) em(130);
             text-align: left;
@@ -132,9 +133,8 @@
             }
             &.visible{
                 @include transition(color, 1s , ease-out);
-                color:$clr-white-100;
-                opacity: 1;
-
+                color:$clr-secondary;
+                opacity: 0.2;
                 &::after{
                     background: $clr-white-100;
                     opacity: 1;
@@ -145,7 +145,7 @@
     &__detailsWrapper{
         @include flex-center;
         flex-wrap: wrap;
-        // opacity: 0.2;
+        opacity: 0.2;
         @include breakpoint-md{
             justify-content: space-between;
             align-items: flex-start;
@@ -153,6 +153,7 @@
             gap: 13rem;
         }
         &.visible{
+            color:$clr-secondary;
             @include transition(color, 1s , ease-out);
             opacity: 1;
         }

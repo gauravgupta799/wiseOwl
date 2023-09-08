@@ -20,7 +20,6 @@ till.to("#preloader",{
     duration:1,
     yPercent:-100
 })
-
 window.onload = () =>{
     document.querySelector("#body").classList.add("disable-scroll")
     const percent = document.getElementById("percent");
@@ -42,32 +41,32 @@ window.onload = () =>{
 }
 // ====== Pre-loader end ======
 
-const locoScroll = new LocomotiveScroll({
-    el:document.querySelector("#body"),
-    smooth:true,
-    direction: 'vertical',
-    getDirection:true,
-    smartphone: {
-        smooth: true,
-    },
-    tablet: {
-        smooth: true,
-    }
-});
-ScrollTrigger.scrollerProxy("#body",{
-    scrollTop(value){
-        return arguments.length ? locoScroll.scrollTo(value, 0,0,): 
-        locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect(){
-        return{
-            top:0, left:0, 
-            width:window.innerWidth,
-            height:window.innerHeight
-        }
-    },
-    pinType:document.querySelector("#body").style.transform ? "transform" : "fixed"
-});
+// const locoScroll = new LocomotiveScroll({
+//     el:document.querySelector("#body"),
+//     smooth:true,
+//     direction: 'vertical',
+//     getDirection:true,
+//     smartphone: {
+//         smooth: true,
+//     },
+//     tablet: {
+//         smooth: true,
+//     }
+// });
+// ScrollTrigger.scrollerProxy("#body",{
+//     scrollTop(value){
+//         return arguments.length ? locoScroll.scrollTo(value, 0,0,): 
+//         locoScroll.scroll.instance.scroll.y;
+//     },
+//     getBoundingClientRect(){
+//         return{
+//             top:0, left:0, 
+//             width:window.innerWidth,
+//             height:window.innerHeight
+//         }
+//     },
+//     pinType:document.querySelector("#body").style.transform ? "transform" : "fixed"
+// });
 
 // locoScroll.on("scroll", (instance)=>{
 //     let headerHeight = header.getBoundingClientRect().height;
@@ -104,14 +103,20 @@ function handleBarWhiteAndLogo2(scrollY) {
     }
   }
 //======  Sticky header start ======
-locoScroll.on("scroll", (position) => {
-    const scrollY = position.scroll.y;
+// locoScroll.on("scroll", (position) => {
+//     const scrollY = position.scroll.y;
+//     toggleHeaderSticky(scrollY);
+//     handleBarWhiteAndLogo2(scrollY);
+// });
+
+window.addEventListener("scroll",()=>{
+    const scrollY = window.scrollY;
     toggleHeaderSticky(scrollY);
     handleBarWhiteAndLogo2(scrollY);
 })
 //======  Sticky header end ======
 
-locoScroll.on("scroll", ScrollTrigger.update);
+// locoScroll.on("scroll", ScrollTrigger.update);
 
 //======  Active Page Link start ======
 const windowPathname = window.location.pathname;
@@ -128,12 +133,18 @@ navLinks.forEach(link =>{
 
 // Mobile Menu Toggle start
 $(document).ready(function() {
-    $('.menu').click(function(){
-        $(this).toggleClass('open');
-        $(".header__mobile").toggleClass('open');
-        $(".overlay").toggleClass('active');
-        $('html').toggleClass('disable-scroll');
+    $('.hamburger').click(function(){
+        // $(this).addClass('open');
+        $(".header__mobile").addClass('open');
+        $(".overlay").addClass('active');
+        $('html').addClass('disable-scroll');
     });
+    $(".close-btn").click(function(){
+        // $('.hamburger').removeClass('open');
+        $(".header__mobile").removeClass('open');
+        $(".overlay").removeClass('active');
+        $('html').removeClass('disable-scroll');
+    })
     $(".footer__input input").focusin(function(){
         $(".footer__input").addClass("border-color");
         $(".footer__input").removeClass("error");
@@ -301,40 +312,64 @@ if(submitBtn != null && checkAgree != null) {
 
 
 //====== custome cursor start ======
-// var cursor = document.querySelector('.cursor'),
-// cursorScale = document.querySelectorAll('.cursor-scale')
-// mouseX = 0,
-// mouseY = 0;
-// gsap.to({}, 0.016, {
-//     repeat:-1,
-//     onRepeat:function(){
-//         gsap.set(cursor,{
-//             css:{
-//                 left:mouseX,
-//                 top:mouseY
-//             }
-//         })
-//     }
-// })
-// cursorScale.forEach((link)=>{
-//     link.addEventListener("mousemove", ()=>{
-//         cursor.classList.add('grow');
-//         if(link.classList.contains('small')){
-//             cursor.classList.remove('grow');
-//             cursor.classList.add('grow-small');
-//         }
-//     });
-//     link.addEventListener("mouseleave", ()=>{
-//         cursor.classList.remove('grow');
-//         cursor.classList.remove('grow-small');
-//     });
-// })
-// window.addEventListener("mousemove", (e) => {
-//     mouseX = e.clientX;
-//     mouseY = e.clientY;
-// })
+var cursor = document.querySelector('.cursor'),
+cursorScale = document.querySelectorAll('.cursor-scale')
+mouseX = 0,
+mouseY = 0;
+gsap.to({}, 0.016, {
+    repeat:-1,
+    onRepeat:function(){
+        gsap.set(cursor,{
+            css:{
+                left:mouseX,
+                top:mouseY
+            }
+        })
+    }
+})
+cursorScale.forEach((link)=>{
+    link.addEventListener("mousemove", ()=>{
+        cursor.classList.add('grow');
+        if(link.classList.contains('small')){
+            cursor.classList.remove('grow');
+            cursor.classList.add('grow-small');
+        }
+    });
+    link.addEventListener("mouseleave", ()=>{
+        cursor.classList.remove('grow');
+        cursor.classList.remove('grow-small');
+    });
+})
+window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+})
 //====== custome cursor end ======
 
+// stick values start
+const valuesSection = document.querySelector(".values__bottom");
+const valuesWrapper = document.querySelectorAll(".values__detailsWrapper");
+if(valuesWrapper != null){
+    const io = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            const target = entry.target
+            const heading = target.children[0];
+            console.log(target)
+            if(entry.intersectionRatio > 0){
+                heading.classList.add("sticks");
+                target.classList.add("visible");
+                document.querySelector(".values__headingWrapper").classList.add("sticks")
+            }else{
+                target.classList.remove("visible");
+                document.querySelector(".values__headingWrapper").classList.remove("sticks")
+            }
+        })
+    })
+    valuesWrapper.forEach((value)=>{
+        io.observe(value);
+    })
+}
+// stick values end
 
 //====== Animation  start ======
 const tl = gsap.timeline();
@@ -389,7 +424,7 @@ fadeIn.forEach((mainContent, i) => {
   ScrollTrigger.create({
     trigger: mainContent,
     animation: anim,
-    scroller:"#body",
+    // scroller:"#body",
     toggleActions: "play",
     once: true,
     duration: 1,
@@ -407,7 +442,7 @@ fadeIn2.forEach((mainContent, i) => {
   ScrollTrigger.create({
     trigger: mainContent,
     animation: anim,
-    scroller:"#body",
+    // scroller:"#body",
     toggleActions: "play",
     once: true,
     stagger:0.2,
@@ -427,7 +462,7 @@ textContainers.forEach((item, i) => {
     trigger: item,
     animation: anim,
     toggleActions: "play",
-    scroller:"#body",
+    // scroller:"#body",
     once: true,
     duration: 1,
     stagger:1,
@@ -446,7 +481,7 @@ leftSlide.forEach((left, i) =>{
     trigger: left,
     animation: anim,
     toggleActions: "play",
-    scroller:"#body",
+    // scroller:"#body",
     delay:0.4,
     duration: 3,
     ease: Power4.easeInOut,
@@ -464,7 +499,7 @@ rightSlide.forEach((right, i) =>{
     trigger: right,
     animation: anim,
     toggleActions: "play",
-    scroller:"#body",
+    // scroller:"#body",
     delay:0.6,
     duration: 3,
     stagger:1,
@@ -495,8 +530,8 @@ rightSlide.forEach((right, i) =>{
 const values = document.querySelectorAll(".values__detailsWrapper");
 values.forEach((value, i) =>{
     const animValue = gsap.fromTo(value,
-        { opacity: 0,  scale:0, xPercent:100 },
-        { opacity: 1, scale:1, xPercent:0, duration:1 }
+        { opacity: 0,  scale:0, y:-50 },
+        { opacity: 1, scale:1, y:0, duration:1 }
     );
     ScrollTrigger.create({
         trigger:value,
@@ -504,7 +539,7 @@ values.forEach((value, i) =>{
         toggleActions:'play',
         delay:0.8,
         start:"top 80%",
-        end:"bottom 40%",
+        end:"bottom 20%",
         scrub:true,
         stagger:0.8,
         ease:Power4.easeIn
@@ -515,7 +550,7 @@ values.forEach((value, i) =>{
 tl.from(".divider", {
     ScrollTrigger:{
         trigger: ".about-home",
-        scroller:"#body",
+        // scroller:"#body",
         duration: 1,
         scrub: true,
         ease: Power4.easeOut,
@@ -525,10 +560,10 @@ tl.from(".divider", {
     ease: Power4.easeOut
 });
 
-ScrollTrigger.addEventListener("refresh", () => {
-    locoScroll.update();
-});
-ScrollTrigger.refresh();
+// ScrollTrigger.addEventListener("refresh", () => {
+//     locoScroll.update();
+// });
+// ScrollTrigger.refresh();
 
 
 
@@ -559,29 +594,7 @@ ScrollTrigger.refresh();
 // })
 
 
-// stick values start
-// const valuesSection = document.querySelector(".values__bottom");
-// const valuesWrapper = document.querySelectorAll(".values__detailsWrapper");
-// if(valuesWrapper != null){
-//     const io = new IntersectionObserver((entries)=>{
-//         entries.forEach((entry)=>{
-//             const target = entry.target
-//             const heading = target.children[0];
-//             if(entry.intersectionRatio > 0){
-//                 heading.classList.add("sticks");
-//                 target.classList.add("visible");
-//                 document.querySelector(".values__headingWrapper").classList.add("sticks")
-//             }else{
-//                 target.classList.remove("visible");
-//                 document.querySelector(".values__headingWrapper").classList.remove("sticks")
-//             }
-//         })
-//     })
-//     valuesWrapper.forEach((value)=>{
-//         io.observe(value);
-//     })
-// }
-// stick values end
+
 
 
 

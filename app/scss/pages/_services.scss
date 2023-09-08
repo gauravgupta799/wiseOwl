@@ -59,7 +59,6 @@
         }
     }
     &__content{
-        
         h1{
             font-size: rem(60);
             font-family: $ff-medium;
@@ -74,6 +73,11 @@
             @include breakpoint-xl{
                 font-size: rem(120);
             }
+        }
+        p{
+            color:$clr-white-100;
+            text-transform: capitalize;
+            font-family: $ff-light;
         }
     }
 }
@@ -100,6 +104,10 @@
             font-size:rem(120); 
             line-height: 1;
         }
+    }
+    p{
+        font-family: $ff-light;
+        text-transform: capitalize;
     }
     &__second{
         border-top:1px solid $clr-black;

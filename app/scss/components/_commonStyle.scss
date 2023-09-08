@@ -31,6 +31,17 @@
     }
 }
 
+.header__mobile-link{
+    transition:letter-spacing 0.5s ease-out;
+    &::before{
+        bottom: -15px;
+        height: 3px;
+    }
+    &:hover{
+        letter-spacing: 0.05em;
+    }
+}
+
 .header__mobile-link.active{
     color:$clr-secondary;
     &::before{

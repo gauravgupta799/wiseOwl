@@ -6,8 +6,7 @@
 
 .cursor{
     position: fixed;
-    width: 40px;
-    height: 40px;
+    @include dimensions(rem(40), rem(40));
     margin-left: -20px;
     margin-top: -20px;
     border:2px solid $clr-secondary;
@@ -16,16 +15,18 @@
     transform-origin:center center;
     pointer-events: none;
     z-index: 100;
+    transform:scale(0.2);
+    background: $clr-secondary;
 }
 
 .grow,
 .grow-small {
     transform:scale(4.5);
     background: $clr-white-100;
-    mix-blend-mode: multiply;
+    mix-blend-mode:difference;
     border:none;
 }
 
 .grow-small{
-    transform:scale(2.2);
+    transform:scale(2.4);
 }

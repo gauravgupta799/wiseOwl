@@ -38,8 +38,7 @@
         &-link{
             color:$clr-white-100 ;
             font-size: rem(16);
-            letter-spacing: -0.64px;
-            font-family: $ff-medium;
+            font-family: $ff-light;
             @include transition(0.4s, ease-in-out);
             @include breakpoint-sm{
                 font-size: rem(18);
@@ -155,7 +154,7 @@
     &__category{
         @include  flex-center-vertical;
         gap:rem(20);
-        font-family: $ff-regular;
+        font-family: $ff-light;
         font-weight: 400;
         @include breakpoint-sm{
             gap:rem(30);

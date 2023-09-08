@@ -8,15 +8,7 @@
     <title>WiseOwl - About Page</title>
 </head>
 <body id ="body">
-    <!-- <div class="cursor"></div> -->
-    <!-- <div class="page-loader">
-        <div class="content">
-            <div class="loading">
-                <p>Loading</p>
-               <span></span>
-            </div>
-         </div>
-    </div> -->
+    <div class="cursor"></div>
     <div id="preloader">
         <div id="percent">0%</div>
         <div id="bar">
@@ -35,9 +27,9 @@
                         </a>
                     </div>
                     <nav class="nav">
-                        <div class="menu hamburger">
+                        <div class="hamburger cursor-scale small">
                             <span class="menu__text-1">Menu</span>
-                            <span class="menu__text-2">Close</span>
+                            <!-- <span class="menu__text-2">Close</span> -->
                             <div class="bar bar-white"></div>
                         </div>
                     </nav>
@@ -49,10 +41,19 @@
         <!-- Mobile menu start -->
         <div class="header__mobile">
             <div class="page-container">
-                <div class="header__logo mt--5">
-                    <a href="/index.html">
-                        <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo" loading="lazy">
-                    </a>
+                <div class="header__mobile--top">
+                    <div class="header__logo">
+                        <a href="/index.html">
+                            <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="close-btn cursor-scale small">
+                        <span class="text-white menu__text-2">Close</span>
+                        <div class="bar-close">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
                 </div>
                 <ul class="header__mobile-list">
                    <li class="header__mobile-item"><a href="index.html" class="header__mobile-link">Home</a></li>
@@ -62,33 +63,30 @@
                    <li class="header__mobile-item"><a href="services.html" class="header__mobile-link">Services</a></li>
                    <li class="header__mobile-item"><a href="contact.html" class="header__mobile-link">Contact</a></li>
                 </ul>
-                <hr class="mt--3 bg--secondary">
-                <div class="sidemenu__social-media m--1 mt--md--2">
-                    <ul class="footer__socials">
-                        <li class="footer-socials-item">
-                            <a href="www.facebook.com" class="footer__socials-link" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="10.431" height="19.476" viewBox="0 0 10.431 19.476">
-                                    <path data-name="Icon awesome-facebook-f" d="M11.357 10.955 11.9 7.43H8.516V5.143a1.762 1.762 0 0 1 1.987-1.9h1.537v-3A18.75 18.75 0 0 0 9.311 0C6.526 0 4.705 1.688 4.705 4.744V7.43h-3.1v3.525h3.1v8.521h3.81v-8.521z" transform="translate(-1.609)" style="fill:#cbcbcb"/>
-                                </svg>                        
-                            </a>
-                        </li>
-                        <li class="footer-socials-item">
-                            <a href="www.instagra.comm" class="footer__socials-link" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="19.476" height="19.476" viewBox="0 0 19.476 19.476">
-                                    <path data-name="Icon simple-instagram" d="M9.738 0C7.092 0 6.762.012 5.723.058A7.18 7.18 0 0 0 3.36.511a4.769 4.769 0 0 0-1.726 1.123A4.751 4.751 0 0 0 .511 3.36a7.159 7.159 0 0 0-.453 2.363C.01 6.762 0 7.092 0 9.738s.012 2.976.058 4.014a7.185 7.185 0 0 0 .453 2.364 4.775 4.775 0 0 0 1.123 1.725 4.762 4.762 0 0 0 1.726 1.123 7.189 7.189 0 0 0 2.364.453c1.039.049 1.369.058 4.014.058s2.976-.012 4.014-.058a7.206 7.206 0 0 0 2.364-.453 4.977 4.977 0 0 0 2.848-2.848 7.185 7.185 0 0 0 .453-2.364c.049-1.039.058-1.369.058-4.014s-.012-2.976-.058-4.014a7.2 7.2 0 0 0-.453-2.364 4.779 4.779 0 0 0-1.123-1.725A4.745 4.745 0 0 0 16.116.511a7.164 7.164 0 0 0-2.364-.453C12.714.01 12.383 0 9.738 0zm0 1.753c2.6 0 2.909.013 3.936.058a5.365 5.365 0 0 1 1.807.337 3.2 3.2 0 0 1 1.849 1.848 5.376 5.376 0 0 1 .334 1.804c.046 1.027.057 1.336.057 3.936s-.012 2.909-.06 3.936a5.48 5.48 0 0 1-.342 1.807 3.092 3.092 0 0 1-.73 1.121 3.038 3.038 0 0 1-1.12.727 5.416 5.416 0 0 1-1.814.335c-1.034.046-1.338.057-3.943.057s-2.91-.012-3.943-.06a5.522 5.522 0 0 1-1.814-.342 3.016 3.016 0 0 1-1.119-.73 2.957 2.957 0 0 1-.73-1.12 5.526 5.526 0 0 1-.341-1.814c-.037-1.022-.05-1.338-.05-3.931s.013-2.91.05-3.945a5.52 5.52 0 0 1 .341-1.813 2.887 2.887 0 0 1 .73-1.121 2.88 2.88 0 0 1 1.119-.729 5.39 5.39 0 0 1 1.8-.342C6.793 1.741 7.1 1.728 9.7 1.728l.037.024zm0 2.985a5 5 0 1 0 5 5 5 5 0 0 0-5-5.001zm0 8.246a3.246 3.246 0 1 1 3.246-3.246 3.245 3.245 0 0 1-3.246 3.246zM16.1 4.54a1.169 1.169 0 1 1-1.169-1.168A1.169 1.169 0 0 1 16.1 4.54z" style="fill:#cbcbcb"/>
-                                </svg>                          
-                            </a>
-                        </li>
-                        <li class="footer-socials-item">
-                            <a href="www.linkedin.com" class="footer__socials-link" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17.041" height="17.04" viewBox="0 0 17.041 17.04">
-                                    <path data-name="Icon awesome-linkedin-in" d="M3.814 17.041H.281V5.664h3.533zM2.046 4.112a2.056 2.056 0 1 1 2.046-2.065 2.063 2.063 0 0 1-2.046 2.065zm14.991 12.929h-3.525V11.5c0-1.32-.027-3.013-1.837-3.013-1.837 0-2.118 1.434-2.118 2.918v5.633H6.028V5.664h3.388v1.552h.049a3.712 3.712 0 0 1 3.343-1.837c3.576 0 4.233 2.355 4.233 5.413v6.25z" transform="translate(0 -.001)" style="fill:#cbcbcb"/>
-                                </svg>
-                                
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="footer__socials justify-content-center justify-content-md-start mt--4">
+                    <li class="footer-socials-item">
+                        <a href="www.facebook.com" class="footer__socials-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10.431" height="19.476" viewBox="0 0 10.431 19.476">
+                                <path data-name="Icon awesome-facebook-f" d="M11.357 10.955 11.9 7.43H8.516V5.143a1.762 1.762 0 0 1 1.987-1.9h1.537v-3A18.75 18.75 0 0 0 9.311 0C6.526 0 4.705 1.688 4.705 4.744V7.43h-3.1v3.525h3.1v8.521h3.81v-8.521z" transform="translate(-1.609)" style="fill:#cbcbcb"/>
+                            </svg>                        
+                        </a>
+                    </li>
+                    <li class="footer-socials-item">
+                        <a href="www.instagra.comm" class="footer__socials-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19.476" height="19.476" viewBox="0 0 19.476 19.476">
+                                <path data-name="Icon simple-instagram" d="M9.738 0C7.092 0 6.762.012 5.723.058A7.18 7.18 0 0 0 3.36.511a4.769 4.769 0 0 0-1.726 1.123A4.751 4.751 0 0 0 .511 3.36a7.159 7.159 0 0 0-.453 2.363C.01 6.762 0 7.092 0 9.738s.012 2.976.058 4.014a7.185 7.185 0 0 0 .453 2.364 4.775 4.775 0 0 0 1.123 1.725 4.762 4.762 0 0 0 1.726 1.123 7.189 7.189 0 0 0 2.364.453c1.039.049 1.369.058 4.014.058s2.976-.012 4.014-.058a7.206 7.206 0 0 0 2.364-.453 4.977 4.977 0 0 0 2.848-2.848 7.185 7.185 0 0 0 .453-2.364c.049-1.039.058-1.369.058-4.014s-.012-2.976-.058-4.014a7.2 7.2 0 0 0-.453-2.364 4.779 4.779 0 0 0-1.123-1.725A4.745 4.745 0 0 0 16.116.511a7.164 7.164 0 0 0-2.364-.453C12.714.01 12.383 0 9.738 0zm0 1.753c2.6 0 2.909.013 3.936.058a5.365 5.365 0 0 1 1.807.337 3.2 3.2 0 0 1 1.849 1.848 5.376 5.376 0 0 1 .334 1.804c.046 1.027.057 1.336.057 3.936s-.012 2.909-.06 3.936a5.48 5.48 0 0 1-.342 1.807 3.092 3.092 0 0 1-.73 1.121 3.038 3.038 0 0 1-1.12.727 5.416 5.416 0 0 1-1.814.335c-1.034.046-1.338.057-3.943.057s-2.91-.012-3.943-.06a5.522 5.522 0 0 1-1.814-.342 3.016 3.016 0 0 1-1.119-.73 2.957 2.957 0 0 1-.73-1.12 5.526 5.526 0 0 1-.341-1.814c-.037-1.022-.05-1.338-.05-3.931s.013-2.91.05-3.945a5.52 5.52 0 0 1 .341-1.813 2.887 2.887 0 0 1 .73-1.121 2.88 2.88 0 0 1 1.119-.729 5.39 5.39 0 0 1 1.8-.342C6.793 1.741 7.1 1.728 9.7 1.728l.037.024zm0 2.985a5 5 0 1 0 5 5 5 5 0 0 0-5-5.001zm0 8.246a3.246 3.246 0 1 1 3.246-3.246 3.245 3.245 0 0 1-3.246 3.246zM16.1 4.54a1.169 1.169 0 1 1-1.169-1.168A1.169 1.169 0 0 1 16.1 4.54z" style="fill:#cbcbcb"/>
+                            </svg>                          
+                        </a>
+                    </li>
+                    <li class="footer-socials-item">
+                        <a href="www.linkedin.com" class="footer__socials-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17.041" height="17.04" viewBox="0 0 17.041 17.04">
+                                <path data-name="Icon awesome-linkedin-in" d="M3.814 17.041H.281V5.664h3.533zM2.046 4.112a2.056 2.056 0 1 1 2.046-2.065 2.063 2.063 0 0 1-2.046 2.065zm14.991 12.929h-3.525V11.5c0-1.32-.027-3.013-1.837-3.013-1.837 0-2.118 1.434-2.118 2.918v5.633H6.028V5.664h3.388v1.552h.049a3.712 3.712 0 0 1 3.343-1.837c3.576 0 4.233 2.355 4.233 5.413v6.25z" transform="translate(0 -.001)" style="fill:#cbcbcb"/>
+                            </svg>
+                            
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
          <!-- Mobile menu end -->
@@ -108,11 +106,11 @@
                     <div class="row">
                         <div class="col-md-10 col-lg-8 mx-auto text-center">
                             <div class="heading-wrapper">
-                                <h1 class="text-capitalize ff-medium heading">Meet the company</h1>                       
+                                <h1 class="text-capitalize ff-medium heading cursor-scale">Meet the company</h1>                       
                             </div>
                         </div>
                         <div class="col-md-9 col-lg-6 mx-auto text-center">
-                            <p class="text-capitalize mt--1 subHeading ff-light">
+                            <p class="text-capitalize mt--1 subHeading ff-light cursor-scale small">
                                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
                             </p>
                         </div>
@@ -131,15 +129,15 @@
         <!-- Company Section Start -->
         <section class="company mt--10 mt--lg--15">
             <div class="page-container">
-                <a href="#" class="btn btn--primary animate-fade-in">Comapany</a>
+                <a href="#" class="btn btn--primary animate-fade-in cursor-scale small">Comapany</a>
                 <div class="row mt--2">
                     <div class="col-12 col-md-8 col-lg-5">
                         <div class="heading-wrapper">
-                            <h3 class="text-capitalize animate-fade-in-up">
+                            <h3 class="text-capitalize animate-fade-in-up cursor-scale">
                                 Jouw go-to creatieve team: vol passie, ambitie
                             </h3>  
                         </div>
-                        <p class="animate-fade-in-up ff-light">
+                        <p class="animate-fade-in-up ff-light cursor-scale small">
                             Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                         </p>
                     </div>
@@ -148,10 +146,10 @@
                             <div class="col-12 col-sm-6 col-lg-12">
                                 <div class="counter__top">
                                     <div class="heading-wrapper">
-                                        <h1 class="counter__number animate-fade-in" data-target="85">0</h1>                         
+                                        <h1 class="counter__number animate-fade-in cursor-scale" data-target="85">0</h1>                         
                                     </div>
                                     <div class="divider my--1 animate-fade-in-up"></div>
-                                    <p class="animate-fade-in-up ff-light">Projects Done</p>
+                                    <p class="animate-fade-in-up ff-light cursor-scale small">Projects Done</p>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-lg-12 counter__bottom">
@@ -159,19 +157,19 @@
                                     <div class="col-5">
                                         <div class="counter__left">
                                             <div class="heading-wrapper">
-                                                <h1 class="counter__number animate-fade-in" data-target="46">0</h1>
+                                                <h1 class="counter__number animate-fade-in cursor-scale" data-target="46">0</h1>
                                             </div>
                                             <div class="divider my--1 animate-fade-in-up"></div>
-                                            <p class="animate-fade-in-up ff-light">Experience</p>
+                                            <p class="animate-fade-in-up ff-light cursor-scale small">Experience</p>
                                         </div>
                                     </div>
                                     <div class="col-5 offset-2">
                                         <div class="counter__right">
                                             <div class="heading-wrapper">
-                                                <h1 class="counter__number animate-fade-in" data-target="65">0</h1>
+                                                <h1 class="counter__number animate-fade-in cursor-scale" data-target="65">0</h1>
                                             </div>
                                             <div class="divider my--1 animate-fade-in-up"></div>
-                                            <p class="animate-fade-in-up ff-light">Clients</p>
+                                            <p class="animate-fade-in-up ff-light cursor-scale small">Clients</p>
                                         </div>
                                     </div>
                                 </div>
@@ -186,11 +184,11 @@
         <!-- Marquee Section Start -->
         <section class="marquee mt--10 mt--md--15 mt--lg--20 mt--xl--25">
             <div class="marquee__container animate-fade-in-up">
-                <h1 class="marquee__text">Est. 2021</h1>
-                <h1 class="marquee__text">Est. 2022</h1>
-                <h1 class="marquee__text">Est. 2023</h1>
-                <h1 class="marquee__text">Est. 2024</h1>
-                <h1 class="marquee__text">Est. 2021</h1>
+                <h1 class="marquee__text cursor-scale">Est. 2021</h1>
+                <h1 class="marquee__text cursor-scale">Est. 2022</h1>
+                <h1 class="marquee__text cursor-scale">Est. 2023</h1>
+                <h1 class="marquee__text cursor-scale">Est. 2024</h1>
+                <h1 class="marquee__text cursor-scale">Est. 2021</h1>
             </div>
             <div class="gallery mt--6">
                 <div class="row">
@@ -212,11 +210,11 @@
         <!-- Team Section Start -->
         <section class="team mt--10 mt--md--15 mt--lg--20">
             <div class="page-container">
-                <a href="#" class="btn btn--primary animate-fade-in">Our Team</a>
+                <a href="#" class="btn btn--primary animate-fade-in cursor-scale small">Our Team</a>
                 <div class="row mt--2">
                     <div class="col-12 col-md-10 col-xl-7">
                         <div class="heading-wrapper">
-                            <h3 class="text-capitalize animate-fade-in-up">
+                            <h3 class="text-capitalize animate-fade-in-up cursor-scale">
                                 The 35-person Big Human team of 12 designers, 15 engineers,
                             </h3>  
                         </div>
@@ -229,7 +227,7 @@
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover" loading="lazy">
-                                <figcaption class="team__details">
+                                <figcaption class="team__details cursor-scale small">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
@@ -238,7 +236,7 @@
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover" loading="lazy">
-                                <figcaption class="team__details">
+                                <figcaption class="team__details cursor-scale small">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
@@ -247,7 +245,7 @@
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover" loading="lazy">
-                                <figcaption class="team__details">
+                                <figcaption class="team__details cursor-scale small">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
@@ -256,7 +254,7 @@
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover" loading="lazy">
-                                <figcaption class="team__details">
+                                <figcaption class="team__details cursor-scale small">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
@@ -265,7 +263,7 @@
                         <div class="swiper-slide">
                             <figure class="team__imgWrapper animate-fade-in-up">
                                 <img src="" alt="" class="img-fluid img-cover" loading="lazy">
-                                <figcaption class="team__details">
+                                <figcaption class="team__details cursor-scale small">
                                     <div class="team__member-name text-white animate-fade-in">aditya</div>
                                     <div class="clr-g-10 animate-fade-in-up">founder</div>
                                 </figcaption>
@@ -276,7 +274,6 @@
             </div>
         </section>
         <!-- Team Section End -->
-
 
         <!-- Our Values Section Start -->
         <section class="values mt--10 mt--md--15 mt--lg--20">
@@ -290,10 +287,10 @@
                     <div class="row d-flex align-items-start">
                         <div class="col-12 col-lg-3 col-xl-5 values__headingWrapper">
                             <div class="heading-wrapper">
-                                <h3 class="text-capitalize text-white animate-fade-in-up">Our Values</h3>  
+                                <h3 class="text-capitalize text-white animate-fade-in-up cursor-scale">Our Values</h3>  
                             </div>
                         </div>
-                        <div class="col-12 col-lg-8 col-xl-6 offset-lg-1 mt--2 mt--md--4 mt--lg--0">
+                        <div class="col-12 col-lg-8 col-xl-6 offset-lg-1 mt--4 mt--lg--0">
                             <div class="row">
                                 <div class="col-12 text-white">
                                     <div class="values__detailsWrapper" id="one">
@@ -301,8 +298,8 @@
                                             <h3>01</h3>
                                         </div>
                                         <div class="values__details">
-                                            <h2 class="">relentless</h2>
-                                            <p class="ff-light">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
+                                            <h2 class="cursor-scale">relentless</h2>
+                                            <p class="ff-light cursor-scale small">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
                                         </div> 
                                     </div>                              
                                 </div>
@@ -312,8 +309,8 @@
                                             <h3>02</h3>
                                         </div>
                                         <div class="values__details">
-                                            <h2 class="">authentic</h2>
-                                            <p class="ff-light">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
+                                            <h2 class="cursor-scale">authentic</h2>
+                                            <p class="ff-light cursor-scale small">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
                                         </div> 
                                     </div>  
                                 </div>
@@ -321,8 +318,8 @@
                                     <div class="values__detailsWrapper" id="three">
                                         <div class="values__counting "><h3>03</h3></div>
                                         <div class="values__details">
-                                            <h2 class="">accountable</h2>
-                                            <p class="ff-light">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
+                                            <h2 class=" cursor-scale">accountable</h2>
+                                            <p class="ff-light cursor-scale small">Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd</p>
                                         </div> 
                                     </div>   
                                 </div>
@@ -337,11 +334,11 @@
         <!-- Join-Us Section Start -->
         <section class="join-us mt--10 mt--lg--15">
             <div class="page-container">
-                <a href="#" class="btn btn--primary animate-fade-in">Join Us</a>
+                <a href="#" class="btn btn--primary animate-fade-in cursor-scale small">Join Us</a>
                 <div class="row mt--2">
                     <div class="col-12 col-md-8 col-lg-7">
                         <div class="heading-wrapper">
-                            <h3 class="text-capitalize animate-fade-in-up">
+                            <h3 class="text-capitalize animate-fade-in-up cursor-scale">
                                 The 35-person Big Human team of 12 designers, 15 engineers,
                             </h3>           
                         </div>
@@ -381,7 +378,7 @@
                 <div class="row">
                     <div class="col-12 col-sm-8 col-xl-6 mx-auto text-center">
                         <div class="heading-wrapper">
-                            <h2 class="text-white text-capitalize animate-fade-in-up">
+                            <h2 class="text-white text-capitalize animate-fade-in-up cursor-scale">
                                 Let's make your  Website shine Lorem
                             </h2>
                         </div>

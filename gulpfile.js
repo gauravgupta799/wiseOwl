@@ -34,13 +34,14 @@ function scssTaskMinified(){
     .pipe(dest('dist', {sourcemaps:'.'}))
 }
 
+// "app/venders/gsap/ScrollTrigger.min.js",
+
 // Array of javaScript files
 const jsFilesArray = [
     "app/venders/jquery/jquery-3.7.0.min.js",
     "app/venders/gsap/gsap.min.js",
-    // "app/venders/gsap/ScrollTrigger.min.js",
     "app/venders/gsap/ScrollTrigger-3.6.1.min.js",
-    'app/venders/locomotive-scroll/locomotive-scroll.min.js',
+    // 'app/venders/locomotive-scroll/locomotive-scroll.min.js',
     "app/venders/swiper/js/swiper-bundle.min.js",
     "app/js/main.js",
 ];

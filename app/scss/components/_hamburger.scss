@@ -24,12 +24,8 @@
         }
       }
       &::after{
-        @include bar-after(2px, 25px , 8px);
+        @include bar-before(2px, 34px, 8px);
         right: 0;
-
-        @include breakpoint-sm{
-          @include bar-before(2px, 34px, 8px);
-        }
       }
     }
     .bar-white{
@@ -51,38 +47,47 @@
         display: block;
       }
     }
-    .menu__text-2{
-      margin-top: 0 !important;
-      display: none;
-      @include transition(0.5s, ease-out);
-    }
+    // .menu__text-2{
+    //   margin-top: 0 !important;
+    //   display: none;
+    //   @include transition(0.5s, ease-out);
+    // }
     
-    &.open {
-      z-index: 999;
-      .bar{
-        transition-duration: 0.5s;
-        background: transparent;
-        &::before{
-          transform: rotateZ(45deg) scaleX(1) translate(6px, 6px);
-        }
-        &::after{
-          transform: rotateZ(-45deg) scaleX(1) translate(6px, -6px);
-          width: 28px;
-        }
-      }
-      .menu__text-1{
-        display: none;
-        @include transition(0.5s, ease-out);
-      }
-      .menu__text-2{
-        @include breakpoint-md{
-          display: block;
-          @include transition(0.5s, ease-out);
-        }
-      }
-    }
+    // &.open {
+    //   z-index: 999;
+    //   .bar{
+    //     transition-duration: 0.5s;
+    //     background: transparent;
+    //     &::before{
+    //       transform: rotateZ(45deg) scaleX(1) translate(6px, 6px);
+    //     }
+    //     &::after{
+    //       transform: rotateZ(-45deg) scaleX(1) translate(6px, -6px);
+    //       width: 28px;
+    //     }
+    //   }
+    //   .menu__text-1{
+    //     display: none;
+    //     @include transition(0.5s, ease-out);
+    //   }
+    //   .menu__text-2{
+    //     @include breakpoint-md{
+    //       display: block;
+    //       @include transition(0.5s, ease-out);
+    //     }
+    //   }
+    // }
+
     &:hover {
       cursor: pointer;
     }
   }
   
+
+.menu__text-2{
+  display: none;
+  @include transition(0.5s, ease-out);
+  @include breakpoint-md{
+    display: block;
+  }
+}

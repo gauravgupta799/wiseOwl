@@ -8,6 +8,7 @@
     <title>WiseOwl - Contact Page</title>
 </head>
 <body id="body">
+    <div class="cursor"></div>
     <div id="preloader">
         <div id="percent">0%</div>
         <div id="bar">
@@ -31,9 +32,8 @@
                             <input type="checkbox" class="checkbox__field" id="switchToggle">
                             <span class="slider"></span>
                         </label>
-                        <div class="menu hamburger">
+                        <div class="hamburger cursor-scale small">
                             <span class="text-white menu__text-1">Menu</span>
-                            <span class="text-white menu__text-2">Close</span>
                             <div class="bar"></div>
                         </div>
                     </nav>
@@ -45,10 +45,19 @@
         <!-- Mobile menu start -->
         <div class="header__mobile">
             <div class="page-container">
-                <div class="header__logo mt--5">
-                    <a href="/index.html">
-                        <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo" loading="lazy">
-                    </a>
+                <div class="header__mobile--top">
+                    <div class="header__logo">
+                        <a href="/index.html">
+                            <img src="./app/assets/logos/wiseOwl-logo.svg" alt="company's logo" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="close-btn cursor-scale small">
+                        <span class="text-white menu__text-2">Close</span>
+                        <div class="bar-close">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
                 </div>
                 <ul class="header__mobile-list">
                    <li class="header__mobile-item"><a href="index.html" class="header__mobile-link">Home</a></li>
@@ -58,33 +67,30 @@
                    <li class="header__mobile-item"><a href="services.html" class="header__mobile-link">Services</a></li>
                    <li class="header__mobile-item"><a href="contact.html" class="header__mobile-link">Contact</a></li>
                 </ul>
-                <hr class="mt--3 bg--secondary">
-                <div class="sidemenu__social-media m--1 mt--md--2">
-                    <ul class="footer__socials">
-                        <li class="footer-socials-item">
-                            <a href="www.facebook.com" class="footer__socials-link" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="10.431" height="19.476" viewBox="0 0 10.431 19.476">
-                                    <path data-name="Icon awesome-facebook-f" d="M11.357 10.955 11.9 7.43H8.516V5.143a1.762 1.762 0 0 1 1.987-1.9h1.537v-3A18.75 18.75 0 0 0 9.311 0C6.526 0 4.705 1.688 4.705 4.744V7.43h-3.1v3.525h3.1v8.521h3.81v-8.521z" transform="translate(-1.609)" style="fill:#cbcbcb"/>
-                                </svg>                        
-                            </a>
-                        </li>
-                        <li class="footer-socials-item">
-                            <a href="www.instagra.comm" class="footer__socials-link" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="19.476" height="19.476" viewBox="0 0 19.476 19.476">
-                                    <path data-name="Icon simple-instagram" d="M9.738 0C7.092 0 6.762.012 5.723.058A7.18 7.18 0 0 0 3.36.511a4.769 4.769 0 0 0-1.726 1.123A4.751 4.751 0 0 0 .511 3.36a7.159 7.159 0 0 0-.453 2.363C.01 6.762 0 7.092 0 9.738s.012 2.976.058 4.014a7.185 7.185 0 0 0 .453 2.364 4.775 4.775 0 0 0 1.123 1.725 4.762 4.762 0 0 0 1.726 1.123 7.189 7.189 0 0 0 2.364.453c1.039.049 1.369.058 4.014.058s2.976-.012 4.014-.058a7.206 7.206 0 0 0 2.364-.453 4.977 4.977 0 0 0 2.848-2.848 7.185 7.185 0 0 0 .453-2.364c.049-1.039.058-1.369.058-4.014s-.012-2.976-.058-4.014a7.2 7.2 0 0 0-.453-2.364 4.779 4.779 0 0 0-1.123-1.725A4.745 4.745 0 0 0 16.116.511a7.164 7.164 0 0 0-2.364-.453C12.714.01 12.383 0 9.738 0zm0 1.753c2.6 0 2.909.013 3.936.058a5.365 5.365 0 0 1 1.807.337 3.2 3.2 0 0 1 1.849 1.848 5.376 5.376 0 0 1 .334 1.804c.046 1.027.057 1.336.057 3.936s-.012 2.909-.06 3.936a5.48 5.48 0 0 1-.342 1.807 3.092 3.092 0 0 1-.73 1.121 3.038 3.038 0 0 1-1.12.727 5.416 5.416 0 0 1-1.814.335c-1.034.046-1.338.057-3.943.057s-2.91-.012-3.943-.06a5.522 5.522 0 0 1-1.814-.342 3.016 3.016 0 0 1-1.119-.73 2.957 2.957 0 0 1-.73-1.12 5.526 5.526 0 0 1-.341-1.814c-.037-1.022-.05-1.338-.05-3.931s.013-2.91.05-3.945a5.52 5.52 0 0 1 .341-1.813 2.887 2.887 0 0 1 .73-1.121 2.88 2.88 0 0 1 1.119-.729 5.39 5.39 0 0 1 1.8-.342C6.793 1.741 7.1 1.728 9.7 1.728l.037.024zm0 2.985a5 5 0 1 0 5 5 5 5 0 0 0-5-5.001zm0 8.246a3.246 3.246 0 1 1 3.246-3.246 3.245 3.245 0 0 1-3.246 3.246zM16.1 4.54a1.169 1.169 0 1 1-1.169-1.168A1.169 1.169 0 0 1 16.1 4.54z" style="fill:#cbcbcb"/>
-                                </svg>                          
-                            </a>
-                        </li>
-                        <li class="footer-socials-item">
-                            <a href="www.linkedin.com" class="footer__socials-link" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17.041" height="17.04" viewBox="0 0 17.041 17.04">
-                                    <path data-name="Icon awesome-linkedin-in" d="M3.814 17.041H.281V5.664h3.533zM2.046 4.112a2.056 2.056 0 1 1 2.046-2.065 2.063 2.063 0 0 1-2.046 2.065zm14.991 12.929h-3.525V11.5c0-1.32-.027-3.013-1.837-3.013-1.837 0-2.118 1.434-2.118 2.918v5.633H6.028V5.664h3.388v1.552h.049a3.712 3.712 0 0 1 3.343-1.837c3.576 0 4.233 2.355 4.233 5.413v6.25z" transform="translate(0 -.001)" style="fill:#cbcbcb"/>
-                                </svg>
-                                
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="footer__socials justify-content-center justify-content-md-start mt--4">
+                    <li class="footer-socials-item">
+                        <a href="www.facebook.com" class="footer__socials-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10.431" height="19.476" viewBox="0 0 10.431 19.476">
+                                <path data-name="Icon awesome-facebook-f" d="M11.357 10.955 11.9 7.43H8.516V5.143a1.762 1.762 0 0 1 1.987-1.9h1.537v-3A18.75 18.75 0 0 0 9.311 0C6.526 0 4.705 1.688 4.705 4.744V7.43h-3.1v3.525h3.1v8.521h3.81v-8.521z" transform="translate(-1.609)" style="fill:#cbcbcb"/>
+                            </svg>                        
+                        </a>
+                    </li>
+                    <li class="footer-socials-item">
+                        <a href="www.instagra.comm" class="footer__socials-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19.476" height="19.476" viewBox="0 0 19.476 19.476">
+                                <path data-name="Icon simple-instagram" d="M9.738 0C7.092 0 6.762.012 5.723.058A7.18 7.18 0 0 0 3.36.511a4.769 4.769 0 0 0-1.726 1.123A4.751 4.751 0 0 0 .511 3.36a7.159 7.159 0 0 0-.453 2.363C.01 6.762 0 7.092 0 9.738s.012 2.976.058 4.014a7.185 7.185 0 0 0 .453 2.364 4.775 4.775 0 0 0 1.123 1.725 4.762 4.762 0 0 0 1.726 1.123 7.189 7.189 0 0 0 2.364.453c1.039.049 1.369.058 4.014.058s2.976-.012 4.014-.058a7.206 7.206 0 0 0 2.364-.453 4.977 4.977 0 0 0 2.848-2.848 7.185 7.185 0 0 0 .453-2.364c.049-1.039.058-1.369.058-4.014s-.012-2.976-.058-4.014a7.2 7.2 0 0 0-.453-2.364 4.779 4.779 0 0 0-1.123-1.725A4.745 4.745 0 0 0 16.116.511a7.164 7.164 0 0 0-2.364-.453C12.714.01 12.383 0 9.738 0zm0 1.753c2.6 0 2.909.013 3.936.058a5.365 5.365 0 0 1 1.807.337 3.2 3.2 0 0 1 1.849 1.848 5.376 5.376 0 0 1 .334 1.804c.046 1.027.057 1.336.057 3.936s-.012 2.909-.06 3.936a5.48 5.48 0 0 1-.342 1.807 3.092 3.092 0 0 1-.73 1.121 3.038 3.038 0 0 1-1.12.727 5.416 5.416 0 0 1-1.814.335c-1.034.046-1.338.057-3.943.057s-2.91-.012-3.943-.06a5.522 5.522 0 0 1-1.814-.342 3.016 3.016 0 0 1-1.119-.73 2.957 2.957 0 0 1-.73-1.12 5.526 5.526 0 0 1-.341-1.814c-.037-1.022-.05-1.338-.05-3.931s.013-2.91.05-3.945a5.52 5.52 0 0 1 .341-1.813 2.887 2.887 0 0 1 .73-1.121 2.88 2.88 0 0 1 1.119-.729 5.39 5.39 0 0 1 1.8-.342C6.793 1.741 7.1 1.728 9.7 1.728l.037.024zm0 2.985a5 5 0 1 0 5 5 5 5 0 0 0-5-5.001zm0 8.246a3.246 3.246 0 1 1 3.246-3.246 3.245 3.245 0 0 1-3.246 3.246zM16.1 4.54a1.169 1.169 0 1 1-1.169-1.168A1.169 1.169 0 0 1 16.1 4.54z" style="fill:#cbcbcb"/>
+                            </svg>                          
+                        </a>
+                    </li>
+                    <li class="footer-socials-item">
+                        <a href="www.linkedin.com" class="footer__socials-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17.041" height="17.04" viewBox="0 0 17.041 17.04">
+                                <path data-name="Icon awesome-linkedin-in" d="M3.814 17.041H.281V5.664h3.533zM2.046 4.112a2.056 2.056 0 1 1 2.046-2.065 2.063 2.063 0 0 1-2.046 2.065zm14.991 12.929h-3.525V11.5c0-1.32-.027-3.013-1.837-3.013-1.837 0-2.118 1.434-2.118 2.918v5.633H6.028V5.664h3.388v1.552h.049a3.712 3.712 0 0 1 3.343-1.837c3.576 0 4.233 2.355 4.233 5.413v6.25z" transform="translate(0 -.001)" style="fill:#cbcbcb"/>
+                            </svg>
+                            
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- Mobile menu end -->
@@ -103,7 +109,7 @@
                 <div class="row">
                     <div class=" col-12 col-lg-5">
                         <div class="heading-wrapper">
-                            <h1 class="text-white ff-medium heading">
+                            <h1 class="text-white ff-medium heading cursor-scale">
                                 Lorem Ipsum Contact Design
                             </h1>                            
                         </div>
@@ -168,7 +174,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <div class="heading-wrapper">
-                            <h1 class="talk__heading animate-fade-in-up">Let's Talk</h1>                          
+                            <h1 class="talk__heading animate-fade-in-up cursor-scale">Let's Talk</h1>                          
                         </div>
                     </div>
                     <div class="col-12 col-lg-4 offset-lg-2">
@@ -205,7 +211,7 @@
                             <div class="talk__item-wrapper">
                                 <div class="row">
                                     <div class="col-12 col-sm-6">
-                                        <div class="talk__content">
+                                        <div class="talk__content cursor-scale small">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                 <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" fill="#050505"/>
                                             </svg>                    
@@ -215,7 +221,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 d-flex justify-content-sm-end align-items-end">
-                                        <div class="ff-light">
+                                        <div class="ff-light cursor-scale small">
                                             <span>Email Address</span>
                                         </div>
                                     </div>
@@ -228,7 +234,7 @@
                             <div class="talk__item-wrapper">
                                 <div class="row">
                                     <div class="col-12 col-sm-6">
-                                        <div class="talk__content">
+                                        <div class="talk__content cursor-scale small">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                 <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" fill="#050505"/>
                                             </svg>
@@ -238,7 +244,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 d-flex justify-content-sm-end align-items-end">
-                                        <div class="">
+                                        <div class="cursor-scale small">
                                             <span class="ff-light">Phone Number</span>
                                         </div>
                                     </div>                  
@@ -251,7 +257,7 @@
                             <div class="talk__item-wrapper">
                                 <div class="row">
                                     <div class="col-12 col-sm-6">
-                                        <div class="talk__content">
+                                        <div class="talk__content cursor-scale small">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                 <path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z" fill="#050505"/>
                                             </svg>
@@ -261,7 +267,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 d-flex justify-content-sm-end align-items-end">
-                                        <div class="d-flex ff-light pr--2">
+                                        <div class="d-flex ff-light pr--2 cursor-scale small">
                                             <span>Address</span>
                                         </div>
                                     </div>               

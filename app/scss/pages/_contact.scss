@@ -104,8 +104,8 @@
         }
     }
     &__content{
-        display: flex;
-        align-items: center;
+       @include flex-center-vertical;
+        cursor: pointer;
         @include breakpoint-sm{
             align-items: baseline;
         }

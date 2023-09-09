@@ -12,20 +12,38 @@
 @use "../abstract/functions" as *;
 
 *{
-    padding: 0;
-    margin: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html{
   scroll-behavior: smooth;
 }
-  
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $clr-white-30;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: $clr-primary; 
+}
+
+
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
@@ -40,10 +58,6 @@ body {
   // cursor: none;
 }
 
-// body.disable-scroll {
-//     overflow: hidden !important;
-// }
- 
   div,
   ul,
   ol,

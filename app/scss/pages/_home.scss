@@ -65,6 +65,7 @@
        @include full-dimensions;
         img{
             object-fit: cover;
+            @include transition(transform, 0.35s, ease-out);
             @media only screen and (max-width:36em){
                 height: rem(280);
             }

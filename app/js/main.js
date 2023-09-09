@@ -134,16 +134,12 @@ navLinks.forEach(link =>{
 // Mobile Menu Toggle start
 $(document).ready(function() {
     $('.hamburger').click(function(){
-        // $(this).addClass('open');
         $(".header__mobile").addClass('open');
         $(".overlay").addClass('active');
-        $('html').addClass('disable-scroll');
     });
     $(".close-btn").click(function(){
-        // $('.hamburger').removeClass('open');
         $(".header__mobile").removeClass('open');
         $(".overlay").removeClass('active');
-        $('html').removeClass('disable-scroll');
     })
     $(".footer__input input").focusin(function(){
         $(".footer__input").addClass("border-color");
@@ -151,13 +147,19 @@ $(document).ready(function() {
     })
     $(".footer__input input").focusout(function(){
         $(".footer__input").removeClass("border-color");
-    })
+    });
+    const mobileMenu = document.querySelector(".header__mobile");
+    if(mobileMenu.classList.contains("open")){
+        console.log("true")
+    }else{
+        console.log("fasle")
+    }
 })
 // Mobile Menu Toggle End
 
 
 // form Validation start
-document.getElementById("footer__form").addEventListener("submit", (e) => {
+document.getElementById("footer__form").addEventListener("~submit", (e) => {
     e.preventDefault();
     const inputField = document.querySelector('input[type="email"]');
     if(inputField.value != ""){

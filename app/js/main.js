@@ -37,7 +37,7 @@ window.onload = () =>{
             percent.innerHTML = width + "%";
         }
     }
-    id = setInterval(frame, 50);
+    id = setInterval(frame, 40);
 }
 // ====== Pre-loader end ======
 

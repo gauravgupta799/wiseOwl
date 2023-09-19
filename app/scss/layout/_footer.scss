@@ -81,9 +81,9 @@
         @include breakpoint-sm{
             padding-block: em(20);
         }
-        @include breakpoint-md{
-            padding-block: em(24);
-        }
+        // @include breakpoint-md{
+        //     padding-block: em(24);
+        // }
     }
     &__leftWrapper{
         @include flex-center-vertical;
